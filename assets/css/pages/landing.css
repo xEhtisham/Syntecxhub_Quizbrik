@@ -1,0 +1,69 @@
+/* ==========================================================
+   LANDING PAGE
+   ========================================================== */
+
+.landing {
+
+    width: 100%;
+
+}
+
+.landing .card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+}
+
+.landing header {
+
+    text-align: center;
+
+}
+
+.landing h1 {
+
+    font-size: var(--font-size-4xl);
+
+    font-weight: var(--font-weight-bold);
+
+    color: var(--color-primary);
+
+}
+
+.landing header p {
+
+    margin-top: var(--space-2);
+
+    color: var(--color-text-light);
+
+}
+
+.landing section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-6);
+
+}
+
+.landing label {
+
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    font-weight: var(--font-weight-medium);
+
+}
+
+.landing .btn {
+
+    width: 100%;
+
+}
