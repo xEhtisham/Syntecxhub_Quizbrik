@@ -7,6 +7,27 @@
 
 "use strict";
 
+import { CONFIG } from "../config.js";
+
+/**
+ * Creates HTML <option> elements from an array.
+ *
+ * @param {string[]} items
+ * @param {string|null} selectedItem
+ * @returns {string}
+ */
+function createOptions(items, selectedItem = null) {
+  return items
+    .map(
+      (item) => `
+                <option ${item === selectedItem ? "selected" : ""}>
+                    ${item}
+                </option>
+            `,
+    )
+    .join("");
+}
+
 /**
  * Creates the landing page.
  *
@@ -14,7 +35,6 @@
  */
 export function renderLandingPage() {
   return `
-
         <main class="landing">
 
             <section class="card">
@@ -42,14 +62,10 @@ export function renderLandingPage() {
                             id="category"
                             class="input"
                         >
-                            <option>Science</option>
-                            <option>History</option>
-                            <option>Technology</option>
+                            ${createOptions(CONFIG.categories)}
                         </select>
 
                     </div>
-
-                    <br>
 
                     <div>
 
@@ -61,14 +77,10 @@ export function renderLandingPage() {
                             id="difficulty"
                             class="input"
                         >
-                            <option>Easy</option>
-                            <option selected>Medium</option>
-                            <option>Hard</option>
+                            ${createOptions(CONFIG.difficulties, "Medium")}
                         </select>
 
                     </div>
-
-                    <br>
 
                     <div>
 
@@ -80,26 +92,21 @@ export function renderLandingPage() {
                             id="questions"
                             class="input"
                             type="number"
-                            value="10"
-                            min="5"
-                            max="50"
+                            value="${CONFIG.questionLimits.default}"
+                            min="${CONFIG.questionLimits.min}"
+                            max="${CONFIG.questionLimits.max}"
                         >
 
                     </div>
 
                 </section>
 
-                <br>
-
-                <button
-                    class="btn"
-                >
+                <button class="btn">
                     Start Quiz
                 </button>
 
             </section>
 
         </main>
-
     `;
 }
