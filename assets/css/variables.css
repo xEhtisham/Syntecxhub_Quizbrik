@@ -1,0 +1,109 @@
+/* ==========================================================
+   QUIZBRIK DESIGN SYSTEM
+   ========================================================== */
+
+:root {
+
+    /* ==========================================
+       Brand Colors
+       ========================================== */
+
+    --color-primary: #0B2545;
+    --color-secondary: #1F7A8C;
+    --color-accent: #4EA8DE;
+
+    /* ==========================================
+       Neutral Colors
+       ========================================== */
+
+    --color-background: #F4F1EA;
+    --color-surface: #FFFFFF;
+
+    --color-text: #102A43;
+    --color-text-muted: #64748B;
+
+    --color-border: #D9E2EC;
+
+    /* ==========================================
+       Feedback Colors
+       ========================================== */
+
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+
+    /* ==========================================
+       Typography
+       ========================================== */
+
+    --font-family: "Poppins", sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    /* ==========================================
+       Spacing
+       4px Scale
+       ========================================== */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ==========================================
+       Border Radius
+       ========================================== */
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-round: 999px;
+
+    /* ==========================================
+       Shadows
+       ========================================== */
+
+    --shadow-sm: 0 4px 12px rgba(16, 42, 67, 0.08);
+
+    --shadow-md: 0 12px 32px rgba(16, 42, 67, 0.12);
+
+    --shadow-lg: 0 24px 48px rgba(16, 42, 67, 0.18);
+
+    /* ==========================================
+       Animation
+       ========================================== */
+
+    --transition-fast: 0.2s ease;
+
+    --transition-normal: 0.3s ease;
+
+    --transition-slow: 0.5s ease;
+
+    /* ==========================================
+       Layout
+       ========================================== */
+
+    --container-width: 1200px;
+
+    --navbar-height: 80px;
+
+}
