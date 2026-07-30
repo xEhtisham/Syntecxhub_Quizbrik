@@ -9,6 +9,7 @@
 
 import { renderLandingPage } from "./ui/landing.js";
 import { renderQuizPage } from "./ui/quiz.js";
+import { renderResultPage } from "./ui/result.js";
 import { generateQuiz } from "./quiz/engine.js";
 
 /**
@@ -22,6 +23,13 @@ const app = document.querySelector("#app");
 const state = {
   currentScreen: "landing",
   quizConfig: null,
+
+  questions: [],
+  currentQuestion: 0,
+  score: 0,
+
+  answered: false,
+  selectedAnswer: null,
 };
 
 /**
@@ -32,6 +40,7 @@ function showLandingPage() {
 
   attachLandingEvents();
 }
+
 /**
  * Render quiz screen.
  */
@@ -39,6 +48,25 @@ function showQuizPage() {
   app.innerHTML = renderQuizPage(state);
 
   attachQuizEvents();
+}
+
+/**
+ * Render result screen.
+ */
+function showResultPage() {
+  app.innerHTML = renderResultPage(state);
+
+  document.querySelector("#restart-btn").addEventListener("click", () => {
+    state.currentQuestion = 0;
+    state.score = 0;
+    state.questions = [];
+    state.quizConfig = null;
+
+    state.answered = false;
+    state.selectedAnswer = null;
+
+    showLandingPage();
+  });
 }
 
 /**
@@ -51,13 +79,11 @@ function attachLandingEvents() {
 }
 
 /**
- * Read user selections and save them.
+ * Start a new quiz.
  */
 async function startQuiz() {
   const category = document.querySelector("#category").value;
-
   const difficulty = document.querySelector("#difficulty").value;
-
   const amount = Number(document.querySelector("#questions").value);
 
   state.quizConfig = {
@@ -70,12 +96,12 @@ async function startQuiz() {
     state.questions = await generateQuiz(state.quizConfig);
 
     state.currentQuestion = 0;
-
     state.score = 0;
 
-    state.currentScreen = "quiz";
+    state.answered = false;
+    state.selectedAnswer = null;
 
-    console.log(state.questions);
+    state.currentScreen = "quiz";
 
     showQuizPage();
   } catch (error) {
@@ -84,38 +110,53 @@ async function startQuiz() {
     alert("Unable to load quiz questions.");
   }
 }
+
+/**
+ * Attach quiz event listeners.
+ */
 function attachQuizEvents() {
-  document.querySelectorAll(".option-btn").forEach((button) => {
-    button.addEventListener("click", handleAnswer);
-  });
+  if (!state.answered) {
+    document.querySelectorAll(".option-btn").forEach((button) => {
+      button.addEventListener("click", handleAnswer);
+    });
+  }
+
+  const nextButton = document.querySelector("#next-btn");
+
+  if (nextButton) {
+    nextButton.addEventListener("click", nextQuestion);
+  }
 }
 
+/**
+ * Handle answer selection.
+ */
 function handleAnswer(event) {
   const selectedAnswer = event.target.dataset.answer;
 
-  const current = state.questions[state.currentQuestion];
+  const currentQuestion = state.questions[state.currentQuestion];
 
-  if (selectedAnswer === current.correctAnswer) {
+  if (selectedAnswer === currentQuestion.correctAnswer) {
     state.score++;
   }
 
+  state.selectedAnswer = selectedAnswer;
+  state.answered = true;
+
+  showQuizPage();
+}
+
+/**
+ * Move to the next question.
+ */
+function nextQuestion() {
   state.currentQuestion++;
 
-  if (state.currentQuestion >= state.questions.length) {
-    app.innerHTML = `
-            <main>
-                <section class="card">
-                    <h2>Quiz Finished 🎉</h2>
+  state.answered = false;
+  state.selectedAnswer = null;
 
-                    <h3>
-                        Score:
-                        ${state.score}
-                        /
-                        ${state.questions.length}
-                    </h3>
-                </section>
-            </main>
-        `;
+  if (state.currentQuestion >= state.questions.length) {
+    showResultPage();
 
     return;
   }
