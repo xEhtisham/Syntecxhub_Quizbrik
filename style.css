@@ -586,7 +586,9 @@ progress::-moz-progress-bar {
    Animations & Transitions
    ========================================================== */
 
-.card {
+.landing .card,
+.result .card,
+.review-card {
     animation: fadeInUp 0.3s ease-out forwards;
 }
 

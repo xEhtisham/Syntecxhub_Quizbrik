@@ -308,7 +308,14 @@ function handleSelectOption(e) {
   const btn = e.currentTarget;
   const answer = btn.getAttribute('data-answer');
   state.selectedAnswer = answer;
-  showQuiz(false);
+  
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+
+  const submitBtn = document.getElementById('submit-btn');
+  if (submitBtn) {
+    submitBtn.disabled = false;
+  }
 }
 
 function submitAnswer() {
