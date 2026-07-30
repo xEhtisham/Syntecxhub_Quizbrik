@@ -163,6 +163,72 @@ body {
     color: var(--navy);
 }
 
+/* Interactive Pill & Segment Controls */
+
+.pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pill-btn {
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pill-btn:hover:not(.active) {
+    border-color: var(--teal);
+    background: rgba(31, 122, 140, 0.04);
+}
+
+.pill-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(11, 37, 69, 0.15);
+}
+
+.segmented-control {
+    display: flex;
+    background: var(--beige);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    gap: 4px;
+}
+
+.segment-btn {
+    flex: 1;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.segment-btn:hover:not(.active) {
+    color: var(--navy);
+}
+
+.segment-btn.active {
+    background: var(--white);
+    color: var(--navy);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(11, 37, 69, 0.10);
+}
+
 .input {
     width: 100%;
     padding: 0.75rem 1rem;

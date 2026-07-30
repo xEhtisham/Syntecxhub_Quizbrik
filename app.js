@@ -8,6 +8,9 @@ const MAX_QUESTIONS = 50;
 const TIMER_SECONDS = 30;
 
 const state = {
+  selectedCategory: "Science",
+  selectedDifficulty: "Medium",
+  selectedAmount: 10,
   questions: [],
   userAnswers: [],
   currentQuestion: 0,
@@ -33,13 +36,9 @@ function shuffle(array) {
 }
 
 async function startQuiz() {
-  const categorySelect = document.getElementById('category');
-  const difficultySelect = document.getElementById('difficulty');
-  const countInput = document.getElementById('questions');
-
-  const category = categorySelect.value;
-  const difficulty = difficultySelect.value;
-  const count = parseInt(countInput.value, 10);
+  const category = state.selectedCategory;
+  const difficulty = state.selectedDifficulty;
+  const count = state.selectedAmount;
 
   const allQuestions = await loadQuestions();
   
@@ -89,10 +88,18 @@ function saveQuizStats(score, total) {
 }
 
 function renderLanding() {
-  const categoriesHtml = CATEGORIES.map(c => `<option value="${c}">${c}</option>`).join('');
-  const difficultiesHtml = DIFFICULTIES.map(d => `<option value="${d}" ${d === 'Medium' ? 'selected' : ''}>${d}</option>`).join('');
+  const categoryPillsHtml = CATEGORIES.map(c => 
+    `<button type="button" class="pill-btn ${c === state.selectedCategory ? 'active' : ''}" data-type="category" data-value="${c}">${c}</button>`
+  ).join('');
+
+  const difficultyPillsHtml = DIFFICULTIES.map(d => 
+    `<button type="button" class="segment-btn ${d === state.selectedDifficulty ? 'active' : ''}" data-type="difficulty" data-value="${d}">${d}</button>`
+  ).join('');
+
   const questionCounts = [5, 10, 15, 20, 25, 30];
-  const countsHtml = questionCounts.map(n => `<option value="${n}" ${n === DEFAULT_QUESTION_COUNT ? 'selected' : ''}>${n} Questions</option>`).join('');
+  const countPillsHtml = questionCounts.map(n => 
+    `<button type="button" class="pill-btn ${n === state.selectedAmount ? 'active' : ''}" data-type="count" data-value="${n}">${n}</button>`
+  ).join('');
 
   const stats = getStoredStats();
   const avgScore = stats.totalQuestions > 0 ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100) : 0;
@@ -123,16 +130,22 @@ function renderLanding() {
         </header>
         ${statsHtml}
         <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category" class="input">${categoriesHtml}</select>
+          <label>Category</label>
+          <div class="pill-group" id="category-pills">
+            ${categoryPillsHtml}
+          </div>
         </div>
         <div class="form-group">
-          <label for="difficulty">Difficulty</label>
-          <select id="difficulty" class="input">${difficultiesHtml}</select>
+          <label>Difficulty</label>
+          <div class="segmented-control" id="difficulty-pills">
+            ${difficultyPillsHtml}
+          </div>
         </div>
         <div class="form-group">
-          <label for="questions">Number of Questions</label>
-          <select id="questions" class="input">${countsHtml}</select>
+          <label>Number of Questions</label>
+          <div class="pill-group" id="count-pills">
+            ${countPillsHtml}
+          </div>
         </div>
         <button id="start-quiz-btn" class="btn">Start Quiz</button>
       </section>
@@ -276,6 +289,21 @@ function renderReview() {
 function showLanding() {
   app.innerHTML = renderLanding();
   document.getElementById('start-quiz-btn').addEventListener('click', startQuiz);
+
+  document.querySelectorAll('.pill-btn, .segment-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const type = e.currentTarget.getAttribute('data-type');
+      const val = e.currentTarget.getAttribute('data-value');
+      const parent = e.currentTarget.parentElement;
+
+      parent.querySelectorAll('.pill-btn, .segment-btn').forEach(b => b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+
+      if (type === 'category') state.selectedCategory = val;
+      if (type === 'difficulty') state.selectedDifficulty = val;
+      if (type === 'count') state.selectedAmount = parseInt(val, 10);
+    });
+  });
 }
 
 function showQuiz(isNewQuestion = false) {
