@@ -177,14 +177,20 @@ select.input option {
     transition: var(--transition);
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     background: var(--teal);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
 
-.btn:active {
+.btn:active:not(:disabled) {
     transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    background: var(--navy);
 }
 
 
@@ -324,7 +330,12 @@ progress::-moz-progress-bar {
     background: rgba(31, 122, 140, 0.04);
 }
 
-.option-btn:hover:not(:disabled) .label {
+.option-btn.selected {
+    border-color: var(--teal);
+    background: rgba(31, 122, 140, 0.08);
+}
+
+.option-btn.selected .label {
     background: var(--teal);
     color: var(--white);
 }

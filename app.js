@@ -61,7 +61,7 @@ async function startQuiz() {
   state.selectedAnswer = null;
   state.timer = TIMER_SECONDS;
 
-  showQuiz();
+  showQuiz(true);
 }
 
 function renderLanding() {
@@ -113,6 +113,8 @@ function renderQuiz() {
       } else if (opt === state.selectedAnswer) {
         btnClass += ' wrong';
       }
+    } else if (opt === state.selectedAnswer) {
+      btnClass += ' selected';
     }
     
     return `<button class="${btnClass}" data-answer="${opt.replace(/"/g, '&quot;')}" ${disabled}>
@@ -120,11 +122,18 @@ function renderQuiz() {
     </button>`;
   }).join('');
 
-  let explanationHtml = '';
-  if (state.answered) {
+  let actionAreaHtml = '';
+  if (!state.answered) {
+    const isSubmitDisabled = !state.selectedAnswer ? 'disabled' : '';
+    actionAreaHtml = `
+      <div class="action-area" style="margin-top: 1.25rem;">
+        <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer</button>
+      </div>
+    `;
+  } else {
     const isLast = state.currentQuestion === state.questions.length - 1;
     const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
-    explanationHtml = `
+    actionAreaHtml = `
       <div class="explanation">
         <p>${q.explanation}</p>
         <button id="next-btn" class="btn">${nextBtnText}</button>
@@ -149,7 +158,7 @@ function renderQuiz() {
         <div class="options">
           ${optionsHtml}
         </div>
-        ${explanationHtml}
+        ${actionAreaHtml}
       </section>
     </main>
   `;
@@ -224,15 +233,23 @@ function showLanding() {
   document.getElementById('start-quiz-btn').addEventListener('click', startQuiz);
 }
 
-function showQuiz() {
+function showQuiz(isNewQuestion = false) {
   app.innerHTML = renderQuiz();
   
   if (!state.answered) {
     const optionBtns = document.querySelectorAll('.option-btn');
     optionBtns.forEach(btn => {
-      btn.addEventListener('click', handleAnswer);
+      btn.addEventListener('click', handleSelectOption);
     });
-    startTimer();
+
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', submitAnswer);
+    }
+
+    if (isNewQuestion) {
+      startTimer();
+    }
   } else {
     document.getElementById('next-btn').addEventListener('click', nextQuestion);
   }
@@ -277,28 +294,37 @@ function startTimer() {
     if (state.timer <= 0) {
       clearInterval(state.timerInterval);
       state.answered = true;
-      state.selectedAnswer = null;
-      state.userAnswers[state.currentQuestion] = null;
-      showQuiz();
+      state.userAnswers[state.currentQuestion] = state.selectedAnswer;
+      const q = state.questions[state.currentQuestion];
+      if (state.selectedAnswer && state.selectedAnswer === q.correctAnswer) {
+        state.score++;
+      }
+      showQuiz(false);
     }
   }, 1000);
 }
 
-function handleAnswer(e) {
-  clearInterval(state.timerInterval);
+function handleSelectOption(e) {
   const btn = e.currentTarget;
   const answer = btn.getAttribute('data-answer');
+  state.selectedAnswer = answer;
+  showQuiz(false);
+}
+
+function submitAnswer() {
+  if (!state.selectedAnswer) return;
+
+  clearInterval(state.timerInterval);
   const q = state.questions[state.currentQuestion];
   
   state.answered = true;
-  state.selectedAnswer = answer;
-  state.userAnswers[state.currentQuestion] = answer;
+  state.userAnswers[state.currentQuestion] = state.selectedAnswer;
   
-  if (answer === q.correctAnswer) {
+  if (state.selectedAnswer === q.correctAnswer) {
     state.score++;
   }
   
-  showQuiz();
+  showQuiz(false);
 }
 
 function nextQuestion() {
@@ -311,7 +337,7 @@ function nextQuestion() {
   if (state.currentQuestion >= state.questions.length) {
     showResult();
   } else {
-    showQuiz();
+    showQuiz(true);
   }
 }
 
