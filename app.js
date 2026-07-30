@@ -35,22 +35,69 @@ function shuffle(array) {
   return newArray;
 }
 
+const OTDB_CATEGORY_MAP = {
+  "Science": 17,
+  "History": 23,
+  "Technology": 18,
+  "Geography": 22,
+  "General Knowledge": 9,
+  "Business": 24
+};
+
+function decodeHTML(html) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
+}
+
+function convertOTDBQuestions(results) {
+  return results.map((item, index) => {
+    const question = decodeHTML(item.question);
+    const correctAnswer = decodeHTML(item.correct_answer);
+    const incorrectAnswers = item.incorrect_answers.map(decodeHTML);
+    const options = shuffle([correctAnswer, ...incorrectAnswers]);
+
+    return {
+      id: index + 1,
+      category: decodeHTML(item.category),
+      difficulty: item.difficulty.charAt(0).toUpperCase() + item.difficulty.slice(1),
+      question: question,
+      options: options,
+      correctAnswer: correctAnswer,
+      explanation: `The correct answer is ${correctAnswer}.`
+    };
+  });
+}
+
 async function startQuiz() {
   const category = state.selectedCategory;
-  const difficulty = state.selectedDifficulty;
+  const difficulty = state.selectedDifficulty.toLowerCase();
   const count = state.selectedAmount;
+  const categoryId = OTDB_CATEGORY_MAP[category];
 
-  const allQuestions = await loadQuestions();
-  
-  const filtered = allQuestions.filter(q => q.category === category && q.difficulty === difficulty);
-  
-  if (filtered.length === 0) {
-    alert("No questions match your selected category and difficulty.");
-    return;
+  let selectedQuestions = [];
+
+  if (categoryId) {
+    try {
+      const url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.response_code === 0 && data.results && data.results.length > 0) {
+        selectedQuestions = convertOTDBQuestions(data.results);
+      }
+    } catch (err) {
+      console.warn("OTDB API unavailable, using local questions fallback", err);
+    }
   }
 
-  const shuffled = shuffle(filtered);
-  const selectedQuestions = shuffled.slice(0, count);
+  // Fallback to local questions if API is offline or empty
+  if (selectedQuestions.length === 0) {
+    const allQuestions = await loadQuestions();
+    const filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
+    const shuffled = shuffle(filtered.length > 0 ? filtered : allQuestions);
+    selectedQuestions = shuffled.slice(0, count);
+  }
 
   state.questions = selectedQuestions;
   state.userAnswers = new Array(selectedQuestions.length).fill(null);
