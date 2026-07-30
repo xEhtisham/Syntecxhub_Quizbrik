@@ -1,6 +1,6 @@
 "use strict";
 
-const CATEGORIES = ["Science", "History", "Technology"];
+const CATEGORIES = ["Science", "History", "Technology", "Geography", "General Knowledge", "Business"];
 const DIFFICULTIES = ["Easy", "Medium", "Hard"];
 const DEFAULT_QUESTION_COUNT = 10;
 const MIN_QUESTIONS = 5;

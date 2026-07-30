@@ -6,267 +6,537 @@
     "question": "What planet is known as the Red Planet?",
     "options": ["Earth", "Mars", "Venus", "Jupiter"],
     "correctAnswer": "Mars",
-    "explanation": "Mars is called the Red Planet because iron oxide (rust) on its surface gives it a reddish appearance."
+    "explanation": "Mars is called the Red Planet because of iron oxide on its surface."
   },
   {
     "id": 2,
     "category": "Science",
     "difficulty": "Easy",
-    "question": "What is the chemical symbol for gold?",
-    "options": ["Ag", "Fe", "Au", "Cu"],
-    "correctAnswer": "Au",
-    "explanation": "The chemical symbol Au comes from the Latin word for gold, 'aurum', which translates to shining dawn."
+    "question": "What element does 'O' represent on the periodic table?",
+    "options": ["Gold", "Oxygen", "Osmium", "Silver"],
+    "correctAnswer": "Oxygen",
+    "explanation": "O is the chemical symbol for Oxygen, atomic number 8."
   },
   {
     "id": 3,
     "category": "Science",
     "difficulty": "Easy",
-    "question": "Which organ in the human body is primarily responsible for filtering blood and producing urine?",
-    "options": ["Liver", "Kidney", "Heart", "Lungs"],
-    "correctAnswer": "Kidney",
-    "explanation": "Kidneys filter waste products, excess water, and impurities from the blood to produce urine."
+    "question": "What force pulls objects toward the center of the Earth?",
+    "options": ["Magnetism", "Friction", "Gravity", "Tension"],
+    "correctAnswer": "Gravity",
+    "explanation": "Gravity is the fundamental force that attracts objects with mass toward one another."
   },
   {
     "id": 4,
     "category": "Science",
-    "difficulty": "Easy",
-    "question": "What process do plants use to convert sunlight into chemical energy?",
-    "options": ["Respiration", "Fermentation", "Transpiration", "Photosynthesis"],
-    "correctAnswer": "Photosynthesis",
-    "explanation": "Photosynthesis uses light energy to synthesize organic nutrients from carbon dioxide and water."
+    "difficulty": "Medium",
+    "question": "What gas do plants absorb from the atmosphere for photosynthesis?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
+    "correctAnswer": "Carbon Dioxide",
+    "explanation": "Plants absorb Carbon Dioxide and release Oxygen during photosynthesis."
   },
   {
     "id": 5,
     "category": "Science",
     "difficulty": "Medium",
-    "question": "What is the most abundant gas in Earth's atmosphere?",
-    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
-    "correctAnswer": "Nitrogen",
-    "explanation": "Nitrogen makes up approximately 78% of Earth's atmosphere, while oxygen accounts for about 21%."
+    "question": "What is the speed of light in a vacuum approximately?",
+    "options": ["150,000 km/s", "300,000 km/s", "450,000 km/s", "600,000 km/s"],
+    "correctAnswer": "300,000 km/s",
+    "explanation": "The speed of light in a vacuum is approximately 299,792 kilometers per second."
   },
   {
     "id": 6,
     "category": "Science",
     "difficulty": "Medium",
-    "question": "Which fundamental force is responsible for holding atomic nuclei together?",
-    "options": ["Electromagnetic force", "Weak nuclear force", "Strong nuclear force", "Gravitational force"],
-    "correctAnswer": "Strong nuclear force",
-    "explanation": "The strong nuclear force binds protons and neutrons together in the nucleus, overcoming electromagnetic repulsion."
+    "question": "Which human organ is responsible for filtering blood and producing urine?",
+    "options": ["Heart", "Liver", "Kidney", "Lungs"],
+    "correctAnswer": "Kidney",
+    "explanation": "Kidneys filter metabolic waste products and excess fluid from the blood."
   },
   {
     "id": 7,
     "category": "Science",
-    "difficulty": "Medium",
-    "question": "What speed does light travel in a vacuum, rounded to the nearest thousand kilometers per second?",
-    "options": ["300,000 km/s", "150,000 km/s", "250,000 km/s", "350,000 km/s"],
-    "correctAnswer": "300,000 km/s",
-    "explanation": "Light travels at approximately 299,792 km/s in a vacuum, commonly rounded to 300,000 km/s."
+    "difficulty": "Hard",
+    "question": "What is the powerhouse of the eukaryotic cell?",
+    "options": ["Ribosome", "Nucleus", "Mitochondria", "Golgi Apparatus"],
+    "correctAnswer": "Mitochondria",
+    "explanation": "Mitochondria generate most of the chemical energy needed to power cellular reactions."
   },
   {
     "id": 8,
     "category": "Science",
     "difficulty": "Hard",
-    "question": "Which enzyme is responsible for unwinding the double helix structure of DNA during replication?",
-    "options": ["DNA Polymerase", "RNA Primase", "DNA Ligase", "Helicase"],
-    "correctAnswer": "Helicase",
-    "explanation": "Helicase breaks the hydrogen bonds between complimentary nitrogenous base pairs to separate DNA strands."
+    "question": "What subatomic particle carries a negative electrical charge?",
+    "options": ["Proton", "Neutron", "Electron", "Photon"],
+    "correctAnswer": "Electron",
+    "explanation": "Electrons carry a negative charge, whereas protons carry a positive charge."
   },
   {
     "id": 9,
     "category": "Science",
     "difficulty": "Hard",
-    "question": "What temperature is absolute zero in degrees Celsius?",
-    "options": ["-459.67 °C", "0 °C", "-273.15 °C", "-100 °C"],
-    "correctAnswer": "-273.15 °C",
-    "explanation": "Absolute zero is 0 Kelvin, which equals -273.15 degrees Celsius, where all classical particle motion ceases."
+    "question": "What law states that energy cannot be created or destroyed?",
+    "options": ["Boyle's Law", "First Law of Thermodynamics", "Newton's Third Law", "Kepler's Second Law"],
+    "correctAnswer": "First Law of Thermodynamics",
+    "explanation": "The First Law of Thermodynamics is the Law of Conservation of Energy."
   },
   {
     "id": 10,
     "category": "Science",
     "difficulty": "Hard",
-    "question": "Which subatomic particles are composed of three quarks bound together by gluons?",
-    "options": ["Leptons", "Mesons", "Bosons", "Baryons"],
-    "correctAnswer": "Baryons",
-    "explanation": "Baryons (such as protons and neutrons) are composite subatomic particles made of three valence quarks."
+    "question": "Which enzyme in human saliva begins the digestion of starches?",
+    "options": ["Pepsin", "Amylase", "Lipase", "Trypsin"],
+    "correctAnswer": "Amylase",
+    "explanation": "Salivary amylase breaks down complex carbohydrates into simpler sugars in the mouth."
   },
   {
     "id": 11,
     "category": "History",
     "difficulty": "Easy",
     "question": "Who was the first President of the United States?",
-    "options": ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"],
+    "options": ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"],
     "correctAnswer": "George Washington",
-    "explanation": "George Washington served as the first US President from 1789 to 1797 after leading the Continental Army."
+    "explanation": "George Washington served as the first US President from 1789 to 1797."
   },
   {
     "id": 12,
     "category": "History",
     "difficulty": "Easy",
-    "question": "In which ancient civilization were the Great Pyramids of Giza constructed?",
-    "options": ["Ancient Greece", "Ancient Egypt", "Mesopotamia", "Ancient Rome"],
-    "correctAnswer": "Ancient Egypt",
-    "explanation": "The Great Pyramids of Giza were built during the Fourth Dynasty of Ancient Egypt's Old Kingdom."
+    "question": "In which country were the ancient pyramids of Giza built?",
+    "options": ["Greece", "Egypt", "Italy", "Mexico"],
+    "correctAnswer": "Egypt",
+    "explanation": "The Giza Pyramids were constructed on the West Bank of the Nile River in Egypt."
   },
   {
     "id": 13,
     "category": "History",
     "difficulty": "Easy",
-    "question": "In which year did World War II officially end?",
-    "options": ["1945", "1918", "1939", "1950"],
-    "correctAnswer": "1945",
-    "explanation": "World War II concluded in September 1945 following the unconditional surrender of the Axis powers."
+    "question": "What famous ship sank in 1912 after hitting an iceberg?",
+    "options": ["Lusitania", "Titanic", "Britannic", "Endeavour"],
+    "correctAnswer": "Titanic",
+    "explanation": "RMS Titanic sank on its maiden voyage in April 1912."
   },
   {
     "id": 14,
     "category": "History",
     "difficulty": "Medium",
-    "question": "Which empire was ruled by Suleiman the Magnificent during its 16th-century golden age?",
-    "options": ["Byzantine Empire", "Persian Empire", "Mughal Empire", "Ottoman Empire"],
-    "correctAnswer": "Ottoman Empire",
-    "explanation": "Suleiman the Magnificent ruled the Ottoman Empire from 1520 to 1566, expanding it into Europe, Asia, and Africa."
+    "question": "In which year did World War II end?",
+    "options": ["1918", "1939", "1945", "1950"],
+    "correctAnswer": "1945",
+    "explanation": "World War II concluded in 1945 following Allied victories in Europe and the Pacific."
   },
   {
     "id": 15,
     "category": "History",
     "difficulty": "Medium",
-    "question": "The Magna Carta was agreed to by King John of England in which year?",
-    "options": ["1066", "1492", "1776", "1215"],
-    "correctAnswer": "1215",
-    "explanation": "Signed at Runnymede in 1215, the Magna Carta established that the English monarch was not above the law."
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Vincent van Gogh"],
+    "correctAnswer": "Leonardo da Vinci",
+    "explanation": "Leonardo da Vinci created the Mona Lisa during the Italian Renaissance."
   },
   {
     "id": 16,
     "category": "History",
     "difficulty": "Medium",
-    "question": "Which peace treaty officially brought World War I to an end in 1919?",
-    "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Utrecht", "Treaty of Ghent"],
-    "correctAnswer": "Treaty of Versailles",
-    "explanation": "The Treaty of Versailles was signed on June 28, 1919, establishing post-war territorial changes and reparations."
+    "question": "Which ancient civilization constructed Machu Picchu?",
+    "options": ["Aztec", "Maya", "Inca", "Olmec"],
+    "correctAnswer": "Inca",
+    "explanation": "Machu Picchu is a 15th-century Inca citadel located in the Andes Mountains of Peru."
   },
   {
     "id": 17,
     "category": "History",
-    "difficulty": "Medium",
-    "question": "Who was the first emperor of a unified China and founder of the Qin Dynasty?",
-    "options": ["Han Wudi", "Kublai Khan", "Qin Shi Huang", "Emperor Gaozu"],
-    "correctAnswer": "Qin Shi Huang",
-    "explanation": "Qin Shi Huang unified China in 221 BC, standardizing currency and launching major Great Wall defense projects."
+    "difficulty": "Hard",
+    "question": "What document signed in 1215 limited the power of the English monarch?",
+    "options": ["Magna Carta", "Treaty of Versailles", "Declaration of Rights", "Edict of Nantes"],
+    "correctAnswer": "Magna Carta",
+    "explanation": "King John signed the Magna Carta at Runnymede in 1215."
   },
   {
     "id": 18,
     "category": "History",
     "difficulty": "Hard",
-    "question": "What was the secret US-led research project that developed the first atomic weapons?",
-    "options": ["Operation Overlord", "Project Apollo", "Operation Barbarossa", "Manhattan Project"],
-    "correctAnswer": "Manhattan Project",
-    "explanation": "The Manhattan Project was initiated in 1939 and produced the first atomic bombs detonated in 1945."
+    "question": "Which empire was ruled by Suleiman the Magnificent during its peak?",
+    "options": ["Byzantine Empire", "Ottoman Empire", "Roman Empire", "Persian Empire"],
+    "correctAnswer": "Ottoman Empire",
+    "explanation": "Suleiman the Magnificent expanded and strengthened the Ottoman Empire in the 16th century."
   },
   {
     "id": 19,
     "category": "History",
     "difficulty": "Hard",
-    "question": "Which 490 BC battle saw Athenian forces defeat the first Persian invasion of Greece?",
-    "options": ["Battle of Marathon", "Battle of Thermopylae", "Battle of Salamis", "Battle of Plataea"],
-    "correctAnswer": "Battle of Marathon",
-    "explanation": "At the Battle of Marathon, the Athenian army led by Miltiades repelled King Darius I's invading Persian forces."
+    "question": "What battle in 1815 marked the final defeat of Napoleon Bonaparte?",
+    "options": ["Battle of Austerlitz", "Battle of Leipzig", "Battle of Waterloo", "Battle of Trafalgar"],
+    "correctAnswer": "Battle of Waterloo",
+    "explanation": "The Battle of Waterloo in Belgium ended Napoleon's reign as Emperor of the French."
   },
   {
     "id": 20,
     "category": "History",
     "difficulty": "Hard",
-    "question": "Which Roman emperor issued the Edict of Thessalonica in 380 AD, making Nicene Christianity the empire's state religion?",
-    "options": ["Constantine the Great", "Theodosius I", "Nero", "Marcus Aurelius"],
-    "correctAnswer": "Theodosius I",
-    "explanation": "Emperor Theodosius I made Nicene Christianity the official state religion of the Roman Empire in 380 AD."
+    "question": "Which war was fought between the Northern and Southern states of America?",
+    "options": ["Revolutionary War", "American Civil War", "War of 1812", "Spanish-American War"],
+    "correctAnswer": "American Civil War",
+    "explanation": "The American Civil War took place from 1861 to 1865 over issues including states' rights and slavery."
   },
   {
     "id": 21,
     "category": "Technology",
     "difficulty": "Easy",
-    "question": "What does the abbreviation HTML stand for?",
-    "options": ["Hyperlink and Text Markup Language", "High Tech Modern Language", "Hypertext Markup Language", "Home Tool Markup Language"],
-    "correctAnswer": "Hypertext Markup Language",
-    "explanation": "HTML stands for Hypertext Markup Language, the standard code used to construct web pages."
+    "question": "What does CPU stand for in computer hardware?",
+    "options": ["Central Processing Unit", "Computer Power Unit", "Core Processing Utility", "Central Program Unit"],
+    "correctAnswer": "Central Processing Unit",
+    "explanation": "The CPU performs basic arithmetic, logic, controlling, and input/output operations."
   },
   {
     "id": 22,
     "category": "Technology",
     "difficulty": "Easy",
-    "question": "Which company originally developed the Android operating system before Google acquired it in 2005?",
-    "options": ["Apple", "Microsoft", "Samsung", "Android Inc."],
-    "correctAnswer": "Android Inc.",
-    "explanation": "Android Inc. was co-founded by Andy Rubin in 2003 and subsequently purchased by Google in 2005."
+    "question": "Which company created the Windows operating system?",
+    "options": ["Apple", "IBM", "Microsoft", "Google"],
+    "correctAnswer": "Microsoft",
+    "explanation": "Microsoft released Windows in 1985 as a graphical operating system shell for MS-DOS."
   },
   {
     "id": 23,
     "category": "Technology",
     "difficulty": "Easy",
-    "question": "Which component serves as a computer's primary high-speed volatile working memory?",
-    "options": ["ROM", "HDD", "SSD", "RAM"],
-    "correctAnswer": "RAM",
-    "explanation": "RAM (Random Access Memory) is volatile, meaning stored data is erased whenever power is disconnected."
+    "question": "What programming language is primarily used for web page styling?",
+    "options": ["HTML", "CSS", "Python", "SQL"],
+    "correctAnswer": "CSS",
+    "explanation": "CSS (Cascading Style Sheets) controls presentation, layout, and visual design."
   },
   {
     "id": 24,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "What is the worst-case time complexity of the standard QuickSort algorithm?",
-    "options": ["O(n^2)", "O(1)", "O(n log n)", "O(n)"],
-    "correctAnswer": "O(n^2)",
-    "explanation": "QuickSort averages O(n log n) time, but degrades to O(n^2) when poor pivot selections consistently occur."
+    "question": "What technology protocol secures communication over a computer network (HTTPS)?",
+    "options": ["FTP", "SMTP", "TLS/SSL", "UDP"],
+    "correctAnswer": "TLS/SSL",
+    "explanation": "HTTPS uses Transport Layer Security (TLS) or Secure Sockets Layer (SSL) to encrypt traffic."
   },
   {
     "id": 25,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "What does the HTTP standard status code 404 represent?",
-    "options": ["Unauthorized", "Internal Server Error", "Not Found", "Bad Request"],
-    "correctAnswer": "Not Found",
-    "explanation": "HTTP 404 Not Found indicates that the web client successfully communicated with the server, but the requested URI does not exist."
+    "question": "Which data structure operates on a First-In, First-Out (FIFO) principle?",
+    "options": ["Stack", "Queue", "Tree", "Graph"],
+    "correctAnswer": "Queue",
+    "explanation": "Queues process items in FIFO order, whereas Stacks operate on LIFO (Last-In, First-Out)."
   },
   {
     "id": 26,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "Which OSI Transport layer protocol provides reliable, connection-oriented data communication?",
-    "options": ["TCP", "IP", "UDP", "HTTP"],
-    "correctAnswer": "TCP",
-    "explanation": "TCP (Transmission Control Protocol) manages data packet ordering, retransmission of lost packets, and error checking."
+    "question": "Who is credited with inventing the World Wide Web in 1989?",
+    "options": ["Steve Jobs", "Tim Berners-Lee", "Alan Turing", "Linus Torvalds"],
+    "correctAnswer": "Tim Berners-Lee",
+    "explanation": "Tim Berners-Lee invented HTML, HTTP, and the World Wide Web while working at CERN."
   },
   {
     "id": 27,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "The security of the RSA asymmetric cryptographic algorithm primarily relies on the mathematical difficulty of which problem?",
-    "options": ["Elliptic Curve Cryptography", "Discrete Logarithms", "Prime Factorization", "Symmetric Substitution"],
-    "correctAnswer": "Prime Factorization",
-    "explanation": "RSA key exchange relies on the computational hardness of factoring the product of two very large prime numbers."
+    "question": "What is the time complexity of searching in a balanced Binary Search Tree?",
+    "options": ["O(1)", "O(N)", "O(log N)", "O(N log N)"],
+    "correctAnswer": "O(log N)",
+    "explanation": "Searching a balanced BST eliminates half the remaining nodes at each step, yielding O(log N) time."
   },
   {
     "id": 28,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "According to Brewer's CAP theorem for distributed systems, which three properties cannot all be simultaneously guaranteed?",
-    "options": ["Consistency, Availability, Partition Tolerance", "Concurrency, Accuracy, Performance", "Capacity, Availability, Persistence", "Control, Authentication, Privacy"],
-    "correctAnswer": "Consistency, Availability, Partition Tolerance",
-    "explanation": "The CAP theorem proves that a distributed data store can simultaneously provide at most two of: Consistency, Availability, and Partition Tolerance."
+    "question": "Which HTTP status code signifies 'Internal Server Error'?",
+    "options": ["400", "404", "500", "503"],
+    "correctAnswer": "500",
+    "explanation": "HTTP status code 500 represents a generic server-side failure."
   },
   {
     "id": 29,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "Which Git command captures a snapshot of currently staged changes into the local repository log?",
-    "options": ["git commit", "git fetch", "git pull", "git rebase"],
-    "correctAnswer": "git commit",
-    "explanation": "The `git commit` command creates a new commit object containing staged changes with author metadata and message."
+    "question": "What architectural pattern separates an application into Model, View, and Controller?",
+    "options": ["MVVM", "MVC", "Flux", "Singleton"],
+    "correctAnswer": "MVC",
+    "explanation": "MVC isolates business logic (Model), UI presentation (View), and input handling (Controller)."
   },
   {
     "id": 30,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "Which architectural software pattern separates user interfaces into Model, View, and Controller components?",
-    "options": ["Microservices", "Pub/Sub Pattern", "MVC Pattern", "Monolithic Architecture"],
-    "correctAnswer": "MVC Pattern",
-    "explanation": "MVC isolates data management (Model), user interaction interface (View), and business logic routing (Controller)."
+    "question": "What open-source containerization platform was introduced in 2013?",
+    "options": ["Kubernetes", "Docker", "Vagrant", "OpenShift"],
+    "correctAnswer": "Docker",
+    "explanation": "Docker revolutionized software deployment by automating application containerization."
+  },
+  {
+    "id": 31,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "What is the capital city of France?",
+    "options": ["London", "Berlin", "Paris", "Madrid"],
+    "correctAnswer": "Paris",
+    "explanation": "Paris is the capital and most populous city of France."
+  },
+  {
+    "id": 32,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "Which is the largest ocean on Earth?",
+    "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    "correctAnswer": "Pacific Ocean",
+    "explanation": "The Pacific Ocean covers over 30% of the Earth's surface."
+  },
+  {
+    "id": 33,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "On which continent is the Amazon Rainforest primarily located?",
+    "options": ["Africa", "South America", "Asia", "Australia"],
+    "correctAnswer": "South America",
+    "explanation": "The Amazon Basin spans across nine South American nations."
+  },
+  {
+    "id": 34,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "What is the longest river in the world?",
+    "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+    "correctAnswer": "Nile River",
+    "explanation": "The Nile River in northeastern Africa is traditionally recognized as the world's longest river."
+  },
+  {
+    "id": 35,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which mountain peak is the highest above sea level?",
+    "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Denali"],
+    "correctAnswer": "Mount Everest",
+    "explanation": "Mount Everest reaches 8,848.86 meters above sea level in the Himalayas."
+  },
+  {
+    "id": 36,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which country has the largest total land area in the world?",
+    "options": ["Canada", "China", "United States", "Russia"],
+    "correctAnswer": "Russia",
+    "explanation": "Russia spans over 17 million square kilometers across Europe and Asia."
+  },
+  {
+    "id": 37,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What is the capital city of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    "correctAnswer": "Canberra",
+    "explanation": "Canberra was selected as the compromise national capital between Sydney and Melbourne in 1908."
+  },
+  {
+    "id": 38,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "Which desert is the largest hot desert in the world?",
+    "options": ["Gobi Desert", "Kalahari Desert", "Sahara Desert", "Atacama Desert"],
+    "correctAnswer": "Sahara Desert",
+    "explanation": "The Sahara Desert in Northern Africa covers over 9.2 million square kilometers."
+  },
+  {
+    "id": 39,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What strait separates Europe from Africa at its narrowest point?",
+    "options": ["Bering Strait", "Strait of Gibraltar", "Strait of Hormuz", "Bosporus Strait"],
+    "correctAnswer": "Strait of Gibraltar",
+    "explanation": "The Strait of Gibraltar connects the Atlantic Ocean to the Mediterranean Sea."
+  },
+  {
+    "id": 40,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "Which landlocked African country has the largest population?",
+    "options": ["Ethiopia", "Uganda", "Chad", "Niger"],
+    "correctAnswer": "Ethiopia",
+    "explanation": "Ethiopia is the most populous landlocked country globally, with over 120 million inhabitants."
+  },
+  {
+    "id": 41,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "How many days are in a standard non-leap year?",
+    "options": ["364", "365", "366", "367"],
+    "correctAnswer": "365",
+    "explanation": "A standard calendar year contains 365 days, divided into 12 months."
+  },
+  {
+    "id": 42,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What color is formed by mixing red and yellow paint?",
+    "options": ["Green", "Purple", "Orange", "Brown"],
+    "correctAnswer": "Orange",
+    "explanation": "Mixing the primary colors red and yellow yields the secondary color orange."
+  },
+  {
+    "id": 43,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What currency is officially used across Eurozone member nations?",
+    "options": ["Pound", "Dollar", "Euro", "Yen"],
+    "correctAnswer": "Euro",
+    "explanation": "The Euro (€) is the official currency of 20 of the 27 European Union member states."
+  },
+  {
+    "id": 44,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "Which instrument has 88 keys in standard modern configuration?",
+    "options": ["Organ", "Piano", "Accordion", "Harpsichord"],
+    "correctAnswer": "Piano",
+    "explanation": "A standard acoustic piano features 88 keys: 52 white and 36 black."
+  },
+  {
+    "id": 45,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What is the hardest natural substance known on Earth?",
+    "options": ["Titanium", "Diamond", "Quartz", "Granite"],
+    "correctAnswer": "Diamond",
+    "explanation": "Diamond rates 10 on the Mohs scale of mineral hardness."
+  },
+  {
+    "id": 46,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "Which author wrote the classic novel '1984'?",
+    "options": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "H.G. Wells"],
+    "correctAnswer": "George Orwell",
+    "explanation": "George Orwell published the dystopian political fiction novel '1984' in 1949."
+  },
+  {
+    "id": 47,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "What language has the largest number of native speakers worldwide?",
+    "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+    "correctAnswer": "Mandarin Chinese",
+    "explanation": "Mandarin Chinese has over 900 million native speakers globally."
+  },
+  {
+    "id": 48,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "What international award is given annually in Sweden and Norway for outstanding achievements?",
+    "options": ["Pulitzer Prize", "Nobel Prize", "Turing Award", "Fields Medal"],
+    "correctAnswer": "Nobel Prize",
+    "explanation": "The Nobel Prizes were established by the 1895 will of Alfred Nobel."
+  },
+  {
+    "id": 49,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "What chemical element has the atomic number 1?",
+    "options": ["Helium", "Hydrogen", "Lithium", "Carbon"],
+    "correctAnswer": "Hydrogen",
+    "explanation": "Hydrogen is the lightest and most abundant chemical element in the universe."
+  },
+  {
+    "id": 50,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "Which ocean touches the eastern coast of Australia?",
+    "options": ["Indian Ocean", "Pacific Ocean", "Southern Ocean", "Atlantic Ocean"],
+    "correctAnswer": "Pacific Ocean",
+    "explanation": "Australia's eastern coast borders the Coral Sea and Tasman Sea in the South Pacific."
+  },
+  {
+    "id": 51,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What financial statement lists a company's assets, liabilities, and equity?",
+    "options": ["Income Statement", "Balance Sheet", "Cash Flow Statement", "Audit Report"],
+    "correctAnswer": "Balance Sheet",
+    "explanation": "A Balance Sheet provides a snapshot of financial health at a specific point in time."
+  },
+  {
+    "id": 52,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What term refers to the total monetary value of goods and services produced in a country?",
+    "options": ["GDP", "CPI", "ROI", "IPO"],
+    "correctAnswer": "GDP",
+    "explanation": "Gross Domestic Product (GDP) measures national economic production volume."
+  },
+  {
+    "id": 53,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What does IPO stand for in corporate finance?",
+    "options": ["Initial Public Offering", "Internal Profit Organization", "International Payment Option", "Investor Performance Index"],
+    "correctAnswer": "Initial Public Offering",
+    "explanation": "An IPO occurs when a private company sells stock shares to the public for the first time."
+  },
+  {
+    "id": 54,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What metric measures net profit relative to capital invested (ROI)?",
+    "options": ["Return on Investment", "Rate of Interest", "Risk of Inflation", "Revenue on Income"],
+    "correctAnswer": "Return on Investment",
+    "explanation": "ROI evaluates the efficiency and profitability of an investment."
+  },
+  {
+    "id": 55,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Which market structure features a single seller controlling an entire industry?",
+    "options": ["Oligopoly", "Monopoly", "Monopsony", "Perfect Competition"],
+    "correctAnswer": "Monopoly",
+    "explanation": "A monopoly exists when one enterprise is the sole supplier of a commodity or service."
+  },
+  {
+    "id": 56,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Who is known as the 'Father of Modern Economics' and wrote 'The Wealth of Nations'?",
+    "options": ["John Maynard Keynes", "Milton Friedman", "Adam Smith", "Karl Marx"],
+    "correctAnswer": "Adam Smith",
+    "explanation": "Adam Smith published 'The Wealth of Nations' in 1776, pioneering free-market principles."
+  },
+  {
+    "id": 57,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What economic concept describes the point where supply equals demand?",
+    "options": ["Inflation", "Elasticity", "Equilibrium", "Marginal Utility"],
+    "correctAnswer": "Equilibrium",
+    "explanation": "Market equilibrium occurs when market supply balances market demand at a stable price."
+  },
+  {
+    "id": 58,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "Which central banking system regulates US monetary policy and interest rates?",
+    "options": ["World Bank", "Federal Reserve", "International Monetary Fund", "Treasury Department"],
+    "correctAnswer": "Federal Reserve",
+    "explanation": "The Federal Reserve ('The Fed') acts as the central bank of the United States."
+  },
+  {
+    "id": 59,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What ratio compares a company's current stock price to its per-share earnings?",
+    "options": ["P/E Ratio", "Debt-to-Equity Ratio", "Current Ratio", "Quick Ratio"],
+    "correctAnswer": "P/E Ratio",
+    "explanation": "The Price-to-Earnings (P/E) ratio values a company by comparing share price to earnings."
+  },
+  {
+    "id": 60,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What is the term for a market condition characterized by falling stock prices and widespread pessimism?",
+    "options": ["Bull Market", "Bear Market", "Stagflation", "Correction"],
+    "correctAnswer": "Bear Market",
+    "explanation": "A Bear Market typically describes a sustained 20% or greater decline in market indices."
   }
 ]
