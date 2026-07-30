@@ -1,31 +1,45 @@
-/**
- * ==========================================================
- * Quiz Screen
- * Renders the quiz interface.
- * ==========================================================
- */
-
 "use strict";
 
-/**
- * Render quiz screen.
- *
- * @returns {string}
- */
-export function renderQuizPage() {
+export function renderQuizPage(state) {
+  const question = state.questions[state.currentQuestion];
+
   return `
+    <main class="quiz">
 
-        <main class="quiz">
+        <section class="card">
 
-            <section class="card">
+            <h2>
+                Question ${state.currentQuestion + 1}
+                / ${state.questions.length}
+            </h2>
 
-                <h2>Quiz Started 🚀</h2>
+            <progress
+                value="${state.currentQuestion + 1}"
+                max="${state.questions.length}">
+            </progress>
 
-                <p>This is where the quiz will appear.</p>
+            <h3>${question.question}</h3>
 
-            </section>
+            <div class="options">
 
-        </main>
+                ${question.options
+                  .map(
+                    (option) => `
 
+                    <button
+                        class="option-btn"
+                        data-answer="${option}">
+                        ${option}
+                    </button>
+
+                `,
+                  )
+                  .join("")}
+
+            </div>
+
+        </section>
+
+    </main>
     `;
 }

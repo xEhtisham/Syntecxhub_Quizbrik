@@ -85,3 +85,31 @@
     border-color: var(--color-primary);
 
 }
+
+.options {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+
+}
+
+.option-btn {
+
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    background: var(--color-primary);
+    color: white;
+    transition: .2s;
+
+}
+
+.option-btn:hover {
+
+    transform: translateY(-2px);
+
+}
