@@ -64,11 +64,55 @@ async function startQuiz() {
   showQuiz(true);
 }
 
+const STATS_KEY = 'quizbrik_user_stats';
+
+function getStoredStats() {
+  try {
+    const raw = localStorage.getItem(STATS_KEY);
+    if (!raw) return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0 };
+    return JSON.parse(raw);
+  } catch (e) {
+    return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0 };
+  }
+}
+
+function saveQuizStats(score, total) {
+  const stats = getStoredStats();
+  stats.totalQuizzes += 1;
+  stats.totalQuestions += total;
+  stats.totalCorrect += score;
+  try {
+    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+  } catch (e) {
+    console.error('Failed to save stats', e);
+  }
+}
+
 function renderLanding() {
   const categoriesHtml = CATEGORIES.map(c => `<option value="${c}">${c}</option>`).join('');
   const difficultiesHtml = DIFFICULTIES.map(d => `<option value="${d}" ${d === 'Medium' ? 'selected' : ''}>${d}</option>`).join('');
   const questionCounts = [5, 10, 15, 20, 25, 30];
   const countsHtml = questionCounts.map(n => `<option value="${n}" ${n === DEFAULT_QUESTION_COUNT ? 'selected' : ''}>${n} Questions</option>`).join('');
+
+  const stats = getStoredStats();
+  const avgScore = stats.totalQuestions > 0 ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100) : 0;
+
+  const statsHtml = `
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value">${stats.totalQuizzes}</span>
+        <span class="stat-label">Quizzes Played</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">${avgScore}%</span>
+        <span class="stat-label">Average Score</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">${stats.totalQuestions}</span>
+        <span class="stat-label">Questions</span>
+      </div>
+    </div>
+  `;
 
   return `
     <main class="landing">
@@ -77,6 +121,7 @@ function renderLanding() {
           <h1>Quizbrik</h1>
           <p>Test your knowledge. Learn. Compete. Improve.</p>
         </header>
+        ${statsHtml}
         <div class="form-group">
           <label for="category">Category</label>
           <select id="category" class="input">${categoriesHtml}</select>
@@ -255,8 +300,11 @@ function showQuiz(isNewQuestion = false) {
   }
 }
 
-function showResult() {
+function showResult(isFirstTime = false) {
   clearInterval(state.timerInterval);
+  if (isFirstTime) {
+    saveQuizStats(state.score, state.questions.length);
+  }
   app.innerHTML = renderResult();
   
   document.getElementById('review-btn').addEventListener('click', showReview);
@@ -273,7 +321,7 @@ function showResult() {
 
 function showReview() {
   app.innerHTML = renderReview();
-  document.getElementById('back-to-result-btn').addEventListener('click', showResult);
+  document.getElementById('back-to-result-btn').addEventListener('click', () => showResult(false));
 }
 
 function startTimer() {
@@ -342,7 +390,7 @@ function nextQuestion() {
   state.timer = TIMER_SECONDS;
   
   if (state.currentQuestion >= state.questions.length) {
-    showResult();
+    showResult(true);
   } else {
     showQuiz(true);
   }
