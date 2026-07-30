@@ -205,6 +205,10 @@ function renderQuiz() {
     <main class="quiz">
       <section class="card quiz-card">
         <div class="quiz-header">
+          <div class="quiz-badge-bar">
+            <span class="category-badge">${q.category}</span>
+            <span class="difficulty-badge difficulty-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+          </div>
           <div class="quiz-info">
             <span>Question ${qNum} / ${total}</span>
             <span>Score: ${state.score}</span>

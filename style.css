@@ -313,6 +313,48 @@ select.input option {
     margin-bottom: 1rem;
 }
 
+.quiz-badge-bar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.category-badge {
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: var(--beige);
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty-badge {
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty-easy {
+    background: rgba(31, 122, 140, 0.12);
+    color: var(--teal);
+}
+
+.difficulty-medium {
+    background: rgba(78, 168, 222, 0.18);
+    color: #1E6B9E;
+}
+
+.difficulty-hard {
+    background: rgba(11, 37, 69, 0.12);
+    color: var(--navy);
+}
+
 .quiz-info {
     display: flex;
     justify-content: space-between;
