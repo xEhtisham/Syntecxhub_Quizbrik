@@ -65,6 +65,8 @@ async function startQuiz() {
 function renderLanding() {
   const categoriesHtml = CATEGORIES.map(c => `<option value="${c}">${c}</option>`).join('');
   const difficultiesHtml = DIFFICULTIES.map(d => `<option value="${d}" ${d === 'Medium' ? 'selected' : ''}>${d}</option>`).join('');
+  const questionCounts = [5, 10, 15, 20, 25, 30];
+  const countsHtml = questionCounts.map(n => `<option value="${n}" ${n === DEFAULT_QUESTION_COUNT ? 'selected' : ''}>${n} Questions</option>`).join('');
 
   return `
     <main class="landing">
@@ -83,7 +85,7 @@ function renderLanding() {
         </div>
         <div class="form-group">
           <label for="questions">Number of Questions</label>
-          <input id="questions" class="input" type="number" min="${MIN_QUESTIONS}" max="${MAX_QUESTIONS}" value="${DEFAULT_QUESTION_COUNT}">
+          <select id="questions" class="input">${countsHtml}</select>
         </div>
         <button id="start-quiz-btn" class="btn">Start Quiz</button>
       </section>

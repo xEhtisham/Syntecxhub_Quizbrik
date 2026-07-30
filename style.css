@@ -1,434 +1,185 @@
-/* Quizbrik — Premium Dark Glassmorphism */
+/* ==========================================================
+   QUIZBRIK — Design System
+   Palette: Navy · Teal · Sky Blue · Beige · White
+   ========================================================== */
 
-/* =========================================
-   Variables
-   ========================================= */
 :root {
-  --primary: #4EA8DE;
-  --secondary: #7C3AED;
-  --success: #22C55E;
-  --danger: #EF4444;
-  
-  --bg-color-1: #0a0e27;
-  --bg-color-2: #1a1f3a;
-  --bg-color-3: #111827;
-  --bg-color-4: #1e1b4b;
-  
-  --text-light: #f8fafc;
-  --text-muted: #94a3b8;
-  
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    --navy: #0B2545;
+    --teal: #1F7A8C;
+    --sky: #4EA8DE;
+    --beige: #F4F1EA;
+    --white: #FFFFFF;
+
+    --text: #102A43;
+    --text-muted: #64748B;
+    --border: #D9E2EC;
+
+    --shadow: 0 12px 40px rgba(11, 37, 69, 0.10);
+    --shadow-hover: 0 16px 48px rgba(11, 37, 69, 0.16);
+
+    --radius: 16px;
+    --radius-sm: 10px;
+
+    --transition: 0.25s ease;
 }
 
-/* =========================================
-   Reset & Base
-   ========================================= */
+
+/* ==========================================================
+   Reset
+   ========================================================== */
+
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+button, input, select {
+    font: inherit;
+    border: none;
+    outline: none;
+}
+
+button { cursor: pointer; background: none; }
+
+
+/* ==========================================================
+   Base
+   ========================================================== */
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-light);
-  min-height: 100vh;
-  /* Animated Gradient Background */
-  background: linear-gradient(-45deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3), var(--bg-color-4));
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  overflow-x: hidden;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    background-color: var(--beige);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* =========================================
-   Layout & Containers
-   ========================================= */
 #app {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.landing, .quiz, .result {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-/* =========================================
-   Typography
-   ========================================= */
-h1 {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 700;
-  text-align: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-}
+/* ==========================================================
+   Card
+   ========================================================== */
 
-h2.question {
-  font-size: clamp(1.25rem, 4vw, 1.5rem);
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 16px 0 24px;
-  color: var(--text-light);
-}
-
-p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* =========================================
-   Glassmorphism Cards
-   ========================================= */
 .card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  box-shadow: var(--glass-shadow);
-  padding: clamp(24px, 6vw, 48px);
-  width: 100%;
-  max-width: 620px;
-  display: flex;
-  flex-direction: column;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    width: 100%;
+    max-width: 520px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+}
+
+
+/* ==========================================================
+   Landing Page
+   ========================================================== */
+
+.landing {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .landing .card {
-  gap: 24px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.landing .card > p {
-  margin-bottom: 12px;
+.landing header {
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
+
+.landing h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+}
+
+.landing header p {
+    margin-top: 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Form fields */
 
 .form-group {
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
 .form-group label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================================
-   Form Elements (Inputs & Selects)
-   ========================================= */
 .input {
-  width: 100%;
-  padding: 16px 20px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--glass-border);
-  color: var(--text-light);
-  font-family: inherit;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-  appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+select.input {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748B' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+select.input option {
+    background: var(--white);
+    color: var(--text);
+    padding: 0.5rem;
 }
 
 .input:focus {
-  border-color: var(--primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(78, 168, 222, 0.25);
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.12);
 }
 
-.input option {
-  background: var(--bg-color-2);
-  color: var(--text-light);
-}
+/* Primary button */
 
-/* =========================================
-   Buttons
-   ========================================= */
 .btn {
-  width: 100%;
-  padding: 16px 24px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #ffffff;
-  font-family: inherit;
-  font-size: 1.125rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--navy);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.4);
+    background: var(--teal);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn:active {
-  transform: translateY(1px);
-}
-
-/* =========================================
-   Quiz Header & Progress
-   ========================================= */
-.quiz-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  color: var(--text-muted);
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.quiz-info {
-  display: flex;
-  gap: 20px;
-}
-
-#timer {
-  color: var(--text-light);
-  font-variant-numeric: tabular-nums;
-  transition: color 0.3s ease;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.timer-warning {
-  color: var(--danger) !important;
-  background: rgba(239, 68, 68, 0.1) !important;
-  animation: pulseWarning 1s infinite alternate;
-}
-
-@keyframes pulseWarning {
-  from { box-shadow: 0 0 0 rgba(239, 68, 68, 0); }
-  to { box-shadow: 0 0 15px rgba(239, 68, 68, 0.5); }
-}
-
-progress {
-  width: 100%;
-  height: 8px;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-progress::-webkit-progress-bar {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-progress::-webkit-progress-value {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 10px;
-  transition: width 0.4s ease;
-}
-
-progress::-moz-progress-bar {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 10px;
-  transition: width 0.4s ease;
-}
-
-/* =========================================
-   Quiz Options
-   ========================================= */
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 8px;
-}
-
-.option-btn {
-  width: 100%;
-  padding: 18px 24px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  color: var(--text-light);
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeInUp 0.5s forwards;
-}
-
-/* Staggered entrance for options */
-.option-btn:nth-child(1) { animation-delay: 0.1s; }
-.option-btn:nth-child(2) { animation-delay: 0.2s; }
-.option-btn:nth-child(3) { animation-delay: 0.3s; }
-.option-btn:nth-child(4) { animation-delay: 0.4s; }
-
-.option-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.option-btn.correct {
-  background: rgba(34, 197, 94, 0.15);
-  border-color: var(--success);
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-  color: #fff;
-}
-
-.option-btn.wrong {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: var(--danger);
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
-  color: #fff;
-}
-
-.option-btn:disabled {
-  cursor: default;
-}
-
-/* =========================================
-   Explanation Box
-   ========================================= */
-.explanation {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 24px;
-  margin-top: 24px;
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-.explanation p {
-  color: var(--text-light);
-  margin-bottom: 24px;
-  text-align: left;
-}
-
-/* =========================================
-   Result Page
-   ========================================= */
-.result .card {
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-
-.score-circle {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  /* Conic gradient uses --percent custom property set via JS */
-  background: conic-gradient(
-    var(--primary) calc(var(--percent, 0) * 1%),
-    var(--secondary) calc(var(--percent, 0) * 1%),
-    rgba(255, 255, 255, 0.05) 0
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 32px auto;
-  position: relative;
-  box-shadow: 0 0 40px rgba(78, 168, 222, 0.2);
-}
-
-.score-circle::before {
-  content: '';
-  position: absolute;
-  inset: 8px; /* Creates the stroke width */
-  background: var(--bg-color-2);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.score-circle span {
-  position: relative;
-  z-index: 2;
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.percentage {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--text-light) !important;
-  margin-bottom: 4px;
-}
-
-.result p.message {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  margin-bottom: 24px;
-}
-
-/* Option letter label */
-.option-btn .label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-right: 12px;
-  flex-shrink: 0;
-}
-
-/* =========================================
-   Responsive
-   ========================================= */
-@media (max-width: 480px) {
-  .card {
-    padding: 20px;
-  }
-  .quiz-info {
-    gap: 10px;
-    font-size: 0.85rem;
-  }
-  .option-btn {
-    padding: 14px 16px;
-  }
+    transform: translateY(0);
 }
