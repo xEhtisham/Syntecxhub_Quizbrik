@@ -101,7 +101,10 @@ export function renderLandingPage() {
 
                 </section>
 
-                <button class="btn">
+                <button
+    id="start-quiz-btn"
+    class="btn"
+>
                     Start Quiz
                 </button>
 

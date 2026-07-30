@@ -10,16 +10,30 @@
 import { renderLandingPage } from "./ui/landing.js";
 
 /**
- * Root container where every screen
- * will be rendered.
+ * Root container.
  */
 const app = document.querySelector("#app");
 
 /**
- * Render the application.
+ * Current application state.
+ */
+const state = {
+  currentScreen: "landing",
+  quizConfig: null,
+};
+
+/**
+ * Render landing screen.
+ */
+function showLandingPage() {
+  app.innerHTML = renderLandingPage();
+}
+
+/**
+ * Initialize application.
  */
 function initializeApp() {
-  app.innerHTML = renderLandingPage();
+  showLandingPage();
 }
 
 /**
