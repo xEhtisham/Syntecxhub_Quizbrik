@@ -377,3 +377,73 @@ progress::-moz-progress-bar {
     line-height: 1.6;
 }
 
+
+/* ==========================================================
+   Result Page
+   ========================================================== */
+
+.result {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.result .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.result h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+/* Score ring */
+
+.score-circle {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(
+        var(--teal) calc(var(--percent) * 1%),
+        var(--border) calc(var(--percent) * 1%)
+    );
+}
+
+.score-circle::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.score-circle span {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+/* Percentage & message */
+
+.percentage {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--teal);
+}
+
+.message {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}

@@ -121,7 +121,7 @@ function renderQuiz() {
   let explanationHtml = '';
   if (state.answered) {
     const isLast = state.currentQuestion === state.questions.length - 1;
-    const nextBtnText = isLast ? "Finish Quiz 🎉" : "Next Question →";
+    const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
     explanationHtml = `
       <div class="explanation">
         <p>${q.explanation}</p>
@@ -139,7 +139,7 @@ function renderQuiz() {
           <div class="quiz-info">
             <span>Question ${qNum} / ${total}</span>
             <span>Score: ${state.score}</span>
-            <span id="timer" class="${timerWarningClass}">⏱ ${state.timer}s</span>
+            <span id="timer" class="${timerWarningClass}">${state.timer}s</span>
           </div>
         </div>
         <progress value="${qNum}" max="${total}"></progress>
@@ -165,7 +165,7 @@ function renderResult() {
   return `
     <main class="result">
       <section class="card">
-        <h1>Quiz Complete! 🎉</h1>
+        <h1>Quiz Complete</h1>
         <div class="score-circle" style="--percent: ${percentage}">
           <span>${state.score} / ${total}</span>
         </div>
@@ -218,7 +218,7 @@ function startTimer() {
   state.timerInterval = setInterval(() => {
     state.timer--;
     if (timerEl) {
-      timerEl.textContent = `⏱ ${state.timer}s`;
+      timerEl.textContent = `${state.timer}s`;
       if (state.timer <= 10) {
         timerEl.classList.add('timer-warning');
       }
