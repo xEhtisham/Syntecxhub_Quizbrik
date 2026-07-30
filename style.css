@@ -21,6 +21,9 @@
     --radius-sm: 10px;
 
     --transition: 0.25s ease;
+
+    --success: #22C55E;
+    --danger: #EF4444;
 }
 
 
@@ -183,3 +186,194 @@ select.input option {
 .btn:active {
     transform: translateY(0);
 }
+
+
+/* ==========================================================
+   Quiz Page
+   ========================================================== */
+
+.quiz {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 620px;
+}
+
+/* Header bar */
+
+.quiz-header {
+    margin-bottom: 1rem;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Timer */
+
+#timer {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    background: var(--beige);
+    font-variant-numeric: tabular-nums;
+    color: var(--navy);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.timer-warning {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: var(--danger) !important;
+    animation: pulse 1s ease infinite alternate;
+}
+
+@keyframes pulse {
+    to { box-shadow: 0 0 12px rgba(239, 68, 68, 0.3); }
+}
+
+/* Progress bar */
+
+progress {
+    width: 100%;
+    height: 6px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--teal), var(--sky));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+progress::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--teal), var(--sky));
+    border-radius: 3px;
+}
+
+/* Question */
+
+.question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+/* Options */
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.option-btn .label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--beige);
+    color: var(--navy);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--teal);
+    background: rgba(31, 122, 140, 0.04);
+}
+
+.option-btn:hover:not(:disabled) .label {
+    background: var(--teal);
+    color: var(--white);
+}
+
+/* Correct / Wrong states */
+
+.option-btn.correct {
+    border-color: var(--success);
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.option-btn.correct .label {
+    background: var(--success);
+    color: var(--white);
+}
+
+.option-btn.wrong {
+    border-color: var(--danger);
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.option-btn.wrong .label {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.option-btn:disabled {
+    cursor: default;
+    opacity: 0.65;
+}
+
+.option-btn.correct,
+.option-btn.wrong {
+    opacity: 1;
+}
+
+/* Explanation */
+
+.explanation {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background: var(--beige);
+    border-radius: var(--radius-sm);
+}
+
+.explanation p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
