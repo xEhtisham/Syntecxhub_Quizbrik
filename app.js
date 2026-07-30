@@ -9,6 +9,7 @@ const TIMER_SECONDS = 30;
 
 const state = {
   questions: [],
+  userAnswers: [],
   currentQuestion: 0,
   score: 0,
   answered: false,
@@ -53,6 +54,7 @@ async function startQuiz() {
   const selectedQuestions = shuffled.slice(0, count);
 
   state.questions = selectedQuestions;
+  state.userAnswers = new Array(selectedQuestions.length).fill(null);
   state.currentQuestion = 0;
   state.score = 0;
   state.answered = false;
@@ -171,7 +173,47 @@ function renderResult() {
         </div>
         <p class="percentage">${percentage}%</p>
         <p class="message">${msg}</p>
-        <button id="restart-btn" class="btn">Play Again</button>
+        <div class="button-group">
+          <button id="review-btn" class="btn btn-secondary">Review Answers</button>
+          <button id="restart-btn" class="btn">Play Again</button>
+        </div>
+      </section>
+    </main>
+  `;
+}
+
+function renderReview() {
+  const reviewItemsHtml = state.questions.map((q, i) => {
+    const userAns = state.userAnswers[i];
+    const isCorrect = userAns === q.correctAnswer;
+    const statusClass = isCorrect ? 'review-correct' : 'review-wrong';
+    const statusText = isCorrect ? 'Correct' : (userAns ? 'Incorrect' : 'Time Expired');
+
+    return `
+      <div class="review-item ${statusClass}">
+        <div class="review-item-header">
+          <span class="review-q-num">Question ${i + 1}</span>
+          <span class="review-status">${statusText}</span>
+        </div>
+        <h3 class="review-question">${q.question}</h3>
+        <p class="review-user-ans"><strong>Your Answer:</strong> ${userAns || 'No Answer'}</p>
+        ${!isCorrect ? `<p class="review-correct-ans"><strong>Correct Answer:</strong> ${q.correctAnswer}</p>` : ''}
+        <p class="review-explanation">${q.explanation}</p>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <main class="review">
+      <section class="card review-card">
+        <header class="review-header">
+          <h1>Answer Review</h1>
+          <p>Detailed breakdown of your performance</p>
+        </header>
+        <div class="review-list">
+          ${reviewItemsHtml}
+        </div>
+        <button id="back-to-result-btn" class="btn" style="margin-top: 1.5rem;">Back to Results</button>
       </section>
     </main>
   `;
@@ -199,14 +241,22 @@ function showQuiz() {
 function showResult() {
   clearInterval(state.timerInterval);
   app.innerHTML = renderResult();
+  
+  document.getElementById('review-btn').addEventListener('click', showReview);
   document.getElementById('restart-btn').addEventListener('click', () => {
     state.questions = [];
+    state.userAnswers = [];
     state.currentQuestion = 0;
     state.score = 0;
     state.answered = false;
     state.selectedAnswer = null;
     showLanding();
   });
+}
+
+function showReview() {
+  app.innerHTML = renderReview();
+  document.getElementById('back-to-result-btn').addEventListener('click', showResult);
 }
 
 function startTimer() {
@@ -228,6 +278,7 @@ function startTimer() {
       clearInterval(state.timerInterval);
       state.answered = true;
       state.selectedAnswer = null;
+      state.userAnswers[state.currentQuestion] = null;
       showQuiz();
     }
   }, 1000);
@@ -241,6 +292,7 @@ function handleAnswer(e) {
   
   state.answered = true;
   state.selectedAnswer = answer;
+  state.userAnswers[state.currentQuestion] = answer;
   
   if (answer === q.correctAnswer) {
     state.score++;
@@ -265,3 +317,4 @@ function nextQuestion() {
 
 const app = document.getElementById('app');
 showLanding();
+
