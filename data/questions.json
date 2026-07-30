@@ -4,13 +4,269 @@
     "category": "Science",
     "difficulty": "Easy",
     "question": "What planet is known as the Red Planet?",
-    "options": [
-      "Earth",
-      "Mars",
-      "Venus",
-      "Jupiter"
-    ],
+    "options": ["Earth", "Mars", "Venus", "Jupiter"],
     "correctAnswer": "Mars",
-    "explanation": "Mars is called the Red Planet because of iron oxide on its surface."
+    "explanation": "Mars is called the Red Planet because iron oxide (rust) on its surface gives it a reddish appearance."
+  },
+  {
+    "id": 2,
+    "category": "Science",
+    "difficulty": "Easy",
+    "question": "What is the chemical symbol for gold?",
+    "options": ["Ag", "Fe", "Au", "Cu"],
+    "correctAnswer": "Au",
+    "explanation": "The chemical symbol Au comes from the Latin word for gold, 'aurum', which translates to shining dawn."
+  },
+  {
+    "id": 3,
+    "category": "Science",
+    "difficulty": "Easy",
+    "question": "Which organ in the human body is primarily responsible for filtering blood and producing urine?",
+    "options": ["Liver", "Kidney", "Heart", "Lungs"],
+    "correctAnswer": "Kidney",
+    "explanation": "Kidneys filter waste products, excess water, and impurities from the blood to produce urine."
+  },
+  {
+    "id": 4,
+    "category": "Science",
+    "difficulty": "Easy",
+    "question": "What process do plants use to convert sunlight into chemical energy?",
+    "options": ["Respiration", "Fermentation", "Transpiration", "Photosynthesis"],
+    "correctAnswer": "Photosynthesis",
+    "explanation": "Photosynthesis uses light energy to synthesize organic nutrients from carbon dioxide and water."
+  },
+  {
+    "id": 5,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is the most abundant gas in Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+    "correctAnswer": "Nitrogen",
+    "explanation": "Nitrogen makes up approximately 78% of Earth's atmosphere, while oxygen accounts for about 21%."
+  },
+  {
+    "id": 6,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "Which fundamental force is responsible for holding atomic nuclei together?",
+    "options": ["Electromagnetic force", "Weak nuclear force", "Strong nuclear force", "Gravitational force"],
+    "correctAnswer": "Strong nuclear force",
+    "explanation": "The strong nuclear force binds protons and neutrons together in the nucleus, overcoming electromagnetic repulsion."
+  },
+  {
+    "id": 7,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What speed does light travel in a vacuum, rounded to the nearest thousand kilometers per second?",
+    "options": ["300,000 km/s", "150,000 km/s", "250,000 km/s", "350,000 km/s"],
+    "correctAnswer": "300,000 km/s",
+    "explanation": "Light travels at approximately 299,792 km/s in a vacuum, commonly rounded to 300,000 km/s."
+  },
+  {
+    "id": 8,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "Which enzyme is responsible for unwinding the double helix structure of DNA during replication?",
+    "options": ["DNA Polymerase", "RNA Primase", "DNA Ligase", "Helicase"],
+    "correctAnswer": "Helicase",
+    "explanation": "Helicase breaks the hydrogen bonds between complimentary nitrogenous base pairs to separate DNA strands."
+  },
+  {
+    "id": 9,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What temperature is absolute zero in degrees Celsius?",
+    "options": ["-459.67 °C", "0 °C", "-273.15 °C", "-100 °C"],
+    "correctAnswer": "-273.15 °C",
+    "explanation": "Absolute zero is 0 Kelvin, which equals -273.15 degrees Celsius, where all classical particle motion ceases."
+  },
+  {
+    "id": 10,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "Which subatomic particles are composed of three quarks bound together by gluons?",
+    "options": ["Leptons", "Mesons", "Bosons", "Baryons"],
+    "correctAnswer": "Baryons",
+    "explanation": "Baryons (such as protons and neutrons) are composite subatomic particles made of three valence quarks."
+  },
+  {
+    "id": 11,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "Who was the first President of the United States?",
+    "options": ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"],
+    "correctAnswer": "George Washington",
+    "explanation": "George Washington served as the first US President from 1789 to 1797 after leading the Continental Army."
+  },
+  {
+    "id": 12,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "In which ancient civilization were the Great Pyramids of Giza constructed?",
+    "options": ["Ancient Greece", "Ancient Egypt", "Mesopotamia", "Ancient Rome"],
+    "correctAnswer": "Ancient Egypt",
+    "explanation": "The Great Pyramids of Giza were built during the Fourth Dynasty of Ancient Egypt's Old Kingdom."
+  },
+  {
+    "id": 13,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "In which year did World War II officially end?",
+    "options": ["1945", "1918", "1939", "1950"],
+    "correctAnswer": "1945",
+    "explanation": "World War II concluded in September 1945 following the unconditional surrender of the Axis powers."
+  },
+  {
+    "id": 14,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Which empire was ruled by Suleiman the Magnificent during its 16th-century golden age?",
+    "options": ["Byzantine Empire", "Persian Empire", "Mughal Empire", "Ottoman Empire"],
+    "correctAnswer": "Ottoman Empire",
+    "explanation": "Suleiman the Magnificent ruled the Ottoman Empire from 1520 to 1566, expanding it into Europe, Asia, and Africa."
+  },
+  {
+    "id": 15,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "The Magna Carta was agreed to by King John of England in which year?",
+    "options": ["1066", "1492", "1776", "1215"],
+    "correctAnswer": "1215",
+    "explanation": "Signed at Runnymede in 1215, the Magna Carta established that the English monarch was not above the law."
+  },
+  {
+    "id": 16,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Which peace treaty officially brought World War I to an end in 1919?",
+    "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Utrecht", "Treaty of Ghent"],
+    "correctAnswer": "Treaty of Versailles",
+    "explanation": "The Treaty of Versailles was signed on June 28, 1919, establishing post-war territorial changes and reparations."
+  },
+  {
+    "id": 17,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Who was the first emperor of a unified China and founder of the Qin Dynasty?",
+    "options": ["Han Wudi", "Kublai Khan", "Qin Shi Huang", "Emperor Gaozu"],
+    "correctAnswer": "Qin Shi Huang",
+    "explanation": "Qin Shi Huang unified China in 221 BC, standardizing currency and launching major Great Wall defense projects."
+  },
+  {
+    "id": 18,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What was the secret US-led research project that developed the first atomic weapons?",
+    "options": ["Operation Overlord", "Project Apollo", "Operation Barbarossa", "Manhattan Project"],
+    "correctAnswer": "Manhattan Project",
+    "explanation": "The Manhattan Project was initiated in 1939 and produced the first atomic bombs detonated in 1945."
+  },
+  {
+    "id": 19,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which 490 BC battle saw Athenian forces defeat the first Persian invasion of Greece?",
+    "options": ["Battle of Marathon", "Battle of Thermopylae", "Battle of Salamis", "Battle of Plataea"],
+    "correctAnswer": "Battle of Marathon",
+    "explanation": "At the Battle of Marathon, the Athenian army led by Miltiades repelled King Darius I's invading Persian forces."
+  },
+  {
+    "id": 20,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which Roman emperor issued the Edict of Thessalonica in 380 AD, making Nicene Christianity the empire's state religion?",
+    "options": ["Constantine the Great", "Theodosius I", "Nero", "Marcus Aurelius"],
+    "correctAnswer": "Theodosius I",
+    "explanation": "Emperor Theodosius I made Nicene Christianity the official state religion of the Roman Empire in 380 AD."
+  },
+  {
+    "id": 21,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What does the abbreviation HTML stand for?",
+    "options": ["Hyperlink and Text Markup Language", "High Tech Modern Language", "Hypertext Markup Language", "Home Tool Markup Language"],
+    "correctAnswer": "Hypertext Markup Language",
+    "explanation": "HTML stands for Hypertext Markup Language, the standard code used to construct web pages."
+  },
+  {
+    "id": 22,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "Which company originally developed the Android operating system before Google acquired it in 2005?",
+    "options": ["Apple", "Microsoft", "Samsung", "Android Inc."],
+    "correctAnswer": "Android Inc.",
+    "explanation": "Android Inc. was co-founded by Andy Rubin in 2003 and subsequently purchased by Google in 2005."
+  },
+  {
+    "id": 23,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "Which component serves as a computer's primary high-speed volatile working memory?",
+    "options": ["ROM", "HDD", "SSD", "RAM"],
+    "correctAnswer": "RAM",
+    "explanation": "RAM (Random Access Memory) is volatile, meaning stored data is erased whenever power is disconnected."
+  },
+  {
+    "id": 24,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What is the worst-case time complexity of the standard QuickSort algorithm?",
+    "options": ["O(n^2)", "O(1)", "O(n log n)", "O(n)"],
+    "correctAnswer": "O(n^2)",
+    "explanation": "QuickSort averages O(n log n) time, but degrades to O(n^2) when poor pivot selections consistently occur."
+  },
+  {
+    "id": 25,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What does the HTTP standard status code 404 represent?",
+    "options": ["Unauthorized", "Internal Server Error", "Not Found", "Bad Request"],
+    "correctAnswer": "Not Found",
+    "explanation": "HTTP 404 Not Found indicates that the web client successfully communicated with the server, but the requested URI does not exist."
+  },
+  {
+    "id": 26,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "Which OSI Transport layer protocol provides reliable, connection-oriented data communication?",
+    "options": ["TCP", "IP", "UDP", "HTTP"],
+    "correctAnswer": "TCP",
+    "explanation": "TCP (Transmission Control Protocol) manages data packet ordering, retransmission of lost packets, and error checking."
+  },
+  {
+    "id": 27,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "The security of the RSA asymmetric cryptographic algorithm primarily relies on the mathematical difficulty of which problem?",
+    "options": ["Elliptic Curve Cryptography", "Discrete Logarithms", "Prime Factorization", "Symmetric Substitution"],
+    "correctAnswer": "Prime Factorization",
+    "explanation": "RSA key exchange relies on the computational hardness of factoring the product of two very large prime numbers."
+  },
+  {
+    "id": 28,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "According to Brewer's CAP theorem for distributed systems, which three properties cannot all be simultaneously guaranteed?",
+    "options": ["Consistency, Availability, Partition Tolerance", "Concurrency, Accuracy, Performance", "Capacity, Availability, Persistence", "Control, Authentication, Privacy"],
+    "correctAnswer": "Consistency, Availability, Partition Tolerance",
+    "explanation": "The CAP theorem proves that a distributed data store can simultaneously provide at most two of: Consistency, Availability, and Partition Tolerance."
+  },
+  {
+    "id": 29,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "Which Git command captures a snapshot of currently staged changes into the local repository log?",
+    "options": ["git commit", "git fetch", "git pull", "git rebase"],
+    "correctAnswer": "git commit",
+    "explanation": "The `git commit` command creates a new commit object containing staged changes with author metadata and message."
+  },
+  {
+    "id": 30,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "Which architectural software pattern separates user interfaces into Model, View, and Controller components?",
+    "options": ["Microservices", "Pub/Sub Pattern", "MVC Pattern", "Monolithic Architecture"],
+    "correctAnswer": "MVC Pattern",
+    "explanation": "MVC isolates data management (Model), user interaction interface (View), and business logic routing (Controller)."
   }
 ]
