@@ -207,10 +207,12 @@ function renderLanding() {
   const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
 
   return `
-    <main class="dashboard-portal">
-      <header class="dashboard-topbar">
-        <span class="brand-title">Quizbrik</span>
-        <span class="topbar-date">${dateStr}</span>
+    <div class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">${dateStr}</p>
+        </div>
       </header>
 
       <div class="dashboard-grid">
@@ -264,7 +266,7 @@ function renderLanding() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   `;
 }
 
@@ -317,27 +319,29 @@ function renderQuiz() {
   const timerWarningClass = state.timer <= 10 ? 'timer-warning' : '';
 
   return `
-    <main class="quiz">
-      <section class="card quiz-card">
-        <div class="quiz-header">
-          <div class="quiz-badge-bar">
-            <span class="category-badge">${q.category}</span>
-            <span class="difficulty-badge difficulty-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+    <div class="page">
+      <main class="quiz">
+        <section class="card quiz-card">
+          <div class="quiz-header">
+            <div class="quiz-badge-bar">
+              <span class="category-badge">${q.category}</span>
+              <span class="difficulty-badge difficulty-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+            </div>
+            <div class="quiz-info">
+              <span>Question ${qNum} / ${total}</span>
+              <span>Score: ${state.score}</span>
+              <span id="timer" class="${timerWarningClass}">${state.timer}s</span>
+            </div>
           </div>
-          <div class="quiz-info">
-            <span>Question ${qNum} / ${total}</span>
-            <span>Score: ${state.score}</span>
-            <span id="timer" class="${timerWarningClass}">${state.timer}s</span>
+          <progress value="${qNum}" max="${total}"></progress>
+          <h2 class="question">${q.question}</h2>
+          <div class="options">
+            ${optionsHtml}
           </div>
-        </div>
-        <progress value="${qNum}" max="${total}"></progress>
-        <h2 class="question">${q.question}</h2>
-        <div class="options">
-          ${optionsHtml}
-        </div>
-        ${actionAreaHtml}
-      </section>
-    </main>
+          ${actionAreaHtml}
+        </section>
+      </main>
+    </div>
   `;
 }
 
@@ -351,20 +355,22 @@ function renderResult() {
   else if (percentage >= 50) msg = "Good effort!";
 
   return `
-    <main class="result">
-      <section class="card">
-        <h1>Quiz Complete</h1>
-        <div class="score-circle" style="--percent: ${percentage}">
-          <span>${state.score} / ${total}</span>
-        </div>
-        <p class="percentage">${percentage}%</p>
-        <p class="message">${msg}</p>
-        <div class="button-group">
-          <button id="review-btn" class="btn btn-secondary">Review Answers</button>
-          <button id="restart-btn" class="btn">Play Again</button>
-        </div>
-      </section>
-    </main>
+    <div class="page">
+      <main class="result">
+        <section class="card">
+          <h1>Quiz Complete</h1>
+          <div class="score-circle" style="--percent: ${percentage}">
+            <span>${state.score} / ${total}</span>
+          </div>
+          <p class="percentage">${percentage}%</p>
+          <p class="message">${msg}</p>
+          <div class="button-group">
+            <button id="review-btn" class="btn btn-secondary">Review Answers</button>
+            <button id="restart-btn" class="btn">Play Again</button>
+          </div>
+        </section>
+      </main>
+    </div>
   `;
 }
 
@@ -390,18 +396,20 @@ function renderReview() {
   }).join('');
 
   return `
-    <main class="review">
-      <section class="card review-card">
-        <header class="review-header">
-          <h1>Answer Review</h1>
-          <p>Detailed breakdown of your performance</p>
-        </header>
-        <div class="review-list">
-          ${reviewItemsHtml}
-        </div>
-        <button id="back-to-result-btn" class="btn" style="margin-top: 1.5rem;">Back to Results</button>
-      </section>
-    </main>
+    <div class="page">
+      <main class="review">
+        <section class="card review-card">
+          <header class="review-header">
+            <h1>Answer Review</h1>
+            <p>Detailed breakdown of your performance</p>
+          </header>
+          <div class="review-list">
+            ${reviewItemsHtml}
+          </div>
+          <button id="back-to-result-btn" class="btn" style="margin-top: 1.5rem;">Back to Results</button>
+        </section>
+      </main>
+    </div>
   `;
 }
 
