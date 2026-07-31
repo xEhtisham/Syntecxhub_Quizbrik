@@ -3,540 +3,1620 @@
     "id": 1,
     "category": "Science",
     "difficulty": "Easy",
-    "question": "What planet is known as the Red Planet?",
-    "options": ["Earth", "Mars", "Venus", "Jupiter"],
-    "correctAnswer": "Mars",
-    "explanation": "Mars is called the Red Planet because of iron oxide on its surface."
+    "question": "What is the chemical formula for water?",
+    "options": ["H2O", "CO2", "O2", "NaCl"],
+    "correctAnswer": "H2O",
+    "explanation": "Water is composed of two hydrogen atoms and one oxygen atom."
   },
   {
     "id": 2,
     "category": "Science",
     "difficulty": "Easy",
-    "question": "What element does 'O' represent on the periodic table?",
-    "options": ["Gold", "Oxygen", "Osmium", "Silver"],
-    "correctAnswer": "Oxygen",
-    "explanation": "O is the chemical symbol for Oxygen, atomic number 8."
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Mars", "Jupiter", "Saturn", "Venus"],
+    "correctAnswer": "Mars",
+    "explanation": "Mars has a reddish appearance due to iron oxide on its surface."
   },
   {
     "id": 3,
     "category": "Science",
     "difficulty": "Easy",
-    "question": "What force pulls objects toward the center of the Earth?",
-    "options": ["Magnetism", "Friction", "Gravity", "Tension"],
+    "question": "What is the force that keeps us on the ground?",
+    "options": ["Gravity", "Magnetism", "Friction", "Inertia"],
     "correctAnswer": "Gravity",
-    "explanation": "Gravity is the fundamental force that attracts objects with mass toward one another."
+    "explanation": "Gravity is the force that attracts a body toward the center of the earth."
   },
   {
     "id": 4,
     "category": "Science",
-    "difficulty": "Medium",
-    "question": "What gas do plants absorb from the atmosphere for photosynthesis?",
-    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
-    "correctAnswer": "Carbon Dioxide",
-    "explanation": "Plants absorb Carbon Dioxide and release Oxygen during photosynthesis."
+    "difficulty": "Easy",
+    "question": "What is the nearest star to Earth?",
+    "options": ["The Sun", "Proxima Centauri", "Sirius", "Alpha Centauri"],
+    "correctAnswer": "The Sun",
+    "explanation": "The Sun is the closest star to our planet."
   },
   {
     "id": 5,
     "category": "Science",
-    "difficulty": "Medium",
-    "question": "What is the speed of light in a vacuum approximately?",
-    "options": ["150,000 km/s", "300,000 km/s", "450,000 km/s", "600,000 km/s"],
-    "correctAnswer": "300,000 km/s",
-    "explanation": "The speed of light in a vacuum is approximately 299,792 kilometers per second."
+    "difficulty": "Easy",
+    "question": "What gas do plants primarily absorb from the atmosphere?",
+    "options": ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    "correctAnswer": "Carbon Dioxide",
+    "explanation": "Plants absorb carbon dioxide for photosynthesis."
   },
   {
     "id": 6,
     "category": "Science",
-    "difficulty": "Medium",
-    "question": "Which human organ is responsible for filtering blood and producing urine?",
-    "options": ["Heart", "Liver", "Kidney", "Lungs"],
-    "correctAnswer": "Kidney",
-    "explanation": "Kidneys filter metabolic waste products and excess fluid from the blood."
+    "difficulty": "Easy",
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Diamond", "Gold", "Iron", "Quartz"],
+    "correctAnswer": "Diamond",
+    "explanation": "Diamonds are the hardest known naturally occurring substance."
   },
   {
     "id": 7,
     "category": "Science",
-    "difficulty": "Hard",
-    "question": "What is the powerhouse of the eukaryotic cell?",
-    "options": ["Ribosome", "Nucleus", "Mitochondria", "Golgi Apparatus"],
-    "correctAnswer": "Mitochondria",
-    "explanation": "Mitochondria generate most of the chemical energy needed to power cellular reactions."
+    "difficulty": "Easy",
+    "question": "What do bees collect from flowers?",
+    "options": ["Nectar", "Water", "Leaves", "Roots"],
+    "correctAnswer": "Nectar",
+    "explanation": "Bees collect nectar to produce honey."
   },
   {
     "id": 8,
     "category": "Science",
-    "difficulty": "Hard",
-    "question": "What subatomic particle carries a negative electrical charge?",
-    "options": ["Proton", "Neutron", "Electron", "Photon"],
-    "correctAnswer": "Electron",
-    "explanation": "Electrons carry a negative charge, whereas protons carry a positive charge."
+    "difficulty": "Easy",
+    "question": "How many legs does a spider typically have?",
+    "options": ["8", "6", "10", "4"],
+    "correctAnswer": "8",
+    "explanation": "Spiders are arachnids and have eight legs."
   },
   {
     "id": 9,
     "category": "Science",
-    "difficulty": "Hard",
-    "question": "What law states that energy cannot be created or destroyed?",
-    "options": ["Boyle's Law", "First Law of Thermodynamics", "Newton's Third Law", "Kepler's Second Law"],
-    "correctAnswer": "First Law of Thermodynamics",
-    "explanation": "The First Law of Thermodynamics is the Law of Conservation of Energy."
+    "difficulty": "Easy",
+    "question": "What is the boiling point of water in Celsius?",
+    "options": ["100", "0", "50", "200"],
+    "correctAnswer": "100",
+    "explanation": "Water boils at 100 degrees Celsius at standard atmospheric pressure."
   },
   {
     "id": 10,
     "category": "Science",
-    "difficulty": "Hard",
-    "question": "Which enzyme in human saliva begins the digestion of starches?",
-    "options": ["Pepsin", "Amylase", "Lipase", "Trypsin"],
-    "correctAnswer": "Amylase",
-    "explanation": "Salivary amylase breaks down complex carbohydrates into simpler sugars in the mouth."
+    "difficulty": "Easy",
+    "question": "Which part of the plant conducts photosynthesis?",
+    "options": ["Leaf", "Root", "Stem", "Flower"],
+    "correctAnswer": "Leaf",
+    "explanation": "Leaves contain chlorophyll and are the primary site of photosynthesis."
   },
   {
     "id": 11,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is often called the powerhouse of the cell?",
+    "options": ["Mitochondria", "Nucleus", "Ribosome", "Endoplasmic Reticulum"],
+    "correctAnswer": "Mitochondria",
+    "explanation": "Mitochondria generate most of the cell's supply of ATP."
+  },
+  {
+    "id": 12,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is the chemical symbol for gold?",
+    "options": ["Au", "Ag", "Fe", "Gd"],
+    "correctAnswer": "Au",
+    "explanation": "The symbol Au comes from the Latin word for gold, aurum."
+  },
+  {
+    "id": 13,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "Who developed the theory of general relativity?",
+    "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+    "correctAnswer": "Albert Einstein",
+    "explanation": "Einstein published the theory of general relativity in 1915."
+  },
+  {
+    "id": 14,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is the most abundant gas in the Earth's atmosphere?",
+    "options": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Argon"],
+    "correctAnswer": "Nitrogen",
+    "explanation": "Nitrogen makes up about 78% of the Earth's atmosphere."
+  },
+  {
+    "id": 15,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What type of bond involves sharing of electron pairs between atoms?",
+    "options": ["Covalent", "Ionic", "Metallic", "Hydrogen"],
+    "correctAnswer": "Covalent",
+    "explanation": "A covalent bond consists of the mutual sharing of one or more pairs of electrons."
+  },
+  {
+    "id": 16,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "How many bones are in the average adult human body?",
+    "options": ["206", "205", "210", "196"],
+    "correctAnswer": "206",
+    "explanation": "An adult human typically has 206 bones."
+  },
+  {
+    "id": 17,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is the speed of light in a vacuum?",
+    "options": ["299,792 km/s", "150,000 km/s", "300,000 m/s", "1,000,000 km/s"],
+    "correctAnswer": "299,792 km/s",
+    "explanation": "The speed of light is exactly 299,792,458 meters per second."
+  },
+  {
+    "id": 18,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What organ is primarily responsible for pumping blood?",
+    "options": ["Heart", "Lungs", "Liver", "Brain"],
+    "correctAnswer": "Heart",
+    "explanation": "The heart pumps blood through the circulatory system."
+  },
+  {
+    "id": 19,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "What is the pH of pure water at 25 degrees Celsius?",
+    "options": ["7", "0", "14", "10"],
+    "correctAnswer": "7",
+    "explanation": "Pure water is neutral, meaning it has a pH of 7."
+  },
+  {
+    "id": 20,
+    "category": "Science",
+    "difficulty": "Medium",
+    "question": "Which planet in our solar system has the most moons?",
+    "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+    "correctAnswer": "Saturn",
+    "explanation": "Saturn has the highest number of confirmed moons."
+  },
+  {
+    "id": 21,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the rarest blood type in the human body?",
+    "options": ["AB Negative", "O Negative", "B Negative", "A Negative"],
+    "correctAnswer": "AB Negative",
+    "explanation": "AB Negative is considered the rarest blood type globally."
+  },
+  {
+    "id": 22,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the heaviest naturally occurring element by atomic weight?",
+    "options": ["Uranium", "Plutonium", "Lead", "Osmium"],
+    "correctAnswer": "Uranium",
+    "explanation": "Uranium has the highest atomic weight of the naturally occurring elements."
+  },
+  {
+    "id": 23,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the name of the first artificial Earth satellite?",
+    "options": ["Sputnik 1", "Explorer 1", "Vanguard 1", "Telstar"],
+    "correctAnswer": "Sputnik 1",
+    "explanation": "Sputnik 1 was launched by the Soviet Union in 1957."
+  },
+  {
+    "id": 24,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What fundamental particle is the carrier of the electromagnetic force?",
+    "options": ["Photon", "Gluon", "Boson", "Electron"],
+    "correctAnswer": "Photon",
+    "explanation": "The photon is the elementary particle responsible for electromagnetic phenomena."
+  },
+  {
+    "id": 25,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "Who discovered penicillin?",
+    "options": ["Alexander Fleming", "Louis Pasteur", "Marie Curie", "Joseph Lister"],
+    "correctAnswer": "Alexander Fleming",
+    "explanation": "Alexander Fleming discovered penicillin in 1928."
+  },
+  {
+    "id": 26,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the approximate half-life of Carbon-14?",
+    "options": ["5,730 years", "4,500 years", "10,000 years", "2,000 years"],
+    "correctAnswer": "5,730 years",
+    "explanation": "Carbon-14 has a half-life of roughly 5,730 years."
+  },
+  {
+    "id": 27,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the largest internal organ in the human body?",
+    "options": ["Liver", "Brain", "Lungs", "Heart"],
+    "correctAnswer": "Liver",
+    "explanation": "The liver is the largest internal organ and largest gland."
+  },
+  {
+    "id": 28,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "Which law of thermodynamics states that the entropy of an isolated system always increases?",
+    "options": ["Second Law", "First Law", "Third Law", "Zeroth Law"],
+    "correctAnswer": "Second Law",
+    "explanation": "The second law of thermodynamics establishes the concept of entropy."
+  },
+  {
+    "id": 29,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What is the term for the process by which a cell engulfs solid particles?",
+    "options": ["Phagocytosis", "Pinocytosis", "Exocytosis", "Osmosis"],
+    "correctAnswer": "Phagocytosis",
+    "explanation": "Phagocytosis is the ingestion of solid material by a cell."
+  },
+  {
+    "id": 30,
+    "category": "Science",
+    "difficulty": "Hard",
+    "question": "What physical constant is approximately equal to 6.626 x 10^-34 J s?",
+    "options": ["Planck's constant", "Avogadro's number", "Speed of light", "Gravitational constant"],
+    "correctAnswer": "Planck's constant",
+    "explanation": "Planck's constant relates the energy of a photon to its frequency."
+  },
+  {
+    "id": 31,
     "category": "History",
     "difficulty": "Easy",
     "question": "Who was the first President of the United States?",
-    "options": ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"],
+    "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
     "correctAnswer": "George Washington",
     "explanation": "George Washington served as the first US President from 1789 to 1797."
   },
   {
-    "id": 12,
+    "id": 32,
     "category": "History",
     "difficulty": "Easy",
-    "question": "In which country were the ancient pyramids of Giza built?",
-    "options": ["Greece", "Egypt", "Italy", "Mexico"],
-    "correctAnswer": "Egypt",
-    "explanation": "The Giza Pyramids were constructed on the West Bank of the Nile River in Egypt."
+    "question": "What ancient civilization built the Pyramids of Giza?",
+    "options": ["Egyptians", "Romans", "Greeks", "Mayans"],
+    "correctAnswer": "Egyptians",
+    "explanation": "Ancient Egyptians built the pyramids as tombs for their pharaohs."
   },
   {
-    "id": 13,
+    "id": 33,
     "category": "History",
     "difficulty": "Easy",
-    "question": "What famous ship sank in 1912 after hitting an iceberg?",
-    "options": ["Lusitania", "Titanic", "Britannic", "Endeavour"],
+    "question": "In what year did Christopher Columbus first reach the Americas?",
+    "options": ["1492", "1400", "1592", "1620"],
+    "correctAnswer": "1492",
+    "explanation": "Columbus's first voyage reached the New World in 1492."
+  },
+  {
+    "id": 34,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "Who was the first person to walk on the moon?",
+    "options": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"],
+    "correctAnswer": "Neil Armstrong",
+    "explanation": "Neil Armstrong stepped onto the lunar surface in 1969."
+  },
+  {
+    "id": 35,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "What famous ship sank in 1912 on its maiden voyage?",
+    "options": ["Titanic", "Lusitania", "Britannic", "Mayflower"],
     "correctAnswer": "Titanic",
-    "explanation": "RMS Titanic sank on its maiden voyage in April 1912."
+    "explanation": "The RMS Titanic sank after striking an iceberg in April 1912."
   },
   {
-    "id": 14,
+    "id": 36,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "Who is known as the Maid of Orleans?",
+    "options": ["Joan of Arc", "Marie Antoinette", "Catherine the Great", "Queen Victoria"],
+    "correctAnswer": "Joan of Arc",
+    "explanation": "Joan of Arc is a heroine of France for her role in the Hundred Years' War."
+  },
+  {
+    "id": 37,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "The Roman Empire was primarily centered around which modern-day country?",
+    "options": ["Italy", "Greece", "Egypt", "Spain"],
+    "correctAnswer": "Italy",
+    "explanation": "The city of Rome, in modern-day Italy, was the center of the Roman Empire."
+  },
+  {
+    "id": 38,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "Which country gifted the Statue of Liberty to the USA?",
+    "options": ["France", "United Kingdom", "Spain", "Germany"],
+    "correctAnswer": "France",
+    "explanation": "France gifted the statue to the US to commemorate their alliance during the American Revolution."
+  },
+  {
+    "id": 39,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "What was the name of the civil rights leader who gave the 'I Have a Dream' speech?",
+    "options": ["Martin Luther King Jr.", "Malcolm X", "Rosa Parks", "Frederick Douglass"],
+    "correctAnswer": "Martin Luther King Jr.",
+    "explanation": "MLK Jr. delivered his iconic speech in 1963 during the March on Washington."
+  },
+  {
+    "id": 40,
+    "category": "History",
+    "difficulty": "Easy",
+    "question": "What wall physically divided Berlin from 1961 to 1989?",
+    "options": ["Berlin Wall", "Iron Curtain", "Great Wall", "Hadrian's Wall"],
+    "correctAnswer": "Berlin Wall",
+    "explanation": "The Berlin Wall separated West Berlin from East Berlin."
+  },
+  {
+    "id": 41,
     "category": "History",
     "difficulty": "Medium",
     "question": "In which year did World War II end?",
-    "options": ["1918", "1939", "1945", "1950"],
+    "options": ["1945", "1939", "1918", "1950"],
     "correctAnswer": "1945",
-    "explanation": "World War II concluded in 1945 following Allied victories in Europe and the Pacific."
+    "explanation": "WWII ended in 1945 with the surrender of the Axis powers."
   },
   {
-    "id": 15,
+    "id": 42,
     "category": "History",
     "difficulty": "Medium",
-    "question": "Who painted the Mona Lisa?",
-    "options": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Vincent van Gogh"],
-    "correctAnswer": "Leonardo da Vinci",
-    "explanation": "Leonardo da Vinci created the Mona Lisa during the Italian Renaissance."
+    "question": "Who was the British Prime Minister during most of World War II?",
+    "options": ["Winston Churchill", "Neville Chamberlain", "Clement Attlee", "Margaret Thatcher"],
+    "correctAnswer": "Winston Churchill",
+    "explanation": "Churchill led Britain through most of WWII from 1940 to 1945."
   },
   {
-    "id": 16,
+    "id": 43,
     "category": "History",
     "difficulty": "Medium",
-    "question": "Which ancient civilization constructed Machu Picchu?",
-    "options": ["Aztec", "Maya", "Inca", "Olmec"],
-    "correctAnswer": "Inca",
-    "explanation": "Machu Picchu is a 15th-century Inca citadel located in the Andes Mountains of Peru."
+    "question": "What ancient city was destroyed by Mount Vesuvius in 79 AD?",
+    "options": ["Pompeii", "Troy", "Carthage", "Sparta"],
+    "correctAnswer": "Pompeii",
+    "explanation": "Pompeii was buried under volcanic ash and pumice."
   },
   {
-    "id": 17,
+    "id": 44,
     "category": "History",
-    "difficulty": "Hard",
-    "question": "What document signed in 1215 limited the power of the English monarch?",
-    "options": ["Magna Carta", "Treaty of Versailles", "Declaration of Rights", "Edict of Nantes"],
-    "correctAnswer": "Magna Carta",
-    "explanation": "King John signed the Magna Carta at Runnymede in 1215."
+    "difficulty": "Medium",
+    "question": "Who was the last Tsar of Russia?",
+    "options": ["Nicholas II", "Alexander III", "Peter the Great", "Ivan the Terrible"],
+    "correctAnswer": "Nicholas II",
+    "explanation": "Nicholas II abdicated in 1917 and was later executed."
   },
   {
-    "id": 18,
+    "id": 45,
     "category": "History",
-    "difficulty": "Hard",
-    "question": "Which empire was ruled by Suleiman the Magnificent during its peak?",
-    "options": ["Byzantine Empire", "Ottoman Empire", "Roman Empire", "Persian Empire"],
-    "correctAnswer": "Ottoman Empire",
-    "explanation": "Suleiman the Magnificent expanded and strengthened the Ottoman Empire in the 16th century."
+    "difficulty": "Medium",
+    "question": "The Magna Carta was signed in what year?",
+    "options": ["1215", "1066", "1492", "1776"],
+    "correctAnswer": "1215",
+    "explanation": "King John of England signed the Magna Carta in 1215."
   },
   {
-    "id": 19,
+    "id": 46,
     "category": "History",
-    "difficulty": "Hard",
-    "question": "What battle in 1815 marked the final defeat of Napoleon Bonaparte?",
-    "options": ["Battle of Austerlitz", "Battle of Leipzig", "Battle of Waterloo", "Battle of Trafalgar"],
-    "correctAnswer": "Battle of Waterloo",
-    "explanation": "The Battle of Waterloo in Belgium ended Napoleon's reign as Emperor of the French."
-  },
-  {
-    "id": 20,
-    "category": "History",
-    "difficulty": "Hard",
-    "question": "Which war was fought between the Northern and Southern states of America?",
-    "options": ["Revolutionary War", "American Civil War", "War of 1812", "Spanish-American War"],
+    "difficulty": "Medium",
+    "question": "Which war was fought between the Northern and Southern regions of the USA?",
+    "options": ["American Civil War", "Revolutionary War", "War of 1812", "Spanish-American War"],
     "correctAnswer": "American Civil War",
-    "explanation": "The American Civil War took place from 1861 to 1865 over issues including states' rights and slavery."
+    "explanation": "The American Civil War was fought from 1861 to 1865."
   },
   {
-    "id": 21,
-    "category": "Technology",
-    "difficulty": "Easy",
-    "question": "What does CPU stand for in computer hardware?",
-    "options": ["Central Processing Unit", "Computer Power Unit", "Core Processing Utility", "Central Program Unit"],
-    "correctAnswer": "Central Processing Unit",
-    "explanation": "The CPU performs basic arithmetic, logic, controlling, and input/output operations."
+    "id": 47,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Who discovered the sea route to India in 1498?",
+    "options": ["Vasco da Gama", "Ferdinand Magellan", "Christopher Columbus", "Marco Polo"],
+    "correctAnswer": "Vasco da Gama",
+    "explanation": "Vasco da Gama linked Europe and Asia by ocean route for the first time."
   },
   {
-    "id": 22,
+    "id": 48,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "What was the name of the first successful English settlement in America?",
+    "options": ["Jamestown", "Plymouth", "Roanoke", "Boston"],
+    "correctAnswer": "Jamestown",
+    "explanation": "Jamestown was founded in Virginia in 1607."
+  },
+  {
+    "id": 49,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "The French Revolution began in what year?",
+    "options": ["1789", "1799", "1776", "1812"],
+    "correctAnswer": "1789",
+    "explanation": "The revolution began with the Storming of the Bastille in 1789."
+  },
+  {
+    "id": 50,
+    "category": "History",
+    "difficulty": "Medium",
+    "question": "Who became the Emperor of the French in 1804?",
+    "options": ["Napoleon Bonaparte", "Louis XVI", "Charlemagne", "Louis XIV"],
+    "correctAnswer": "Napoleon Bonaparte",
+    "explanation": "Napoleon crowned himself emperor in 1804."
+  },
+  {
+    "id": 51,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What treaty ended the Thirty Years' War in 1648?",
+    "options": ["Peace of Westphalia", "Treaty of Versailles", "Treaty of Tordesillas", "Congress of Vienna"],
+    "correctAnswer": "Peace of Westphalia",
+    "explanation": "The Peace of Westphalia established a new system of political order in Europe."
+  },
+  {
+    "id": 52,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which dynasty was the last imperial dynasty of China?",
+    "options": ["Qing Dynasty", "Ming Dynasty", "Tang Dynasty", "Han Dynasty"],
+    "correctAnswer": "Qing Dynasty",
+    "explanation": "The Qing Dynasty ruled from 1644 to 1912."
+  },
+  {
+    "id": 53,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Who was the longest-reigning British monarch before Elizabeth II?",
+    "options": ["Queen Victoria", "King George III", "King Henry VIII", "Queen Elizabeth I"],
+    "correctAnswer": "Queen Victoria",
+    "explanation": "Queen Victoria reigned for over 63 years, until 1901."
+  },
+  {
+    "id": 54,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "The Battle of Hastings took place in what year?",
+    "options": ["1066", "1215", "1415", "1099"],
+    "correctAnswer": "1066",
+    "explanation": "The battle initiated the Norman conquest of England."
+  },
+  {
+    "id": 55,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Who was the primary author of the US Declaration of Independence?",
+    "options": ["Thomas Jefferson", "John Adams", "Benjamin Franklin", "James Madison"],
+    "correctAnswer": "Thomas Jefferson",
+    "explanation": "Jefferson wrote the original draft of the document in 1776."
+  },
+  {
+    "id": 56,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Which empire was conquered by Francisco Pizarro?",
+    "options": ["Inca Empire", "Aztec Empire", "Mayan Empire", "Olmec Empire"],
+    "correctAnswer": "Inca Empire",
+    "explanation": "Pizarro led the Spanish conquest of the Inca Empire in the 1530s."
+  },
+  {
+    "id": 57,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "In what year did the Soviet Union officially dissolve?",
+    "options": ["1991", "1989", "1993", "1985"],
+    "correctAnswer": "1991",
+    "explanation": "The USSR was formally dissolved on December 26, 1991."
+  },
+  {
+    "id": 58,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "What was the operational codename for the Allied invasion of Normandy?",
+    "options": ["Operation Overlord", "Operation Barbarossa", "Operation Market Garden", "Operation Torch"],
+    "correctAnswer": "Operation Overlord",
+    "explanation": "Operation Overlord was the codename for the Battle of Normandy."
+  },
+  {
+    "id": 59,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "Who was the leader of the Soviet Union from 1924 to 1953?",
+    "options": ["Joseph Stalin", "Vladimir Lenin", "Nikita Khrushchev", "Leon Trotsky"],
+    "correctAnswer": "Joseph Stalin",
+    "explanation": "Stalin consolidated power and ruled as a dictator until his death."
+  },
+  {
+    "id": 60,
+    "category": "History",
+    "difficulty": "Hard",
+    "question": "The Opium Wars were fought between China and which other power?",
+    "options": ["Britain", "France", "Japan", "Russia"],
+    "correctAnswer": "Britain",
+    "explanation": "The British Empire fought the Qing Dynasty over trade and diplomatic relations."
+  },
+  {
+    "id": 61,
     "category": "Technology",
     "difficulty": "Easy",
-    "question": "Which company created the Windows operating system?",
-    "options": ["Apple", "IBM", "Microsoft", "Google"],
+    "question": "What does 'PC' stand for?",
+    "options": ["Personal Computer", "Private Computer", "Public Computer", "Personal Code"],
+    "correctAnswer": "Personal Computer",
+    "explanation": "A PC is a computer designed for use by one person at a time."
+  },
+  {
+    "id": 62,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "Which company created the iPhone?",
+    "options": ["Apple", "Microsoft", "Samsung", "Google"],
+    "correctAnswer": "Apple",
+    "explanation": "Apple Inc. developed and sells the iPhone."
+  },
+  {
+    "id": 63,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What is the global system of interconnected computer networks called?",
+    "options": ["The Internet", "The Intranet", "The Web", "The Cloud"],
+    "correctAnswer": "The Internet",
+    "explanation": "The Internet is the global network connecting millions of computers."
+  },
+  {
+    "id": 64,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What symbol is required in every standard email address?",
+    "options": ["@", "#", "$", "&"],
+    "correctAnswer": "@",
+    "explanation": "The '@' symbol separates the username from the domain."
+  },
+  {
+    "id": 65,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "Who co-founded Microsoft alongside Paul Allen?",
+    "options": ["Bill Gates", "Steve Jobs", "Mark Zuckerberg", "Larry Page"],
+    "correctAnswer": "Bill Gates",
+    "explanation": "Bill Gates and Paul Allen founded Microsoft in 1975."
+  },
+  {
+    "id": 66,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What does 'www' stand for in a website address?",
+    "options": ["World Wide Web", "World Web Wide", "Wide World Web", "Web World Wide"],
+    "correctAnswer": "World Wide Web",
+    "explanation": "The World Wide Web is an information system where documents are identified by URLs."
+  },
+  {
+    "id": 67,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "Which peripheral device is typically used to point and click on a computer screen?",
+    "options": ["Mouse", "Keyboard", "Monitor", "Printer"],
+    "correctAnswer": "Mouse",
+    "explanation": "A mouse is a hand-held pointing device."
+  },
+  {
+    "id": 68,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What is the name of Google's mobile operating system?",
+    "options": ["Android", "iOS", "Windows Mobile", "Symbian"],
+    "correctAnswer": "Android",
+    "explanation": "Android is a mobile OS based on a modified version of the Linux kernel."
+  },
+  {
+    "id": 69,
+    "category": "Technology",
+    "difficulty": "Easy",
+    "question": "What company is known for creating the Windows operating system?",
+    "options": ["Microsoft", "Apple", "IBM", "Oracle"],
     "correctAnswer": "Microsoft",
-    "explanation": "Microsoft released Windows in 1985 as a graphical operating system shell for MS-DOS."
+    "explanation": "Microsoft developed the Windows family of operating systems."
   },
   {
-    "id": 23,
+    "id": 70,
     "category": "Technology",
     "difficulty": "Easy",
-    "question": "What programming language is primarily used for web page styling?",
-    "options": ["HTML", "CSS", "Python", "SQL"],
-    "correctAnswer": "CSS",
-    "explanation": "CSS (Cascading Style Sheets) controls presentation, layout, and visual design."
+    "question": "What does 'USB' stand for?",
+    "options": ["Universal Serial Bus", "Universal System Bus", "Unified Serial Bus", "Universal Serial Board"],
+    "correctAnswer": "Universal Serial Bus",
+    "explanation": "USB is an industry standard for cables, connectors, and protocols."
   },
   {
-    "id": 24,
+    "id": 71,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "What technology protocol secures communication over a computer network (HTTPS)?",
-    "options": ["FTP", "SMTP", "TLS/SSL", "UDP"],
-    "correctAnswer": "TLS/SSL",
-    "explanation": "HTTPS uses Transport Layer Security (TLS) or Secure Sockets Layer (SSL) to encrypt traffic."
+    "question": "What does 'HTML' stand for?",
+    "options": ["HyperText Markup Language", "HyperText Machine Language", "Hyperlink Text Markup Language", "HighText Markup Language"],
+    "correctAnswer": "HyperText Markup Language",
+    "explanation": "HTML is the standard markup language for documents designed to be displayed in a web browser."
   },
   {
-    "id": 25,
+    "id": 72,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "Which data structure operates on a First-In, First-Out (FIFO) principle?",
-    "options": ["Stack", "Queue", "Tree", "Graph"],
-    "correctAnswer": "Queue",
-    "explanation": "Queues process items in FIFO order, whereas Stacks operate on LIFO (Last-In, First-Out)."
+    "question": "In what year was the first iPhone released?",
+    "options": ["2007", "2005", "2008", "2010"],
+    "correctAnswer": "2007",
+    "explanation": "Steve Jobs introduced the first iPhone on January 9, 2007."
   },
   {
-    "id": 26,
+    "id": 73,
     "category": "Technology",
     "difficulty": "Medium",
-    "question": "Who is credited with inventing the World Wide Web in 1989?",
-    "options": ["Steve Jobs", "Tim Berners-Lee", "Alan Turing", "Linus Torvalds"],
+    "question": "What does 'RAM' stand for in computing?",
+    "options": ["Random Access Memory", "Read Access Memory", "Run Access Memory", "Random Active Memory"],
+    "correctAnswer": "Random Access Memory",
+    "explanation": "RAM is a form of computer memory that can be read and changed in any order."
+  },
+  {
+    "id": 74,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "Which popular programming language is named after a British comedy troupe?",
+    "options": ["Python", "Java", "Ruby", "C++"],
+    "correctAnswer": "Python",
+    "explanation": "Python was named after Monty Python's Flying Circus."
+  },
+  {
+    "id": 75,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "Who invented the World Wide Web?",
+    "options": ["Tim Berners-Lee", "Vint Cerf", "Alan Turing", "Marc Andreessen"],
     "correctAnswer": "Tim Berners-Lee",
-    "explanation": "Tim Berners-Lee invented HTML, HTTP, and the World Wide Web while working at CERN."
+    "explanation": "Tim Berners-Lee invented the World Wide Web in 1989."
   },
   {
-    "id": 27,
+    "id": 76,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What is the main printed circuit board in a computer called?",
+    "options": ["Motherboard", "CPU", "Hard Drive", "Graphics Card"],
+    "correctAnswer": "Motherboard",
+    "explanation": "The motherboard holds and allows communication between many of the crucial electronic components."
+  },
+  {
+    "id": 77,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What does 'CPU' stand for?",
+    "options": ["Central Processing Unit", "Computer Processing Unit", "Central Power Unit", "Core Processing Unit"],
+    "correctAnswer": "Central Processing Unit",
+    "explanation": "The CPU is the electronic circuitry that executes instructions comprising a computer program."
+  },
+  {
+    "id": 78,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What is the name of the first electronic general-purpose computer?",
+    "options": ["ENIAC", "UNIVAC", "Colossus", "Harvard Mark I"],
+    "correctAnswer": "ENIAC",
+    "explanation": "ENIAC was completed in 1945 and was Turing-complete."
+  },
+  {
+    "id": 79,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "What does 'PDF' stand for?",
+    "options": ["Portable Document Format", "Printable Document Format", "Private Document Format", "Portable Data Format"],
+    "correctAnswer": "Portable Document Format",
+    "explanation": "PDF is a file format developed by Adobe in 1992."
+  },
+  {
+    "id": 80,
+    "category": "Technology",
+    "difficulty": "Medium",
+    "question": "Which tech giant acquired GitHub in 2018?",
+    "options": ["Microsoft", "Google", "Amazon", "Facebook"],
+    "correctAnswer": "Microsoft",
+    "explanation": "Microsoft acquired the software development platform GitHub for $7.5 billion."
+  },
+  {
+    "id": 81,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "What is the time complexity of searching in a balanced Binary Search Tree?",
-    "options": ["O(1)", "O(N)", "O(log N)", "O(N log N)"],
-    "correctAnswer": "O(log N)",
-    "explanation": "Searching a balanced BST eliminates half the remaining nodes at each step, yielding O(log N) time."
+    "question": "Who is widely considered to be the first computer programmer?",
+    "options": ["Ada Lovelace", "Charles Babbage", "Alan Turing", "Grace Hopper"],
+    "correctAnswer": "Ada Lovelace",
+    "explanation": "Ada Lovelace wrote the first algorithm intended to be executed by a machine."
   },
   {
-    "id": 28,
+    "id": 82,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "Which HTTP status code signifies 'Internal Server Error'?",
-    "options": ["400", "404", "500", "503"],
-    "correctAnswer": "500",
-    "explanation": "HTTP status code 500 represents a generic server-side failure."
+    "question": "What does 'HTTP' stand for?",
+    "options": ["HyperText Transfer Protocol", "HyperText Transmission Protocol", "HyperLink Transfer Protocol", "HighText Transfer Protocol"],
+    "correctAnswer": "HyperText Transfer Protocol",
+    "explanation": "HTTP is the foundation of data communication for the World Wide Web."
   },
   {
-    "id": 29,
+    "id": 83,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "What architectural pattern separates an application into Model, View, and Controller?",
-    "options": ["MVVM", "MVC", "Flux", "Singleton"],
-    "correctAnswer": "MVC",
-    "explanation": "MVC isolates business logic (Model), UI presentation (View), and input handling (Controller)."
+    "question": "Which encryption standard is widely used by the US government?",
+    "options": ["AES", "DES", "RSA", "Blowfish"],
+    "correctAnswer": "AES",
+    "explanation": "The Advanced Encryption Standard (AES) is a specification established by the U.S. NIST."
   },
   {
-    "id": 30,
+    "id": 84,
     "category": "Technology",
     "difficulty": "Hard",
-    "question": "What open-source containerization platform was introduced in 2013?",
-    "options": ["Kubernetes", "Docker", "Vagrant", "OpenShift"],
-    "correctAnswer": "Docker",
-    "explanation": "Docker revolutionized software deployment by automating application containerization."
+    "question": "What translates high-level language source code entirely into machine code before execution?",
+    "options": ["Compiler", "Interpreter", "Assembler", "Linker"],
+    "correctAnswer": "Compiler",
+    "explanation": "A compiler transforms source code written in a programming language into executable machine code."
   },
   {
-    "id": 31,
+    "id": 85,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "In what year was the Linux kernel first released?",
+    "options": ["1991", "1989", "1993", "1995"],
+    "correctAnswer": "1991",
+    "explanation": "Linus Torvalds released the first Linux kernel in 1991."
+  },
+  {
+    "id": 86,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "What was the original working name of the Java programming language?",
+    "options": ["Oak", "C++", "Mocha", "Coffee"],
+    "correctAnswer": "Oak",
+    "explanation": "James Gosling originally called the project Oak before renaming it Java."
+  },
+  {
+    "id": 87,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "Who is the primary creator of the C programming language?",
+    "options": ["Dennis Ritchie", "Bjarne Stroustrup", "Ken Thompson", "Brian Kernighan"],
+    "correctAnswer": "Dennis Ritchie",
+    "explanation": "Dennis Ritchie created C at Bell Labs in the early 1970s."
+  },
+  {
+    "id": 88,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "What was the first commercially successful personal computer kit?",
+    "options": ["Altair 8800", "Apple I", "Commodore PET", "TRS-80"],
+    "correctAnswer": "Altair 8800",
+    "explanation": "The Altair 8800 sparked the microcomputer revolution."
+  },
+  {
+    "id": 89,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "What network port number is primarily used for HTTPS traffic?",
+    "options": ["443", "80", "21", "22"],
+    "correctAnswer": "443",
+    "explanation": "Port 443 is the standard port for secure web browsing."
+  },
+  {
+    "id": 90,
+    "category": "Technology",
+    "difficulty": "Hard",
+    "question": "What does 'SQL' stand for?",
+    "options": ["Structured Query Language", "Standard Query Language", "Simple Query Language", "System Query Language"],
+    "correctAnswer": "Structured Query Language",
+    "explanation": "SQL is a domain-specific language used in programming for managing databases."
+  },
+  {
+    "id": 91,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "What is the largest continent by land area?",
+    "options": ["Asia", "Africa", "North America", "Europe"],
+    "correctAnswer": "Asia",
+    "explanation": "Asia is the Earth's largest and most populous continent."
+  },
+  {
+    "id": 92,
     "category": "Geography",
     "difficulty": "Easy",
     "question": "What is the capital city of France?",
-    "options": ["London", "Berlin", "Paris", "Madrid"],
+    "options": ["Paris", "Rome", "London", "Berlin"],
     "correctAnswer": "Paris",
     "explanation": "Paris is the capital and most populous city of France."
   },
   {
-    "id": 32,
+    "id": 93,
     "category": "Geography",
     "difficulty": "Easy",
-    "question": "Which is the largest ocean on Earth?",
-    "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    "question": "Which ocean is the largest on Earth?",
+    "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
     "correctAnswer": "Pacific Ocean",
-    "explanation": "The Pacific Ocean covers over 30% of the Earth's surface."
+    "explanation": "The Pacific Ocean covers more than 30% of the Earth's surface."
   },
   {
-    "id": 33,
+    "id": 94,
     "category": "Geography",
     "difficulty": "Easy",
-    "question": "On which continent is the Amazon Rainforest primarily located?",
-    "options": ["Africa", "South America", "Asia", "Australia"],
-    "correctAnswer": "South America",
-    "explanation": "The Amazon Basin spans across nine South American nations."
+    "question": "What country currently has the largest population in the world (as of 2023)?",
+    "options": ["India", "China", "USA", "Indonesia"],
+    "correctAnswer": "India",
+    "explanation": "India recently surpassed China as the most populous country."
   },
   {
-    "id": 34,
+    "id": 95,
     "category": "Geography",
-    "difficulty": "Medium",
-    "question": "What is the longest river in the world?",
-    "options": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+    "difficulty": "Easy",
+    "question": "What is generally considered the longest river in the world?",
+    "options": ["Nile River", "Amazon River", "Yangtze River", "Mississippi River"],
     "correctAnswer": "Nile River",
-    "explanation": "The Nile River in northeastern Africa is traditionally recognized as the world's longest river."
+    "explanation": "The Nile is traditionally considered the longest river, flowing through northeastern Africa."
   },
   {
-    "id": 35,
+    "id": 96,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "In which country would you find the Eiffel Tower?",
+    "options": ["France", "Italy", "Spain", "Germany"],
+    "correctAnswer": "France",
+    "explanation": "The Eiffel Tower is located on the Champ de Mars in Paris, France."
+  },
+  {
+    "id": 97,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "What is the capital of Japan?",
+    "options": ["Tokyo", "Kyoto", "Osaka", "Seoul"],
+    "correctAnswer": "Tokyo",
+    "explanation": "Tokyo is the capital and largest city of Japan."
+  },
+  {
+    "id": 98,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "Which continent is also a single country?",
+    "options": ["Australia", "Antarctica", "Europe", "South America"],
+    "correctAnswer": "Australia",
+    "explanation": "Australia is a sovereign country comprising the mainland of the Australian continent."
+  },
+  {
+    "id": 99,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "Mount Everest is located in which mountain range?",
+    "options": ["Himalayas", "Alps", "Andes", "Rockies"],
+    "correctAnswer": "Himalayas",
+    "explanation": "The Himalayas separate the Indian subcontinent from the Tibetan Plateau."
+  },
+  {
+    "id": 100,
+    "category": "Geography",
+    "difficulty": "Easy",
+    "question": "What is the official language of Brazil?",
+    "options": ["Portuguese", "Spanish", "English", "French"],
+    "correctAnswer": "Portuguese",
+    "explanation": "Due to its history as a colony of Portugal, Brazil's official language is Portuguese."
+  },
+  {
+    "id": 101,
     "category": "Geography",
     "difficulty": "Medium",
-    "question": "Which mountain peak is the highest above sea level?",
-    "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Denali"],
-    "correctAnswer": "Mount Everest",
-    "explanation": "Mount Everest reaches 8,848.86 meters above sea level in the Himalayas."
+    "question": "What is the smallest country in the world by land area?",
+    "options": ["Vatican City", "Monaco", "Nauru", "San Marino"],
+    "correctAnswer": "Vatican City",
+    "explanation": "Vatican City is an independent city-state enclaved within Rome, Italy."
   },
   {
-    "id": 36,
+    "id": 102,
     "category": "Geography",
     "difficulty": "Medium",
-    "question": "Which country has the largest total land area in the world?",
-    "options": ["Canada", "China", "United States", "Russia"],
-    "correctAnswer": "Russia",
-    "explanation": "Russia spans over 17 million square kilometers across Europe and Asia."
-  },
-  {
-    "id": 37,
-    "category": "Geography",
-    "difficulty": "Hard",
-    "question": "What is the capital city of Australia?",
-    "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-    "correctAnswer": "Canberra",
-    "explanation": "Canberra was selected as the compromise national capital between Sydney and Melbourne in 1908."
-  },
-  {
-    "id": 38,
-    "category": "Geography",
-    "difficulty": "Hard",
     "question": "Which desert is the largest hot desert in the world?",
-    "options": ["Gobi Desert", "Kalahari Desert", "Sahara Desert", "Atacama Desert"],
+    "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Kalahari Desert"],
     "correctAnswer": "Sahara Desert",
-    "explanation": "The Sahara Desert in Northern Africa covers over 9.2 million square kilometers."
+    "explanation": "The Sahara spans across most of North Africa."
   },
   {
-    "id": 39,
+    "id": 103,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "What is the capital of Canada?",
+    "options": ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+    "correctAnswer": "Ottawa",
+    "explanation": "Ottawa is located in the province of Ontario."
+  },
+  {
+    "id": 104,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which country has the most natural lakes in the world?",
+    "options": ["Canada", "Russia", "USA", "Finland"],
+    "correctAnswer": "Canada",
+    "explanation": "Canada contains more lakes than the rest of the world combined."
+  },
+  {
+    "id": 105,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "What is the longest river in South America?",
+    "options": ["Amazon River", "Parana River", "Orinoco River", "Magdalena River"],
+    "correctAnswer": "Amazon River",
+    "explanation": "The Amazon River is the longest in South America and the largest by discharge volume."
+  },
+  {
+    "id": 106,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "In which continent is the Amazon Rainforest primarily located?",
+    "options": ["South America", "Africa", "Asia", "North America"],
+    "correctAnswer": "South America",
+    "explanation": "The Amazon Rainforest covers much of northwestern Brazil and extends into Colombia, Peru and other South American countries."
+  },
+  {
+    "id": 107,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which European country is divided into 26 cantons?",
+    "options": ["Switzerland", "Belgium", "Austria", "Germany"],
+    "correctAnswer": "Switzerland",
+    "explanation": "Switzerland is a federal republic consisting of 26 cantons."
+  },
+  {
+    "id": 108,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "What is the capital city of Australia?",
+    "options": ["Canberra", "Sydney", "Melbourne", "Brisbane"],
+    "correctAnswer": "Canberra",
+    "explanation": "Canberra was chosen as the capital in a compromise between Sydney and Melbourne."
+  },
+  {
+    "id": 109,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which ocean lies exactly between Africa and Australia?",
+    "options": ["Indian Ocean", "Pacific Ocean", "Atlantic Ocean", "Southern Ocean"],
+    "correctAnswer": "Indian Ocean",
+    "explanation": "The Indian Ocean is bounded by Asia to the north, Africa to the west, and Australia to the east."
+  },
+  {
+    "id": 110,
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question": "Which major river flows through London?",
+    "options": ["River Thames", "River Severn", "River Trent", "River Mersey"],
+    "correctAnswer": "River Thames",
+    "explanation": "The River Thames flows through southern England and London."
+  },
+  {
+    "id": 111,
     "category": "Geography",
     "difficulty": "Hard",
-    "question": "What strait separates Europe from Africa at its narrowest point?",
-    "options": ["Bering Strait", "Strait of Gibraltar", "Strait of Hormuz", "Bosporus Strait"],
-    "correctAnswer": "Strait of Gibraltar",
-    "explanation": "The Strait of Gibraltar connects the Atlantic Ocean to the Mediterranean Sea."
+    "question": "What is the capital of Kazakhstan?",
+    "options": ["Astana", "Almaty", "Tashkent", "Bishkek"],
+    "correctAnswer": "Astana",
+    "explanation": "Astana is the capital, previously known briefly as Nur-Sultan."
   },
   {
-    "id": 40,
+    "id": 112,
     "category": "Geography",
     "difficulty": "Hard",
-    "question": "Which landlocked African country has the largest population?",
-    "options": ["Ethiopia", "Uganda", "Chad", "Niger"],
-    "correctAnswer": "Ethiopia",
-    "explanation": "Ethiopia is the most populous landlocked country globally, with over 120 million inhabitants."
+    "question": "Which African country has the highest population?",
+    "options": ["Nigeria", "Ethiopia", "Egypt", "South Africa"],
+    "correctAnswer": "Nigeria",
+    "explanation": "Nigeria is the most populous country in Africa."
   },
   {
-    "id": 41,
-    "category": "General Knowledge",
-    "difficulty": "Easy",
-    "question": "How many days are in a standard non-leap year?",
-    "options": ["364", "365", "366", "367"],
-    "correctAnswer": "365",
-    "explanation": "A standard calendar year contains 365 days, divided into 12 months."
-  },
-  {
-    "id": 42,
-    "category": "General Knowledge",
-    "difficulty": "Easy",
-    "question": "What color is formed by mixing red and yellow paint?",
-    "options": ["Green", "Purple", "Orange", "Brown"],
-    "correctAnswer": "Orange",
-    "explanation": "Mixing the primary colors red and yellow yields the secondary color orange."
-  },
-  {
-    "id": 43,
-    "category": "General Knowledge",
-    "difficulty": "Easy",
-    "question": "What currency is officially used across Eurozone member nations?",
-    "options": ["Pound", "Dollar", "Euro", "Yen"],
-    "correctAnswer": "Euro",
-    "explanation": "The Euro (€) is the official currency of 20 of the 27 European Union member states."
-  },
-  {
-    "id": 44,
-    "category": "General Knowledge",
-    "difficulty": "Medium",
-    "question": "Which instrument has 88 keys in standard modern configuration?",
-    "options": ["Organ", "Piano", "Accordion", "Harpsichord"],
-    "correctAnswer": "Piano",
-    "explanation": "A standard acoustic piano features 88 keys: 52 white and 36 black."
-  },
-  {
-    "id": 45,
-    "category": "General Knowledge",
-    "difficulty": "Medium",
-    "question": "What is the hardest natural substance known on Earth?",
-    "options": ["Titanium", "Diamond", "Quartz", "Granite"],
-    "correctAnswer": "Diamond",
-    "explanation": "Diamond rates 10 on the Mohs scale of mineral hardness."
-  },
-  {
-    "id": 46,
-    "category": "General Knowledge",
-    "difficulty": "Medium",
-    "question": "Which author wrote the classic novel '1984'?",
-    "options": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "H.G. Wells"],
-    "correctAnswer": "George Orwell",
-    "explanation": "George Orwell published the dystopian political fiction novel '1984' in 1949."
-  },
-  {
-    "id": 47,
-    "category": "General Knowledge",
+    "id": 113,
+    "category": "Geography",
     "difficulty": "Hard",
-    "question": "What language has the largest number of native speakers worldwide?",
-    "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+    "question": "Mount Kilimanjaro is located in which African country?",
+    "options": ["Tanzania", "Kenya", "Uganda", "Rwanda"],
+    "correctAnswer": "Tanzania",
+    "explanation": "Kilimanjaro is a dormant volcano in Tanzania and the highest mountain in Africa."
+  },
+  {
+    "id": 114,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What is the capital city of New Zealand?",
+    "options": ["Wellington", "Auckland", "Christchurch", "Hamilton"],
+    "correctAnswer": "Wellington",
+    "explanation": "Wellington is the capital and the second most populous urban area of New Zealand."
+  },
+  {
+    "id": 115,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "Which sovereign state is the only country to share a land border with the UK?",
+    "options": ["Ireland", "France", "Spain", "Iceland"],
+    "correctAnswer": "Ireland",
+    "explanation": "The Republic of Ireland shares a border with Northern Ireland, which is part of the UK."
+  },
+  {
+    "id": 116,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What is the deepest known oceanic trench on Earth?",
+    "options": ["Mariana Trench", "Tonga Trench", "Philippine Trench", "Kermadec Trench"],
+    "correctAnswer": "Mariana Trench",
+    "explanation": "The Mariana Trench is located in the western Pacific Ocean."
+  },
+  {
+    "id": 117,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "Which US state has the most active volcanoes?",
+    "options": ["Alaska", "Hawaii", "California", "Washington"],
+    "correctAnswer": "Alaska",
+    "explanation": "Alaska contains over 100 volcanoes and volcanic fields which have been active within the last two million years."
+  },
+  {
+    "id": 118,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What is the largest non-continental island in the world?",
+    "options": ["Greenland", "New Guinea", "Borneo", "Madagascar"],
+    "correctAnswer": "Greenland",
+    "explanation": "Greenland is the world's largest island, as Australia is considered a continental landmass."
+  },
+  {
+    "id": 119,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "Which strait separates Asia from North America?",
+    "options": ["Bering Strait", "Strait of Gibraltar", "Strait of Malacca", "Strait of Hormuz"],
+    "correctAnswer": "Bering Strait",
+    "explanation": "The Bering Strait separates the Chukchi Peninsula of Russia from the Seward Peninsula of Alaska."
+  },
+  {
+    "id": 120,
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question": "What is the capital of Mongolia?",
+    "options": ["Ulaanbaatar", "Astana", "Tashkent", "Kathmandu"],
+    "correctAnswer": "Ulaanbaatar",
+    "explanation": "Ulaanbaatar is the capital and largest city of Mongolia."
+  },
+  {
+    "id": 121,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "How many colors are conventionally said to be in a rainbow?",
+    "options": ["7", "6", "8", "5"],
+    "correctAnswer": "7",
+    "explanation": "The typical rainbow colors are red, orange, yellow, green, blue, indigo, and violet."
+  },
+  {
+    "id": 122,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What animal is widely referred to as man's best friend?",
+    "options": ["Dog", "Cat", "Horse", "Parrot"],
+    "correctAnswer": "Dog",
+    "explanation": "Dogs have a long history of close relations, loyalty, and companionship with humans."
+  },
+  {
+    "id": 123,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "How many days are in a leap year?",
+    "options": ["366", "365", "364", "367"],
+    "correctAnswer": "366",
+    "explanation": "A leap year has an extra day, February 29th, bringing the total to 366."
+  },
+  {
+    "id": 124,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What do you call a baby cat?",
+    "options": ["Kitten", "Puppy", "Cub", "Foal"],
+    "correctAnswer": "Kitten",
+    "explanation": "A kitten is a juvenile cat."
+  },
+  {
+    "id": 125,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "Which fictional wizard is the main character in a book series by J.K. Rowling?",
+    "options": ["Harry Potter", "Gandalf", "Merlin", "Dumbledore"],
+    "correctAnswer": "Harry Potter",
+    "explanation": "Harry Potter is the titular character of the famous fantasy series."
+  },
+  {
+    "id": 126,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What is the main ingredient traditionally used to make bread?",
+    "options": ["Flour", "Sugar", "Butter", "Milk"],
+    "correctAnswer": "Flour",
+    "explanation": "Bread is a staple food prepared from a dough of flour and water, usually by baking."
+  },
+  {
+    "id": 127,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "How many months in the Gregorian calendar have at least 28 days?",
+    "options": ["12", "1", "6", "11"],
+    "correctAnswer": "12",
+    "explanation": "Every single month has at least 28 days."
+  },
+  {
+    "id": 128,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What type of school generally comes immediately after primary school?",
+    "options": ["Secondary school", "University", "Kindergarten", "Preschool"],
+    "correctAnswer": "Secondary school",
+    "explanation": "Secondary school (or high/middle school) follows primary education."
+  },
+  {
+    "id": 129,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "What is the name of the toy block company founded in Denmark in 1932?",
+    "options": ["LEGO", "Mattel", "Hasbro", "Playmobil"],
+    "correctAnswer": "LEGO",
+    "explanation": "The Lego Group is a Danish toy production company."
+  },
+  {
+    "id": 130,
+    "category": "General Knowledge",
+    "difficulty": "Easy",
+    "question": "How many hours are in one day?",
+    "options": ["24", "12", "48", "36"],
+    "correctAnswer": "24",
+    "explanation": "A standard Earth day is divided into 24 hours."
+  },
+  {
+    "id": 131,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "In Greek mythology, who is the god of the sea?",
+    "options": ["Poseidon", "Zeus", "Hades", "Apollo"],
+    "correctAnswer": "Poseidon",
+    "explanation": "Poseidon was the ancient Greek god of the sea, storms, and earthquakes."
+  },
+  {
+    "id": 132,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What is the symbol for the Zodiac sign Taurus?",
+    "options": ["Bull", "Ram", "Crab", "Lion"],
+    "correctAnswer": "Bull",
+    "explanation": "Taurus is represented by the bull."
+  },
+  {
+    "id": 133,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Michelangelo"],
+    "correctAnswer": "Leonardo da Vinci",
+    "explanation": "The Mona Lisa is a Renaissance masterpiece painted by Leonardo da Vinci."
+  },
+  {
+    "id": 134,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What is the name of the highest mountain in North America?",
+    "options": ["Denali", "Mount Logan", "Mount Whitney", "Mount Elbert"],
+    "correctAnswer": "Denali",
+    "explanation": "Denali, formerly known as Mount McKinley, is the highest peak in North America."
+  },
+  {
+    "id": 135,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What is the scientific study of weather called?",
+    "options": ["Meteorology", "Climatology", "Geology", "Astronomy"],
+    "correctAnswer": "Meteorology",
+    "explanation": "Meteorology is the study of the atmosphere and its phenomena, including weather."
+  },
+  {
+    "id": 136,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "Who wrote the play 'Romeo and Juliet'?",
+    "options": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+    "correctAnswer": "William Shakespeare",
+    "explanation": "Shakespeare wrote this famous tragedy early in his career."
+  },
+  {
+    "id": 137,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "Which of these metals is denser (heavier for the same volume)?",
+    "options": ["Gold", "Silver", "Iron", "Aluminum"],
+    "correctAnswer": "Gold",
+    "explanation": "Gold has a density of 19.32 g/cm3, making it much denser than the others listed."
+  },
+  {
+    "id": 138,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What is the main ingredient in guacamole?",
+    "options": ["Avocado", "Tomato", "Onion", "Lime"],
+    "correctAnswer": "Avocado",
+    "explanation": "Guacamole is an avocado-based dip originating in Mexico."
+  },
+  {
+    "id": 139,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "How many strings does a standard violin have?",
+    "options": ["4", "5", "6", "3"],
+    "correctAnswer": "4",
+    "explanation": "A standard violin has four strings tuned in perfect fifths: G, D, A, E."
+  },
+  {
+    "id": 140,
+    "category": "General Knowledge",
+    "difficulty": "Medium",
+    "question": "What language has the most native speakers worldwide?",
+    "options": ["Mandarin Chinese", "English", "Spanish", "Hindi"],
     "correctAnswer": "Mandarin Chinese",
-    "explanation": "Mandarin Chinese has over 900 million native speakers globally."
+    "explanation": "Mandarin has roughly 920 million native speakers, the most of any language."
   },
   {
-    "id": 48,
+    "id": 141,
     "category": "General Knowledge",
     "difficulty": "Hard",
-    "question": "What international award is given annually in Sweden and Norway for outstanding achievements?",
-    "options": ["Pulitzer Prize", "Nobel Prize", "Turing Award", "Fields Medal"],
-    "correctAnswer": "Nobel Prize",
-    "explanation": "The Nobel Prizes were established by the 1895 will of Alfred Nobel."
+    "question": "What is the fear of long words ironically called?",
+    "options": ["Hippopotomonstrosesquippedaliophobia", "Arachnophobia", "Claustrophobia", "Acrophobia"],
+    "correctAnswer": "Hippopotomonstrosesquippedaliophobia",
+    "explanation": "This humorous term was coined specifically to be a very long word."
   },
   {
-    "id": 49,
+    "id": 142,
     "category": "General Knowledge",
     "difficulty": "Hard",
-    "question": "What chemical element has the atomic number 1?",
-    "options": ["Helium", "Hydrogen", "Lithium", "Carbon"],
-    "correctAnswer": "Hydrogen",
-    "explanation": "Hydrogen is the lightest and most abundant chemical element in the universe."
+    "question": "Who composed the famous violin concertos known as the 'Four Seasons'?",
+    "options": ["Antonio Vivaldi", "Wolfgang Amadeus Mozart", "Ludwig van Beethoven", "Johann Sebastian Bach"],
+    "correctAnswer": "Antonio Vivaldi",
+    "explanation": "Vivaldi composed 'The Four Seasons' around 1720."
   },
   {
-    "id": 50,
+    "id": 143,
     "category": "General Knowledge",
     "difficulty": "Hard",
-    "question": "Which ocean touches the eastern coast of Australia?",
-    "options": ["Indian Ocean", "Pacific Ocean", "Southern Ocean", "Atlantic Ocean"],
-    "correctAnswer": "Pacific Ocean",
-    "explanation": "Australia's eastern coast borders the Coral Sea and Tasman Sea in the South Pacific."
+    "question": "What is considered the unofficial national flower of Japan?",
+    "options": ["Cherry Blossom", "Lotus", "Rose", "Orchid"],
+    "correctAnswer": "Cherry Blossom",
+    "explanation": "The cherry blossom (sakura) is deeply symbolic in Japanese culture."
   },
   {
-    "id": 51,
-    "category": "Business",
-    "difficulty": "Easy",
-    "question": "What financial statement lists a company's assets, liabilities, and equity?",
-    "options": ["Income Statement", "Balance Sheet", "Cash Flow Statement", "Audit Report"],
-    "correctAnswer": "Balance Sheet",
-    "explanation": "A Balance Sheet provides a snapshot of financial health at a specific point in time."
-  },
-  {
-    "id": 52,
-    "category": "Business",
-    "difficulty": "Easy",
-    "question": "What term refers to the total monetary value of goods and services produced in a country?",
-    "options": ["GDP", "CPI", "ROI", "IPO"],
-    "correctAnswer": "GDP",
-    "explanation": "Gross Domestic Product (GDP) measures national economic production volume."
-  },
-  {
-    "id": 53,
-    "category": "Business",
-    "difficulty": "Easy",
-    "question": "What does IPO stand for in corporate finance?",
-    "options": ["Initial Public Offering", "Internal Profit Organization", "International Payment Option", "Investor Performance Index"],
-    "correctAnswer": "Initial Public Offering",
-    "explanation": "An IPO occurs when a private company sells stock shares to the public for the first time."
-  },
-  {
-    "id": 54,
-    "category": "Business",
-    "difficulty": "Medium",
-    "question": "What metric measures net profit relative to capital invested (ROI)?",
-    "options": ["Return on Investment", "Rate of Interest", "Risk of Inflation", "Revenue on Income"],
-    "correctAnswer": "Return on Investment",
-    "explanation": "ROI evaluates the efficiency and profitability of an investment."
-  },
-  {
-    "id": 55,
-    "category": "Business",
-    "difficulty": "Medium",
-    "question": "Which market structure features a single seller controlling an entire industry?",
-    "options": ["Oligopoly", "Monopoly", "Monopsony", "Perfect Competition"],
-    "correctAnswer": "Monopoly",
-    "explanation": "A monopoly exists when one enterprise is the sole supplier of a commodity or service."
-  },
-  {
-    "id": 56,
-    "category": "Business",
-    "difficulty": "Medium",
-    "question": "Who is known as the 'Father of Modern Economics' and wrote 'The Wealth of Nations'?",
-    "options": ["John Maynard Keynes", "Milton Friedman", "Adam Smith", "Karl Marx"],
-    "correctAnswer": "Adam Smith",
-    "explanation": "Adam Smith published 'The Wealth of Nations' in 1776, pioneering free-market principles."
-  },
-  {
-    "id": 57,
-    "category": "Business",
+    "id": 144,
+    "category": "General Knowledge",
     "difficulty": "Hard",
-    "question": "What economic concept describes the point where supply equals demand?",
-    "options": ["Inflation", "Elasticity", "Equilibrium", "Marginal Utility"],
-    "correctAnswer": "Equilibrium",
-    "explanation": "Market equilibrium occurs when market supply balances market demand at a stable price."
+    "question": "Which standard chess piece is constrained to move only diagonally?",
+    "options": ["Bishop", "Rook", "Knight", "Pawn"],
+    "correctAnswer": "Bishop",
+    "explanation": "The bishop moves any number of vacant squares diagonally."
   },
   {
-    "id": 58,
-    "category": "Business",
+    "id": 145,
+    "category": "General Knowledge",
     "difficulty": "Hard",
-    "question": "Which central banking system regulates US monetary policy and interest rates?",
-    "options": ["World Bank", "Federal Reserve", "International Monetary Fund", "Treasury Department"],
+    "question": "What is the largest species of shark in the world?",
+    "options": ["Whale Shark", "Great White Shark", "Tiger Shark", "Basking Shark"],
+    "correctAnswer": "Whale Shark",
+    "explanation": "The whale shark is a slow-moving, filter-feeding carpet shark and the largest known extant fish species."
+  },
+  {
+    "id": 146,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "In which athletic event would a competitor use a technique called the 'Fosbury Flop'?",
+    "options": ["High Jump", "Long Jump", "Pole Vault", "Hurdles"],
+    "correctAnswer": "High Jump",
+    "explanation": "Dick Fosbury popularized this back-first technique in the high jump in 1968."
+  },
+  {
+    "id": 147,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "Who wrote the dystopian novel '1984'?",
+    "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "J.R.R. Tolkien"],
+    "correctAnswer": "George Orwell",
+    "explanation": "George Orwell published '1984' in 1949."
+  },
+  {
+    "id": 148,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "What is the main chemical element found in coal?",
+    "options": ["Carbon", "Oxygen", "Hydrogen", "Nitrogen"],
+    "correctAnswer": "Carbon",
+    "explanation": "Coal is a combustible black or brownish-black sedimentary rock composed mostly of carbon."
+  },
+  {
+    "id": 149,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "What naturally occurring material is considered harder than diamond in some forms?",
+    "options": ["Lonsdaleite", "Graphene", "Quartz", "Titanium"],
+    "correctAnswer": "Lonsdaleite",
+    "explanation": "Lonsdaleite is a hexagonal allotrope of carbon that can be harder than regular diamond."
+  },
+  {
+    "id": 150,
+    "category": "General Knowledge",
+    "difficulty": "Hard",
+    "question": "Which philosopher is famously known for the statement 'I think, therefore I am'?",
+    "options": ["René Descartes", "Socrates", "Plato", "Aristotle"],
+    "correctAnswer": "René Descartes",
+    "explanation": "Descartes published the phrase 'Cogito, ergo sum' in 1637."
+  },
+  {
+    "id": 151,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What is the world's largest e-commerce company by revenue?",
+    "options": ["Amazon", "eBay", "Alibaba", "Walmart"],
+    "correctAnswer": "Amazon",
+    "explanation": "Amazon leads global e-commerce and cloud computing by revenue."
+  },
+  {
+    "id": 152,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What does 'CEO' stand for in a corporate environment?",
+    "options": ["Chief Executive Officer", "Chief Operating Officer", "Chief Financial Officer", "Chief Enterprise Officer"],
+    "correctAnswer": "Chief Executive Officer",
+    "explanation": "The CEO is the highest-ranking executive in a company."
+  },
+  {
+    "id": 153,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "Which major sports brand is famous for its 'swoosh' logo?",
+    "options": ["Nike", "Adidas", "Puma", "Reebok"],
+    "correctAnswer": "Nike",
+    "explanation": "The Nike swoosh was created in 1971."
+  },
+  {
+    "id": 154,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "Which fast-food franchise has the most locations globally?",
+    "options": ["McDonald's", "Subway", "Starbucks", "KFC"],
+    "correctAnswer": "McDonald's",
+    "explanation": "McDonald's operates tens of thousands of restaurants worldwide."
+  },
+  {
+    "id": 155,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What is the official currency of the United Kingdom?",
+    "options": ["Pound Sterling", "Euro", "Dollar", "Franc"],
+    "correctAnswer": "Pound Sterling",
+    "explanation": "The Pound Sterling is the oldest currency in continuous use."
+  },
+  {
+    "id": 156,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "Who is the primary founder of Facebook (now Meta)?",
+    "options": ["Mark Zuckerberg", "Bill Gates", "Elon Musk", "Jeff Bezos"],
+    "correctAnswer": "Mark Zuckerberg",
+    "explanation": "Zuckerberg founded Facebook in 2004 with his college roommates."
+  },
+  {
+    "id": 157,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What company produces the Mac line of computers?",
+    "options": ["Apple", "Microsoft", "Dell", "HP"],
+    "correctAnswer": "Apple",
+    "explanation": "Apple introduced the Macintosh computer in 1984."
+  },
+  {
+    "id": 158,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What do you call a small amount of money given as a reward for good service?",
+    "options": ["Tip", "Bribe", "Tax", "Fee"],
+    "correctAnswer": "Tip",
+    "explanation": "A tip, or gratuity, is given to workers in the service sector."
+  },
+  {
+    "id": 159,
+    "category": "Business",
+    "difficulty": "Easy",
+    "question": "What is the central banking system of the United States called?",
+    "options": ["Federal Reserve", "Bank of America", "US Central Bank", "National Bank"],
     "correctAnswer": "Federal Reserve",
-    "explanation": "The Federal Reserve ('The Fed') acts as the central bank of the United States."
+    "explanation": "The Federal Reserve System was created in 1913."
   },
   {
-    "id": 59,
+    "id": 160,
     "category": "Business",
-    "difficulty": "Hard",
-    "question": "What ratio compares a company's current stock price to its per-share earnings?",
-    "options": ["P/E Ratio", "Debt-to-Equity Ratio", "Current Ratio", "Quick Ratio"],
-    "correctAnswer": "P/E Ratio",
-    "explanation": "The Price-to-Earnings (P/E) ratio values a company by comparing share price to earnings."
+    "difficulty": "Easy",
+    "question": "Which beverage company is famous for its classic red and white logo?",
+    "options": ["Coca-Cola", "Pepsi", "Dr Pepper", "Sprite"],
+    "correctAnswer": "Coca-Cola",
+    "explanation": "Coca-Cola has maintained its iconic red and white branding for over a century."
   },
   {
-    "id": 60,
+    "id": 161,
     "category": "Business",
-    "difficulty": "Hard",
-    "question": "What is the term for a market condition characterized by falling stock prices and widespread pessimism?",
-    "options": ["Bull Market", "Bear Market", "Stagflation", "Correction"],
+    "difficulty": "Medium",
+    "question": "What does 'IPO' stand for in finance?",
+    "options": ["Initial Public Offering", "Internal Profit Objective", "International Product Output", "Investment Portfolio Option"],
+    "correctAnswer": "Initial Public Offering",
+    "explanation": "An IPO is when a private company first sells shares to the public."
+  },
+  {
+    "id": 162,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Which entrepreneur founded both SpaceX and Tesla?",
+    "options": ["Elon Musk", "Jeff Bezos", "Richard Branson", "Peter Thiel"],
+    "correctAnswer": "Elon Musk",
+    "explanation": "Musk is the CEO of both Tesla and SpaceX."
+  },
+  {
+    "id": 163,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What does the term 'B2B' mean in business?",
+    "options": ["Business to Business", "Back to Business", "Business to Buyer", "Buyer to Buyer"],
+    "correctAnswer": "Business to Business",
+    "explanation": "B2B refers to commerce transactions between businesses."
+  },
+  {
+    "id": 164,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What is the name of Warren Buffett's primary holding company?",
+    "options": ["Berkshire Hathaway", "JPMorgan Chase", "Goldman Sachs", "BlackRock"],
+    "correctAnswer": "Berkshire Hathaway",
+    "explanation": "Buffett transformed Berkshire Hathaway from a textile manufacturing company into a massive conglomerate."
+  },
+  {
+    "id": 165,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What does 'ROI' stand for in finance and business?",
+    "options": ["Return on Investment", "Rate of Interest", "Return on Income", "Risk of Investment"],
+    "correctAnswer": "Return on Investment",
+    "explanation": "ROI measures the gain or loss generated on an investment relative to its cost."
+  },
+  {
+    "id": 166,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Which tech company acquired the professional networking site LinkedIn in 2016?",
+    "options": ["Microsoft", "Facebook", "Google", "Oracle"],
+    "correctAnswer": "Microsoft",
+    "explanation": "Microsoft acquired LinkedIn for over $26 billion."
+  },
+  {
+    "id": 167,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What is the term for a market condition where stock prices are generally falling?",
+    "options": ["Bear Market", "Bull Market", "Stag Market", "Wolf Market"],
     "correctAnswer": "Bear Market",
-    "explanation": "A Bear Market typically describes a sustained 20% or greater decline in market indices."
+    "explanation": "A bear market signifies a prolonged period of falling asset prices."
+  },
+  {
+    "id": 168,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Which country currently has the world's largest economy by nominal GDP?",
+    "options": ["United States", "China", "Japan", "Germany"],
+    "correctAnswer": "United States",
+    "explanation": "The US has the largest economy in the world by nominal GDP."
+  },
+  {
+    "id": 169,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "Which Japanese automaker is frequently the world's largest by sales volume?",
+    "options": ["Toyota", "Honda", "Nissan", "Subaru"],
+    "correctAnswer": "Toyota",
+    "explanation": "Toyota is consistently one of the largest automotive manufacturers in the world."
+  },
+  {
+    "id": 170,
+    "category": "Business",
+    "difficulty": "Medium",
+    "question": "What does 'HR' stand for in a corporate structure?",
+    "options": ["Human Resources", "Human Relations", "Hiring Resources", "Headquarters Region"],
+    "correctAnswer": "Human Resources",
+    "explanation": "HR manages the employee life cycle and administers benefits."
+  },
+  {
+    "id": 171,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What does the financial acronym 'EBITDA' stand for?",
+    "options": ["Earnings Before Interest, Taxes, Depreciation, and Amortization", "Earnings Before Income, Taxes, Dividends, and Assets", "Equity Before Interest, Taxes, Debt, and Amortization", "Earnings By International Trade, Debt, and Assets"],
+    "correctAnswer": "Earnings Before Interest, Taxes, Depreciation, and Amortization",
+    "explanation": "EBITDA is a measure of a company's overall financial performance."
+  },
+  {
+    "id": 172,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "Who is known as the father of modern economics and authored 'The Wealth of Nations'?",
+    "options": ["Adam Smith", "Karl Marx", "John Maynard Keynes", "Milton Friedman"],
+    "correctAnswer": "Adam Smith",
+    "explanation": "Adam Smith was a Scottish economist and philosopher during the Enlightenment."
+  },
+  {
+    "id": 173,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What is widely considered to be the oldest stock exchange in the world?",
+    "options": ["Amsterdam Stock Exchange", "London Stock Exchange", "New York Stock Exchange", "Frankfurt Stock Exchange"],
+    "correctAnswer": "Amsterdam Stock Exchange",
+    "explanation": "It was established in 1602 by the Dutch East India Company."
+  },
+  {
+    "id": 174,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "Which massive multinational company was founded by Jack Ma in 1999?",
+    "options": ["Alibaba", "Tencent", "Baidu", "JD.com"],
+    "correctAnswer": "Alibaba",
+    "explanation": "Jack Ma co-founded Alibaba Group, a multinational technology conglomerate."
+  },
+  {
+    "id": 175,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What is the financial term for when a company buys another company to combine their operations?",
+    "options": ["Merger and Acquisition", "Hostile Takeover", "Initial Public Offering", "Leveraged Buyout"],
+    "correctAnswer": "Merger and Acquisition",
+    "explanation": "M&A refers to the consolidation of companies or their major business assets."
+  },
+  {
+    "id": 176,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "Which luxury fashion brand is famous for its interlocking 'CC' logo?",
+    "options": ["Chanel", "Gucci", "Louis Vuitton", "Prada"],
+    "correctAnswer": "Chanel",
+    "explanation": "The logo was designed by Coco Chanel and represents her initials."
+  },
+  {
+    "id": 177,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What economic term describes a situation where inflation is high, economic growth slows, and unemployment remains steadily high?",
+    "options": ["Stagflation", "Hyperinflation", "Deflation", "Recession"],
+    "correctAnswer": "Stagflation",
+    "explanation": "Stagflation is a combination of stagnant economic growth and high inflation."
+  },
+  {
+    "id": 178,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "What does 'SWOT' stand for in business and strategic analysis?",
+    "options": ["Strengths, Weaknesses, Opportunities, Threats", "Sales, Workforce, Objectives, Tactics", "Systems, Workflows, Output, Turnover", "Strategies, Wealth, Organization, Taxes"],
+    "correctAnswer": "Strengths, Weaknesses, Opportunities, Threats",
+    "explanation": "SWOT analysis evaluates internal and external factors affecting a business."
+  },
+  {
+    "id": 179,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "In basic accounting, what is the fundamental accounting equation for a balance sheet?",
+    "options": ["Assets = Liabilities + Equity", "Revenue - Expenses = Profit", "Equity = Assets + Liabilities", "Liabilities = Assets + Equity"],
+    "correctAnswer": "Assets = Liabilities + Equity",
+    "explanation": "This equation represents the relationship between assets, liabilities, and owner's equity."
+  },
+  {
+    "id": 180,
+    "category": "Business",
+    "difficulty": "Hard",
+    "question": "Which major tech company's original name was registered as 'Cadabra' before being changed?",
+    "options": ["Amazon", "Google", "Yahoo", "eBay"],
+    "correctAnswer": "Amazon",
+    "explanation": "Jeff Bezos initially incorporated the company as Cadabra, Inc. before renaming it to Amazon."
   }
 ]

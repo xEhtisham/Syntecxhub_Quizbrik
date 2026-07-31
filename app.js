@@ -40,8 +40,7 @@ const OTDB_CATEGORY_MAP = {
   "History": 23,
   "Technology": 18,
   "Geography": 22,
-  "General Knowledge": 9,
-  "Business": 24
+  "General Knowledge": 9
 };
 
 function decodeHTML(html) {
