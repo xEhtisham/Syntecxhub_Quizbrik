@@ -1,6 +1,6 @@
 "use strict";
 
-const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports", "Film", "Music"];
+const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports"];
 const DIFFICULTIES = ["Easy", "Medium", "Hard"];
 const DEFAULT_QUESTION_COUNT = 10;
 const MIN_QUESTIONS = 5;
@@ -41,9 +41,7 @@ const OTDB_CATEGORY_MAP = {
   "Technology": 18,
   "History": 23,
   "Geography": 22,
-  "Sports": 21,
-  "Film": 11,
-  "Music": 12
+  "Sports": 21
 };
 
 function decodeHTML(html) {
