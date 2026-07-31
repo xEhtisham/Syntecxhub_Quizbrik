@@ -166,20 +166,21 @@ function renderLanding() {
 
   const stats = getStoredStats();
   const avgScore = stats.totalQuestions > 0 ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100) : 0;
+  const totalCorrect = stats.totalCorrect || 0;
 
   const statsHtml = `
     <div class="stats-grid">
       <div class="stat-card">
         <span class="stat-value">${stats.totalQuizzes}</span>
-        <span class="stat-label">Quizzes Played</span>
+        <span class="stat-label">Sessions</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value">${avgScore}%</span>
-        <span class="stat-label">Average Score</span>
+        <span class="stat-value">${avgScore}<span class="stat-unit">%</span></span>
+        <span class="stat-label">Avg. Score</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value">${stats.totalQuestions}</span>
-        <span class="stat-label">Questions</span>
+        <span class="stat-value">${totalCorrect}<span class="stat-unit">/${stats.totalQuestions}</span></span>
+        <span class="stat-label">Correct</span>
       </div>
     </div>
   `;
@@ -187,24 +188,23 @@ function renderLanding() {
   const categoryAnalyticsHtml = CATEGORIES.map(cat => {
     const catData = stats.categories[cat] || { total: 0, correct: 0 };
     const percentage = catData.total > 0 ? Math.round((catData.correct / catData.total) * 100) : 0;
-    const subtitle = catData.total > 0 ? `${catData.correct} of ${catData.total} correct` : 'Not attempted yet';
+    const subtitle = catData.total > 0 ? `${catData.correct} of ${catData.total} correct` : 'No data yet';
 
     return `
-      <div class="analytics-row">
+      <div class="analytics-row${catData.total === 0 ? ' analytics-row--empty' : ''}">
         <div class="analytics-meta">
           <span>${cat}</span>
-          <span>${catData.total > 0 ? percentage + '%' : '-'}</span>
+          <span>${catData.total > 0 ? percentage + '%' : '--'}</span>
         </div>
         <div class="analytics-bar-track">
           <div class="analytics-bar-fill" style="width: ${percentage}%"></div>
         </div>
-        <div class="analytics-sub">${subtitle}</div>
       </div>
     `;
   }).join('');
 
   const today = new Date();
-  const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+  const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
   return `
     <div class="page">
@@ -215,56 +215,48 @@ function renderLanding() {
         </div>
       </header>
 
+      <div class="overview-strip">
+        ${statsHtml}
+      </div>
+
       <div class="dashboard-grid">
-        <div class="dashboard-col">
-          <section class="card launch-card">
-            <header class="card-header">
-              <h2>New Session</h2>
-              <p>Select a topic and difficulty to begin.</p>
-            </header>
+        <section class="card launch-card">
+          <header class="card-header">
+            <h2>New Session</h2>
+          </header>
 
-            <div class="form-group">
-              <label>Category</label>
-              <div class="pill-group" id="category-pills">
-                ${categoryPillsHtml}
-              </div>
+          <div class="form-group">
+            <label>Category</label>
+            <div class="pill-group" id="category-pills">
+              ${categoryPillsHtml}
             </div>
+          </div>
 
-            <div class="form-group">
-              <label>Difficulty</label>
-              <div class="segmented-control" id="difficulty-pills">
-                ${difficultyPillsHtml}
-              </div>
+          <div class="form-group">
+            <label>Difficulty</label>
+            <div class="segmented-control" id="difficulty-pills">
+              ${difficultyPillsHtml}
             </div>
+          </div>
 
-            <div class="form-group">
-              <label>Questions</label>
-              <div class="pill-group" id="count-pills">
-                ${countPillsHtml}
-              </div>
+          <div class="form-group">
+            <label>Questions</label>
+            <div class="pill-group" id="count-pills">
+              ${countPillsHtml}
             </div>
+          </div>
 
-            <button id="start-quiz-btn" class="btn">Start Session</button>
-          </section>
-        </div>
+          <button id="start-quiz-btn" class="btn btn-start">Start Session</button>
+        </section>
 
-        <div class="dashboard-col">
-          <section class="card overview-card">
-            <header class="card-header">
-              <h2>Performance</h2>
-            </header>
-            ${statsHtml}
-          </section>
-
-          <section class="card analytics-card">
-            <header class="card-header">
-              <h2>Category Mastery</h2>
-            </header>
-            <div class="analytics-grid">
-              ${categoryAnalyticsHtml}
-            </div>
-          </section>
-        </div>
+        <section class="card analytics-card">
+          <header class="card-header">
+            <h2>Category Mastery</h2>
+          </header>
+          <div class="analytics-grid">
+            ${categoryAnalyticsHtml}
+          </div>
+        </section>
       </div>
     </div>
   `;
