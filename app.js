@@ -204,39 +204,68 @@ function renderLanding() {
   }).join('');
 
   return `
-    <main class="landing">
-      <section class="card">
-        <header>
-          <h1>Quizbrik</h1>
-          <p>Test your knowledge. Learn. Compete. Improve.</p>
-        </header>
-        ${statsHtml}
-        <div class="form-group">
-          <label>Category</label>
-          <div class="pill-group" id="category-pills">
-            ${categoryPillsHtml}
-          </div>
+    <main class="dashboard-portal">
+      <header class="dashboard-topbar">
+        <div class="brand">
+          <span class="brand-title">Quizbrik</span>
+          <span class="brand-tag">SaaS Portal</span>
         </div>
-        <div class="form-group">
-          <label>Difficulty</label>
-          <div class="segmented-control" id="difficulty-pills">
-            ${difficultyPillsHtml}
-          </div>
+        <div class="topbar-right">
+          <span class="portal-badge">Learning Hub</span>
         </div>
-        <div class="form-group">
-          <label>Number of Questions</label>
-          <div class="pill-group" id="count-pills">
-            ${countPillsHtml}
-          </div>
+      </header>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-col main-col">
+          <section class="card launch-card">
+            <header class="card-header">
+              <h2>Quiz Setup</h2>
+              <p>Configure your learning parameters and launch a session.</p>
+            </header>
+
+            <div class="form-group">
+              <label>Category</label>
+              <div class="pill-group" id="category-pills">
+                ${categoryPillsHtml}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Difficulty</label>
+              <div class="segmented-control" id="difficulty-pills">
+                ${difficultyPillsHtml}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Number of Questions</label>
+              <div class="pill-group" id="count-pills">
+                ${countPillsHtml}
+              </div>
+            </div>
+
+            <button id="start-quiz-btn" class="btn btn-primary-lg">Start Quiz Session</button>
+          </section>
         </div>
-        <div class="analytics-section">
-          <h2 class="analytics-title">Skill Breakdown by Category</h2>
-          <div class="analytics-grid">
-            ${categoryAnalyticsHtml}
-          </div>
+
+        <div class="dashboard-col side-col">
+          <section class="card overview-card">
+            <header class="card-header">
+              <h2>Overall Metrics</h2>
+            </header>
+            ${statsHtml}
+          </section>
+
+          <section class="card analytics-card">
+            <header class="card-header">
+              <h2>Category Mastery</h2>
+            </header>
+            <div class="analytics-grid">
+              ${categoryAnalyticsHtml}
+            </div>
+          </section>
         </div>
-        <button id="start-quiz-btn" class="btn" style="margin-top: 0.5rem;">Start Quiz</button>
-      </section>
+      </div>
     </main>
   `;
 }
