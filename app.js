@@ -1,6 +1,6 @@
 "use strict";
 
-const CATEGORIES = ["Science", "History", "Technology", "Geography", "General Knowledge", "Business"];
+const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports", "Film", "Music"];
 const DIFFICULTIES = ["Easy", "Medium", "Hard"];
 const DEFAULT_QUESTION_COUNT = 10;
 const MIN_QUESTIONS = 5;
@@ -8,7 +8,7 @@ const MAX_QUESTIONS = 50;
 const TIMER_SECONDS = 30;
 
 const state = {
-  selectedCategory: "Science",
+  selectedCategory: "General Knowledge",
   selectedDifficulty: "Medium",
   selectedAmount: 10,
   questions: [],
@@ -36,11 +36,14 @@ function shuffle(array) {
 }
 
 const OTDB_CATEGORY_MAP = {
+  "General Knowledge": 9,
   "Science": 17,
-  "History": 23,
   "Technology": 18,
+  "History": 23,
   "Geography": 22,
-  "General Knowledge": 9
+  "Sports": 21,
+  "Film": 11,
+  "Music": 12
 };
 
 function decodeHTML(html) {
@@ -93,7 +96,10 @@ async function startQuiz() {
   // Fallback to local questions if API is offline or empty
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
-    const filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
+    let filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
+    if (filtered.length < count) {
+      filtered = allQuestions.filter(q => q.category === category);
+    }
     const shuffled = shuffle(filtered.length > 0 ? filtered : allQuestions);
     selectedQuestions = shuffled.slice(0, count);
   }
