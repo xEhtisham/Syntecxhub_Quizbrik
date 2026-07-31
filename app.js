@@ -115,18 +115,34 @@ const STATS_KEY = 'quizbrik_user_stats';
 function getStoredStats() {
   try {
     const raw = localStorage.getItem(STATS_KEY);
-    if (!raw) return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0 };
-    return JSON.parse(raw);
+    if (!raw) return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0, categories: {} };
+    const parsed = JSON.parse(raw);
+    if (!parsed.categories) parsed.categories = {};
+    return parsed;
   } catch (e) {
-    return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0 };
+    return { totalQuizzes: 0, totalQuestions: 0, totalCorrect: 0, categories: {} };
   }
 }
 
-function saveQuizStats(score, total) {
+function saveQuizStats(questions, userAnswers) {
+  if (!questions || questions.length === 0) return;
+  
   const stats = getStoredStats();
   stats.totalQuizzes += 1;
-  stats.totalQuestions += total;
-  stats.totalCorrect += score;
+
+  questions.forEach((q, idx) => {
+    const isCorrect = userAnswers[idx] === q.correctAnswer;
+    stats.totalQuestions += 1;
+    if (isCorrect) stats.totalCorrect += 1;
+
+    const cat = q.category || state.selectedCategory;
+    if (!stats.categories[cat]) {
+      stats.categories[cat] = { total: 0, correct: 0 };
+    }
+    stats.categories[cat].total += 1;
+    if (isCorrect) stats.categories[cat].correct += 1;
+  });
+
   try {
     localStorage.setItem(STATS_KEY, JSON.stringify(stats));
   } catch (e) {
@@ -168,6 +184,25 @@ function renderLanding() {
     </div>
   `;
 
+  const categoryAnalyticsHtml = CATEGORIES.map(cat => {
+    const catData = stats.categories[cat] || { total: 0, correct: 0 };
+    const percentage = catData.total > 0 ? Math.round((catData.correct / catData.total) * 100) : 0;
+    const subtitle = catData.total > 0 ? `${catData.correct} of ${catData.total} correct` : 'Not attempted yet';
+
+    return `
+      <div class="analytics-row">
+        <div class="analytics-meta">
+          <span>${cat}</span>
+          <span>${catData.total > 0 ? percentage + '%' : '-'}</span>
+        </div>
+        <div class="analytics-bar-track">
+          <div class="analytics-bar-fill" style="width: ${percentage}%"></div>
+        </div>
+        <div class="analytics-sub">${subtitle}</div>
+      </div>
+    `;
+  }).join('');
+
   return `
     <main class="landing">
       <section class="card">
@@ -194,7 +229,13 @@ function renderLanding() {
             ${countPillsHtml}
           </div>
         </div>
-        <button id="start-quiz-btn" class="btn">Start Quiz</button>
+        <div class="analytics-section">
+          <h2 class="analytics-title">Skill Breakdown by Category</h2>
+          <div class="analytics-grid">
+            ${categoryAnalyticsHtml}
+          </div>
+        </div>
+        <button id="start-quiz-btn" class="btn" style="margin-top: 0.5rem;">Start Quiz</button>
       </section>
     </main>
   `;
@@ -382,7 +423,7 @@ function showQuiz(isNewQuestion = false) {
 function showResult(isFirstTime = false) {
   clearInterval(state.timerInterval);
   if (isFirstTime) {
-    saveQuizStats(state.score, state.questions.length);
+    saveQuizStats(state.questions, state.userAnswers);
   }
   app.innerHTML = renderResult();
   
