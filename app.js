@@ -203,24 +203,22 @@ function renderLanding() {
     `;
   }).join('');
 
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+
   return `
     <main class="dashboard-portal">
       <header class="dashboard-topbar">
-        <div class="brand">
-          <span class="brand-title">Quizbrik</span>
-          <span class="brand-tag">SaaS Portal</span>
-        </div>
-        <div class="topbar-right">
-          <span class="portal-badge">Learning Hub</span>
-        </div>
+        <span class="brand-title">Quizbrik</span>
+        <span class="topbar-date">${dateStr}</span>
       </header>
 
       <div class="dashboard-grid">
-        <div class="dashboard-col main-col">
+        <div class="dashboard-col">
           <section class="card launch-card">
             <header class="card-header">
-              <h2>Quiz Setup</h2>
-              <p>Configure your learning parameters and launch a session.</p>
+              <h2>New Session</h2>
+              <p>Select a topic and difficulty to begin.</p>
             </header>
 
             <div class="form-group">
@@ -238,20 +236,20 @@ function renderLanding() {
             </div>
 
             <div class="form-group">
-              <label>Number of Questions</label>
+              <label>Questions</label>
               <div class="pill-group" id="count-pills">
                 ${countPillsHtml}
               </div>
             </div>
 
-            <button id="start-quiz-btn" class="btn btn-primary-lg">Start Quiz Session</button>
+            <button id="start-quiz-btn" class="btn">Start Session</button>
           </section>
         </div>
 
-        <div class="dashboard-col side-col">
+        <div class="dashboard-col">
           <section class="card overview-card">
             <header class="card-header">
-              <h2>Overall Metrics</h2>
+              <h2>Performance</h2>
             </header>
             ${statsHtml}
           </section>

@@ -73,7 +73,7 @@ body {
 
 
 /* ==========================================================
-   Card & SaaS Dashboard Layout
+   Card & Dashboard Layout
    ========================================================== */
 
 .card {
@@ -85,82 +85,72 @@ body {
     padding: 2rem;
 }
 
+/* Dashboard shell */
+
 .dashboard-portal {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .dashboard-topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    background: var(--white);
-    border: 1px solid var(--border);
+    padding: 0.85rem 1.5rem;
+    background: var(--navy);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
 .brand-title {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--navy);
-    letter-spacing: -0.5px;
+    color: var(--white);
+    letter-spacing: -0.3px;
 }
 
-.brand-tag {
-    padding: 0.2rem 0.55rem;
-    background: var(--beige);
-    color: var(--teal);
-    font-size: 0.72rem;
-    font-weight: 600;
-    border-radius: 6px;
-    text-transform: uppercase;
-}
-
-.portal-badge {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--navy);
-    background: var(--beige);
-    padding: 0.35rem 0.75rem;
-    border-radius: 20px;
+.topbar-date {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 1.5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.25rem;
     align-items: start;
 }
 
 .dashboard-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
+}
+
+/* Cards inside dashboard */
+
+.launch-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
 }
 
 .card-header {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .card-header h2 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
 }
 
 .card-header p {
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
 }
 
@@ -649,6 +639,8 @@ progress::-moz-progress-bar {
     align-items: center;
     text-align: center;
     gap: 0.5rem;
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 .result h1 {
@@ -860,15 +852,19 @@ progress::-moz-progress-bar {
 
 @media (max-width: 600px) {
     #app {
-        padding: 1rem;
+        padding: 1rem 0.75rem;
     }
 
     .card {
-        padding: 1.75rem 1.25rem;
+        padding: 1.5rem 1.15rem;
     }
 
-    .landing h1 {
-        font-size: 1.85rem;
+    .dashboard-topbar {
+        padding: 0.7rem 1rem;
+    }
+
+    .brand-title {
+        font-size: 1.05rem;
     }
 
     .question {
@@ -877,6 +873,15 @@ progress::-moz-progress-bar {
 
     .quiz-info {
         font-size: 0.8rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .stat-value {
+        font-size: 1.05rem;
     }
 
     .score-circle {
@@ -892,3 +897,4 @@ progress::-moz-progress-bar {
         font-size: 1.75rem;
     }
 }
+
