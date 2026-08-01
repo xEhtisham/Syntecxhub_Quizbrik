@@ -188,6 +188,8 @@ body {
     flex: 1;
     min-height: 100vh;
     padding: 2.75rem 3.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -198,6 +200,7 @@ body {
 .page {
     width: 100%;
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 .page-header {
@@ -514,18 +517,20 @@ body {
 }
 
 
-/* ==========================================================
-   Quiz Page
-   ========================================================== */
-
-.quiz {
+.quiz,
+.result,
+.review {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .quiz-card {
     display: flex;
     flex-direction: column;
-    max-width: 700px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .quiz-header {
