@@ -509,6 +509,51 @@ function renderHistory() {
   `;
 }
 
+function showModalDialog({ title, message, confirmText = 'Confirm', cancelText = 'Cancel', isDanger = false }) {
+  return new Promise((resolve) => {
+    const existing = document.getElementById('quizbrik-custom-modal');
+    if (existing) existing.remove();
+
+    const iconHtml = isDanger ? `
+      <div class="modal-icon-wrapper danger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+    ` : `
+      <div class="modal-icon-wrapper info">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+    `;
+
+    const modalContainer = document.createElement('div');
+    modalContainer.id = 'quizbrik-custom-modal';
+    modalContainer.className = 'modal-backdrop';
+    modalContainer.innerHTML = `
+      <div class="modal-card">
+        ${iconHtml}
+        <h3 class="modal-title">${title}</h3>
+        <p class="modal-message">${message}</p>
+        <div class="modal-actions">
+          <button id="modal-cancel-btn" class="btn btn-secondary modal-btn-cancel">${cancelText}</button>
+          <button id="modal-confirm-btn" class="btn ${isDanger ? 'btn-danger-solid' : ''} modal-btn-confirm">${confirmText}</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modalContainer);
+
+    const closeModal = (result) => {
+      modalContainer.remove();
+      resolve(result);
+    };
+
+    document.getElementById('modal-cancel-btn').addEventListener('click', () => closeModal(false));
+    document.getElementById('modal-confirm-btn').addEventListener('click', () => closeModal(true));
+    modalContainer.addEventListener('click', (e) => {
+      if (e.target === modalContainer) closeModal(false);
+    });
+  });
+}
+
 function showHistory() {
   updateActiveSidebarNav('history');
   app.innerHTML = renderHistory();
@@ -520,8 +565,15 @@ function showHistory() {
 
   const clearBtn = document.getElementById('clear-history-btn');
   if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      if (confirm("Are you sure you want to clear your quiz history?")) {
+    clearBtn.addEventListener('click', async () => {
+      const confirmed = await showModalDialog({
+        title: "Clear Session History?",
+        message: "Are you sure you want to delete all stored quiz session records? This cannot be undone.",
+        confirmText: "Clear History",
+        cancelText: "Keep Records",
+        isDanger: true
+      });
+      if (confirmed) {
         clearStoredHistory();
         showHistory();
       }
@@ -589,8 +641,15 @@ function showSettings() {
 
   const resetBtn = document.getElementById('reset-all-data-btn');
   if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      if (confirm("Are you sure you want to reset all data and stats? This action cannot be undone.")) {
+    resetBtn.addEventListener('click', async () => {
+      const confirmed = await showModalDialog({
+        title: "Reset All Application Data?",
+        message: "This will permanently wipe your session history, category performance stats, and settings.",
+        confirmText: "Reset Everything",
+        cancelText: "Cancel",
+        isDanger: true
+      });
+      if (confirmed) {
         localStorage.removeItem(STATS_KEY);
         localStorage.removeItem(HISTORY_KEY);
         localStorage.removeItem(SETTINGS_KEY);
@@ -612,13 +671,20 @@ function updateActiveSidebarNav(pageName) {
 
 function setupSidebarNavigation() {
   document.querySelectorAll('.sidebar-nav .nav-item').forEach(nav => {
-    nav.addEventListener('click', (e) => {
+    nav.addEventListener('click', async (e) => {
       e.preventDefault();
       const page = nav.getAttribute('data-page');
 
       const isQuizActive = state.questions.length > 0 && state.currentQuestion < state.questions.length;
       if (isQuizActive) {
-        if (!confirm("Quit active quiz session and leave page?")) {
+        const confirmed = await showModalDialog({
+          title: "Quit Active Session?",
+          message: "You have an ongoing quiz session. Are you sure you want to quit and leave?",
+          confirmText: "Quit & Leave",
+          cancelText: "Stay in Quiz",
+          isDanger: true
+        });
+        if (!confirmed) {
           return;
         }
         state.questions = [];
@@ -663,8 +729,15 @@ function showLanding() {
   });
 }
 
-function cancelQuiz() {
-  if (confirm("Quit this quiz session and return to the Dashboard?")) {
+async function cancelQuiz() {
+  const confirmed = await showModalDialog({
+    title: "Quit Session?",
+    message: "Are you sure you want to quit this active quiz session and return to the Dashboard?",
+    confirmText: "Quit Session",
+    cancelText: "Keep Playing",
+    isDanger: true
+  });
+  if (confirmed) {
     clearInterval(state.timerInterval);
     state.questions = [];
     state.userAnswers = [];
