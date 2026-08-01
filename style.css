@@ -765,13 +765,12 @@ progress::-moz-progress-bar {
     padding: 1.5rem;
     background: var(--beige);
     border-radius: var(--radius-sm);
+    animation: fadeInExplanation 0.25s ease-out forwards;
 }
 
-.explanation p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
+@keyframes fadeInExplanation {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -1119,7 +1118,10 @@ progress::-moz-progress-bar {
    Animations
    ========================================================== */
 
-.page .card,
+.dashboard-grid .card,
+.history-card,
+.settings-card,
+.result .card,
 .stat-card {
     animation: fadeIn 0.3s ease forwards;
 }

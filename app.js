@@ -331,25 +331,9 @@ function renderQuiz() {
     </button>`;
   }).join('');
 
-  let actionAreaHtml = '';
-  if (!state.answered) {
-    const isSubmitDisabled = !state.selectedAnswer ? 'disabled' : '';
-    actionAreaHtml = `
-      <div class="action-area" style="margin-top: 1.25rem;">
-        <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer</button>
-      </div>
-    `;
-  } else {
-    const isLast = state.currentQuestion === state.questions.length - 1;
-    const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
-    actionAreaHtml = `
-      <div class="explanation">
-        <p>${q.explanation}</p>
-        <button id="next-btn" class="btn">${nextBtnText}</button>
-      </div>
-    `;
-  }
-
+  const isSubmitDisabled = !state.selectedAnswer ? 'disabled' : '';
+  const isLast = state.currentQuestion === state.questions.length - 1;
+  const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
   const timerWarningClass = state.timer <= 10 ? 'timer-warning' : '';
 
   return `
@@ -369,7 +353,7 @@ function renderQuiz() {
             </div>
             <div class="quiz-info">
               <span>Question ${qNum} / ${total}</span>
-              <span>Score: ${state.score}</span>
+              <span id="score-counter">Score: ${state.score}</span>
               <span id="timer" class="${timerWarningClass}">${state.timer}s</span>
             </div>
           </div>
@@ -378,7 +362,15 @@ function renderQuiz() {
           <div class="options">
             ${optionsHtml}
           </div>
-          ${actionAreaHtml}
+
+          <div id="action-area" class="action-area" style="margin-top: 1.25rem; ${state.answered ? 'display: none;' : ''}">
+            <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer</button>
+          </div>
+
+          <div id="explanation-area" class="explanation" style="${state.answered ? '' : 'display: none;'}">
+            <p>${q.explanation}</p>
+            <button id="next-btn" class="btn">${nextBtnText}</button>
+          </div>
         </section>
       </main>
     </div>
@@ -870,8 +862,36 @@ function submitAnswer() {
   if (state.selectedAnswer === q.correctAnswer) {
     state.score++;
   }
-  
-  showQuiz(false);
+
+  // Update option buttons in-place without re-rendering HTML
+  document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.disabled = true;
+    const answer = btn.getAttribute('data-answer');
+    if (answer === q.correctAnswer) {
+      btn.classList.add('correct');
+    } else if (answer === state.selectedAnswer) {
+      btn.classList.add('wrong');
+    }
+  });
+
+  // Update score counter in header
+  const scoreEl = document.getElementById('score-counter');
+  if (scoreEl) {
+    scoreEl.textContent = `Score: ${state.score}`;
+  }
+
+  // Toggle action area and explanation area in-place smoothly
+  const actionArea = document.getElementById('action-area');
+  const explanationArea = document.getElementById('explanation-area');
+
+  if (actionArea) actionArea.style.display = 'none';
+  if (explanationArea) {
+    explanationArea.style.display = 'block';
+    const nextBtn = document.getElementById('next-btn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextQuestion);
+    }
+  }
 }
 
 function nextQuestion() {
