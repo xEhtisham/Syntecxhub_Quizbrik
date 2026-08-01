@@ -135,9 +135,10 @@ async function startQuiz() {
     selectedQuestions = selectedQuestions.slice(0, count);
   }
 
-  // Enforce session difficulty on all question objects
+  // Enforce session difficulty & dynamically shuffle option positions for every question
   selectedQuestions = selectedQuestions.map(q => ({
     ...q,
+    options: shuffle([...q.options]),
     difficulty: state.selectedDifficulty
   }));
 
