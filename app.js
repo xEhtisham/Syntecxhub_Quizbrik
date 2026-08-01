@@ -113,6 +113,45 @@ async function startQuiz() {
   showQuiz(true);
 }
 
+const SETTINGS_KEY = 'quizbrik_user_settings';
+const HISTORY_KEY = 'quizbrik_user_history';
+
+function getStoredSettings() {
+  try {
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    return raw ? JSON.parse(raw) : { timerSeconds: 30 };
+  } catch (e) {
+    return { timerSeconds: 30 };
+  }
+}
+
+function saveStoredSettings(settings) {
+  try {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  } catch (e) {}
+}
+
+function getStoredHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveHistoryRecord(record) {
+  const history = getStoredHistory();
+  history.unshift(record);
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  } catch (e) {}
+}
+
+function clearStoredHistory() {
+  localStorage.removeItem(HISTORY_KEY);
+}
+
 const STATS_KEY = 'quizbrik_user_stats';
 
 function getStoredStats() {
@@ -408,7 +447,183 @@ function renderReview() {
   `;
 }
 
+function renderHistory() {
+  const history = getStoredHistory();
+
+  let historyContentHtml = '';
+
+  if (history.length === 0) {
+    historyContentHtml = `
+      <div class="empty-state">
+        <h3>No Quiz History Yet</h3>
+        <p>Complete a quiz session to track your performance and history over time.</p>
+        <button id="start-first-quiz-btn" class="btn empty-state-btn">Start Session</button>
+      </div>
+    `;
+  } else {
+    const listHtml = history.map(item => `
+      <div class="history-card">
+        <div class="history-main">
+          <div class="history-title-row">
+            <span class="history-category">${item.category}</span>
+            <span class="difficulty-badge difficulty-${item.difficulty.toLowerCase()}">${item.difficulty}</span>
+          </div>
+          <div class="history-meta">
+            <span>Completed on ${item.date}</span>
+          </div>
+        </div>
+        <div class="history-right">
+          <div class="history-score">
+            <div class="history-score-val">${item.score} / ${item.total}</div>
+            <div class="history-score-pct">${item.percentage}% Score</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    historyContentHtml = `
+      <div class="history-list">
+        ${listHtml}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="page">
+      <header class="page-header history-header-actions">
+        <div>
+          <h1 class="page-title">Session History</h1>
+          <p class="page-subtitle">View details and scores from past quiz sessions</p>
+        </div>
+        ${history.length > 0 ? `<button id="clear-history-btn" class="btn btn-danger-outline">Clear History</button>` : ''}
+      </header>
+
+      ${historyContentHtml}
+    </div>
+  `;
+}
+
+function showHistory() {
+  updateActiveSidebarNav('history');
+  app.innerHTML = renderHistory();
+
+  const startBtn = document.getElementById('start-first-quiz-btn');
+  if (startBtn) {
+    startBtn.addEventListener('click', showLanding);
+  }
+
+  const clearBtn = document.getElementById('clear-history-btn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (confirm("Are you sure you want to clear your quiz history?")) {
+        clearStoredHistory();
+        showHistory();
+      }
+    });
+  }
+}
+
+function renderSettings() {
+  const settings = getStoredSettings();
+
+  const timerOptions = [15, 30, 45, 60];
+  const timerPillsHtml = timerOptions.map(t => 
+    `<button type="button" class="pill-btn ${t === settings.timerSeconds ? 'active' : ''}" data-setting="timer" data-value="${t}">${t}s</button>`
+  ).join('');
+
+  return `
+    <div class="page">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">Configure your Quizbrik session preferences and data</p>
+        </div>
+      </header>
+
+      <section class="card settings-card">
+        <div class="settings-row">
+          <div class="settings-info">
+            <h3>Timer Duration</h3>
+            <p>Time allowed per question during quiz sessions</p>
+          </div>
+          <div class="settings-control">
+            <div class="pill-group" id="timer-setting-pills">
+              ${timerPillsHtml}
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-info">
+            <h3>Data Reset</h3>
+            <p>Clear all local quiz history, performance metrics, and settings</p>
+          </div>
+          <div class="settings-control">
+            <button id="reset-all-data-btn" class="btn btn-danger-outline">Reset All Data</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  `;
+}
+
+function showSettings() {
+  updateActiveSidebarNav('settings');
+  app.innerHTML = renderSettings();
+
+  document.querySelectorAll('#timer-setting-pills .pill-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const val = parseInt(e.currentTarget.getAttribute('data-value'), 10);
+      const settings = getStoredSettings();
+      settings.timerSeconds = val;
+      saveStoredSettings(settings);
+      showSettings();
+    });
+  });
+
+  const resetBtn = document.getElementById('reset-all-data-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (confirm("Are you sure you want to reset all data and stats? This action cannot be undone.")) {
+        localStorage.removeItem(STATS_KEY);
+        localStorage.removeItem(HISTORY_KEY);
+        localStorage.removeItem(SETTINGS_KEY);
+        showSettings();
+      }
+    });
+  }
+}
+
+function updateActiveSidebarNav(pageName) {
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(nav => {
+    if (nav.getAttribute('data-page') === pageName) {
+      nav.classList.add('active');
+    } else {
+      nav.classList.remove('active');
+    }
+  });
+}
+
+function setupSidebarNavigation() {
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(nav => {
+    nav.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = nav.getAttribute('data-page');
+      clearInterval(state.timerInterval);
+
+      if (page === 'dashboard') {
+        showLanding();
+      } else if (page === 'history') {
+        showHistory();
+      } else if (page === 'settings') {
+        showSettings();
+      }
+    });
+  });
+}
+
 function showLanding() {
+  updateActiveSidebarNav('dashboard');
   app.innerHTML = renderLanding();
   document.getElementById('start-quiz-btn').addEventListener('click', startQuiz);
 
@@ -454,6 +669,21 @@ function showResult(isFirstTime = false) {
   clearInterval(state.timerInterval);
   if (isFirstTime) {
     saveQuizStats(state.questions, state.userAnswers);
+
+    const pct = Math.round((state.score / state.questions.length) * 100) || 0;
+    const dateStr = new Date().toLocaleString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+    saveHistoryRecord({
+      id: Date.now(),
+      date: dateStr,
+      category: state.selectedCategory,
+      difficulty: state.selectedDifficulty,
+      score: state.score,
+      total: state.questions.length,
+      percentage: pct
+    });
   }
   app.innerHTML = renderResult();
   
@@ -476,7 +706,8 @@ function showReview() {
 
 function startTimer() {
   clearInterval(state.timerInterval);
-  state.timer = TIMER_SECONDS;
+  const settings = getStoredSettings();
+  state.timer = settings.timerSeconds || TIMER_SECONDS;
   
   const timerEl = document.getElementById('timer');
   
@@ -537,7 +768,8 @@ function nextQuestion() {
   state.currentQuestion++;
   state.answered = false;
   state.selectedAnswer = null;
-  state.timer = TIMER_SECONDS;
+  const settings = getStoredSettings();
+  state.timer = settings.timerSeconds || TIMER_SECONDS;
   
   if (state.currentQuestion >= state.questions.length) {
     showResult(true);
@@ -547,5 +779,6 @@ function nextQuestion() {
 }
 
 const app = document.getElementById('app');
+setupSidebarNavigation();
 showLanding();
 

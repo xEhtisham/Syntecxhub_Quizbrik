@@ -921,6 +921,168 @@ progress::-moz-progress-bar {
 
 
 /* ==========================================================
+   History Page
+   ========================================================== */
+
+.history-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+}
+
+.history-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.history-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.history-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.history-category {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.history-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.history-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.history-score {
+    text-align: right;
+}
+
+.history-score-val {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.history-score-pct {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--teal);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.empty-state-btn {
+    display: inline-block;
+    width: auto;
+    padding: 0.75rem 1.5rem;
+}
+
+/* ==========================================================
+   Settings Page
+   ========================================================== */
+
+.settings-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-info h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.settings-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.settings-control {
+    min-width: 180px;
+}
+
+.btn-danger-outline {
+    border: 1.5px solid var(--danger);
+    color: var(--danger);
+    background: transparent;
+    width: auto;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
+}
+
+.btn-danger-outline:hover {
+    background: rgba(220, 38, 38, 0.08);
+    color: var(--danger);
+    box-shadow: none;
+}
+
+
+/* ==========================================================
    Animations
    ========================================================== */
 
