@@ -669,7 +669,7 @@ function showSettings() {
 }
 
 function updateActiveSidebarNav(pageName) {
-  document.querySelectorAll('.sidebar-nav .nav-item').forEach(nav => {
+  document.querySelectorAll('.nav-item').forEach(nav => {
     if (nav.getAttribute('data-page') === pageName) {
       nav.classList.add('active');
     } else {
@@ -679,7 +679,7 @@ function updateActiveSidebarNav(pageName) {
 }
 
 function setupSidebarNavigation() {
-  document.querySelectorAll('.sidebar-nav .nav-item').forEach(nav => {
+  document.querySelectorAll('.nav-item').forEach(nav => {
     nav.addEventListener('click', async (e) => {
       e.preventDefault();
       const page = nav.getAttribute('data-page');
