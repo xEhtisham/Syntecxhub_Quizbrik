@@ -95,12 +95,29 @@ async function startQuiz() {
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
     let filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
-    if (filtered.length < count) {
+    
+    // If no exact category+difficulty match, filter by category
+    if (filtered.length === 0) {
       filtered = allQuestions.filter(q => q.category === category);
     }
-    const shuffled = shuffle(filtered.length > 0 ? filtered : allQuestions);
-    selectedQuestions = shuffled.slice(0, count);
+    if (filtered.length === 0) {
+      filtered = allQuestions;
+    }
+
+    // Fill up to requested count by shuffling and repeating from pool if needed
+    const pool = shuffle(filtered);
+    selectedQuestions = [];
+    while (selectedQuestions.length < count) {
+      selectedQuestions.push(...pool);
+    }
+    selectedQuestions = selectedQuestions.slice(0, count);
   }
+
+  // Enforce session difficulty on all question objects
+  selectedQuestions = selectedQuestions.map(q => ({
+    ...q,
+    difficulty: state.selectedDifficulty
+  }));
 
   state.questions = selectedQuestions;
   state.userAnswers = new Array(selectedQuestions.length).fill(null);
