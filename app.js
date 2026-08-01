@@ -896,6 +896,7 @@ function submitAnswer() {
   const q = state.questions[state.currentQuestion];
   
   state.answered = true;
+  state.lastSubmitTime = Date.now();
   state.userAnswers[state.currentQuestion] = state.selectedAnswer;
   
   if (state.selectedAnswer === q.correctAnswer) {
@@ -950,6 +951,9 @@ function nextQuestion() {
 
 function setupKeyboardControls() {
   document.addEventListener('keydown', (e) => {
+    // Ignore auto-repeated keypresses when holding down a key
+    if (e.repeat) return;
+
     // Ignore key presses if a modal dialog is open or user is typing in an input
     if (document.getElementById('quizbrik-custom-modal')) return;
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -984,6 +988,12 @@ function setupKeyboardControls() {
           submitBtn.click();
         }
       } else {
+        // Prevent accidental immediate next-question trigger if Enter was just pressed to submit
+        if (state.lastSubmitTime && (Date.now() - state.lastSubmitTime < 300)) {
+          e.preventDefault();
+          return;
+        }
+
         const nextBtn = document.getElementById('next-btn');
         if (nextBtn) {
           e.preventDefault();
