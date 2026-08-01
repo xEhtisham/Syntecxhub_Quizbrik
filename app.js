@@ -381,12 +381,12 @@ function renderQuiz() {
           </div>
 
           <div id="action-area" class="action-area" style="margin-top: 1.25rem; ${state.answered ? 'display: none;' : ''}">
-            <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer</button>
+            <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer <span class="kbd-hint">Enter ↵</span></button>
           </div>
 
           <div id="explanation-area" class="explanation" style="${state.answered ? '' : 'display: none;'}">
             <p>${q.explanation}</p>
-            <button id="next-btn" class="btn">${nextBtnText}</button>
+            <button id="next-btn" class="btn">${nextBtnText} <span class="kbd-hint">Enter ↵</span></button>
           </div>
         </section>
       </main>
@@ -924,9 +924,62 @@ function nextQuestion() {
   } else {
     showQuiz(true);
   }
+function setupKeyboardControls() {
+  document.addEventListener('keydown', (e) => {
+    // Ignore key presses if a modal dialog is open or user is typing in an input
+    if (document.getElementById('quizbrik-custom-modal')) return;
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    // Only active during quiz view when questions exist
+    if (state.questions.length === 0 || state.currentQuestion >= state.questions.length) return;
+
+    const key = e.key.toUpperCase();
+
+    // Option selection keys: 1, 2, 3, 4 or A, B, C, D
+    const optionMap = {
+      '1': 0, 'A': 0,
+      '2': 1, 'B': 1,
+      '3': 2, 'C': 2,
+      '4': 3, 'D': 3
+    };
+
+    if (!state.answered && optionMap.hasOwnProperty(key)) {
+      const idx = optionMap[key];
+      const optionBtns = document.querySelectorAll('.option-btn');
+      if (optionBtns[idx] && !optionBtns[idx].disabled) {
+        optionBtns[idx].click();
+      }
+    }
+
+    // Submit or Next Question keys: Enter or Space
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (!state.answered) {
+        const submitBtn = document.getElementById('submit-btn');
+        if (submitBtn && !submitBtn.disabled) {
+          e.preventDefault();
+          submitBtn.click();
+        }
+      } else {
+        const nextBtn = document.getElementById('next-btn');
+        if (nextBtn) {
+          e.preventDefault();
+          nextBtn.click();
+        }
+      }
+    }
+
+    // Quit session key: Escape
+    if (e.key === 'Escape') {
+      const cancelBtn = document.getElementById('cancel-quiz-btn');
+      if (cancelBtn) {
+        cancelBtn.click();
+      }
+    }
+  });
 }
 
 const app = document.getElementById('app');
 setupSidebarNavigation();
+setupKeyboardControls();
 showLanding();
 
