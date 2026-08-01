@@ -21,10 +21,21 @@ const state = {
   timerInterval: null,
 };
 
+let localQuestionCache = null;
+
 async function loadQuestions() {
-  const response = await fetch('data/questions.json');
-  return response.json();
+  if (localQuestionCache) return localQuestionCache;
+  try {
+    const response = await fetch('data/questions.json');
+    localQuestionCache = await response.json();
+    return localQuestionCache;
+  } catch (e) {
+    return [];
+  }
 }
+
+// Pre-fetch local questions in background at app startup
+loadQuestions();
 
 function shuffle(array) {
   const newArray = [...array];
@@ -70,6 +81,12 @@ function convertOTDBQuestions(results) {
 }
 
 async function startQuiz() {
+  const startBtn = document.getElementById('start-quiz-btn');
+  if (startBtn) {
+    startBtn.disabled = true;
+    startBtn.textContent = 'Starting Session...';
+  }
+
   const category = state.selectedCategory;
   const difficulty = state.selectedDifficulty.toLowerCase();
   const count = state.selectedAmount;
@@ -79,19 +96,24 @@ async function startQuiz() {
 
   if (categoryId) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1000);
+
       const url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
-      const res = await fetch(url);
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+
       const data = await res.json();
 
       if (data.response_code === 0 && data.results && data.results.length > 0) {
         selectedQuestions = convertOTDBQuestions(data.results);
       }
     } catch (err) {
-      console.warn("OTDB API unavailable, using local questions fallback", err);
+      // Fast fallback on API timeout or error
     }
   }
 
-  // Fallback to local questions if API is offline or empty
+  // Fallback to pre-cached local questions instantly
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
     let filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
