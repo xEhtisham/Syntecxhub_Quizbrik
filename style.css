@@ -534,9 +534,36 @@ body {
 
 .quiz-badge-bar {
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+}
+
+.quiz-badge-left {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.quiz-cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.quiz-cancel-btn:hover {
+    background: rgba(220, 38, 38, 0.08);
+    border-color: var(--danger);
+    color: var(--danger);
 }
 
 .category-badge {

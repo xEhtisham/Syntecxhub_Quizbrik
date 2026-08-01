@@ -358,8 +358,14 @@ function renderQuiz() {
         <section class="card quiz-card">
           <div class="quiz-header">
             <div class="quiz-badge-bar">
-              <span class="category-badge">${q.category}</span>
-              <span class="difficulty-badge difficulty-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+              <div class="quiz-badge-left">
+                <span class="category-badge">${q.category}</span>
+                <span class="difficulty-badge difficulty-${q.difficulty.toLowerCase()}">${q.difficulty}</span>
+              </div>
+              <button id="cancel-quiz-btn" class="quiz-cancel-btn" title="Quit Quiz Session">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                Quit Session
+              </button>
             </div>
             <div class="quiz-info">
               <span>Question ${qNum} / ${total}</span>
@@ -609,6 +615,20 @@ function setupSidebarNavigation() {
     nav.addEventListener('click', (e) => {
       e.preventDefault();
       const page = nav.getAttribute('data-page');
+
+      const isQuizActive = state.questions.length > 0 && state.currentQuestion < state.questions.length;
+      if (isQuizActive) {
+        if (!confirm("Quit active quiz session and leave page?")) {
+          return;
+        }
+        state.questions = [];
+        state.userAnswers = [];
+        state.currentQuestion = 0;
+        state.score = 0;
+        state.answered = false;
+        state.selectedAnswer = null;
+      }
+
       clearInterval(state.timerInterval);
 
       if (page === 'dashboard') {
@@ -643,8 +663,26 @@ function showLanding() {
   });
 }
 
+function cancelQuiz() {
+  if (confirm("Quit this quiz session and return to the Dashboard?")) {
+    clearInterval(state.timerInterval);
+    state.questions = [];
+    state.userAnswers = [];
+    state.currentQuestion = 0;
+    state.score = 0;
+    state.answered = false;
+    state.selectedAnswer = null;
+    showLanding();
+  }
+}
+
 function showQuiz(isNewQuestion = false) {
   app.innerHTML = renderQuiz();
+
+  const cancelBtn = document.getElementById('cancel-quiz-btn');
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', cancelQuiz);
+  }
   
   if (!state.answered) {
     const optionBtns = document.querySelectorAll('.option-btn');
