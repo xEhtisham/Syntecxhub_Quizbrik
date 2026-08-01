@@ -924,6 +924,8 @@ function nextQuestion() {
   } else {
     showQuiz(true);
   }
+}
+
 function setupKeyboardControls() {
   document.addEventListener('keydown', (e) => {
     // Ignore key presses if a modal dialog is open or user is typing in an input
