@@ -419,13 +419,15 @@ function renderQuiz() {
             ${optionsHtml}
           </div>
 
-          <div id="action-area" class="action-area" style="margin-top: 1.25rem; ${state.answered ? 'display: none;' : ''}">
-            <button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer <span class="kbd-hint">Enter ↵</span></button>
+          <div id="action-area" class="action-area" style="margin-top: 1.25rem;">
+            ${!state.answered
+              ? `<button id="submit-btn" class="btn" ${isSubmitDisabled}>Submit Answer <span class="kbd-hint">Enter ↵</span></button>`
+              : `<button id="next-btn" class="btn">${nextBtnText} <span class="kbd-hint">Enter ↵</span></button>`
+            }
           </div>
 
           <div id="explanation-area" class="explanation" style="${state.answered ? '' : 'display: none;'}">
             <p>${q.explanation}</p>
-            <button id="next-btn" class="btn">${nextBtnText} <span class="kbd-hint">Enter ↵</span></button>
           </div>
         </section>
       </main>
@@ -994,17 +996,20 @@ function submitAnswer() {
     scoreEl.textContent = `Score: ${state.score}`;
   }
 
-  // Toggle action area and explanation area in-place smoothly
-  const actionArea = document.getElementById('action-area');
-  const explanationArea = document.getElementById('explanation-area');
+  // Update action button in-place to Next Question without shifting position
+  const isLast = state.currentQuestion === state.questions.length - 1;
+  const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
 
-  if (actionArea) actionArea.style.display = 'none';
+  const submitBtn = document.getElementById('submit-btn');
+  if (submitBtn) {
+    submitBtn.id = 'next-btn';
+    submitBtn.innerHTML = `${nextBtnText} <span class="kbd-hint">Enter ↵</span>`;
+    submitBtn.onclick = nextQuestion;
+  }
+
+  const explanationArea = document.getElementById('explanation-area');
   if (explanationArea) {
     explanationArea.style.display = 'block';
-    const nextBtn = document.getElementById('next-btn');
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextQuestion);
-    }
   }
 }
 
