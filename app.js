@@ -80,6 +80,28 @@ function convertOTDBQuestions(results) {
   });
 }
 
+function getUniqueQuestionPool(allQuestions, category, difficulty, count) {
+  const diffLower = difficulty.toLowerCase();
+  const primaryPool = shuffle(allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === diffLower));
+  const categoryPool = shuffle(allQuestions.filter(q => q.category === category && !primaryPool.some(p => p.id === q.id)));
+  const globalPool = shuffle(allQuestions.filter(q => !primaryPool.some(p => p.id === q.id) && !categoryPool.some(c => c.id === q.id)));
+
+  const combined = [...primaryPool, ...categoryPool, ...globalPool];
+
+  const uniqueQuestions = [];
+  const seenIds = new Set();
+
+  for (const q of combined) {
+    if (!seenIds.has(q.id)) {
+      seenIds.add(q.id);
+      uniqueQuestions.push(q);
+    }
+    if (uniqueQuestions.length >= count) break;
+  }
+
+  return uniqueQuestions;
+}
+
 async function startQuiz() {
   const startBtn = document.getElementById('start-quiz-btn');
   if (startBtn) {
@@ -116,23 +138,7 @@ async function startQuiz() {
   // Fallback to pre-cached local questions instantly
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
-    let filtered = allQuestions.filter(q => q.category === category && q.difficulty.toLowerCase() === difficulty);
-    
-    // If no exact category+difficulty match, filter by category
-    if (filtered.length === 0) {
-      filtered = allQuestions.filter(q => q.category === category);
-    }
-    if (filtered.length === 0) {
-      filtered = allQuestions;
-    }
-
-    // Fill up to requested count by shuffling and repeating from pool if needed
-    const pool = shuffle(filtered);
-    selectedQuestions = [];
-    while (selectedQuestions.length < count) {
-      selectedQuestions.push(...pool);
-    }
-    selectedQuestions = selectedQuestions.slice(0, count);
+    selectedQuestions = getUniqueQuestionPool(allQuestions, category, difficulty, count);
   }
 
   // Enforce session difficulty & dynamically shuffle option positions for every question
