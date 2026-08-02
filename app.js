@@ -232,14 +232,59 @@ function saveQuizStats(questions, userAnswers) {
   }
 }
 
+const CATEGORY_ICONS = {
+  "General Knowledge": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg>`,
+  "Science": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><path d="M8.5 14h7"/></svg>`,
+  "Technology": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  "History": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>`,
+  "Geography": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+  "Sports": `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`
+};
+
+function renderAppHeader(pageTitle) {
+  return `
+    <div class="app-topbar">
+      <div class="topbar-left">
+        <div class="breadcrumb">
+          <span class="breadcrumb-app">Quizbrik</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-page">${pageTitle}</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="status-indicator" title="Local Dataset & Live API Synced">
+          <span class="status-dot"></span>
+          <span class="status-text">Engine Ready</span>
+        </div>
+        <div class="user-badge">
+          <div class="user-avatar">EK</div>
+          <div class="user-info">
+            <span class="user-name">Ehtisham</span>
+            <span class="user-role">Pro Account</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderLanding() {
   const categoryPillsHtml = CATEGORIES.map(c => 
-    `<button type="button" class="pill-btn ${c === state.selectedCategory ? 'active' : ''}" data-type="category" data-value="${c}">${c}</button>`
+    `<button type="button" class="category-tile pill-btn ${c === state.selectedCategory ? 'active' : ''}" data-type="category" data-value="${c}">
+      <span class="pill-icon">${CATEGORY_ICONS[c] || ''}</span>
+      <span>${c}</span>
+    </button>`
   ).join('');
 
-  const difficultyPillsHtml = DIFFICULTIES.map(d => 
-    `<button type="button" class="segment-btn ${d === state.selectedDifficulty ? 'active' : ''}" data-type="difficulty" data-value="${d}">${d}</button>`
-  ).join('');
+  const difficultyPillsHtml = DIFFICULTIES.map(d => {
+    const dotColor = d === 'Easy' ? 'easy' : (d === 'Medium' ? 'medium' : 'hard');
+    return `
+      <button type="button" class="segment-btn ${d === state.selectedDifficulty ? 'active' : ''}" data-type="difficulty" data-value="${d}">
+        <span class="diff-dot diff-dot-${dotColor}"></span>
+        <span>${d}</span>
+      </button>
+    `;
+  }).join('');
 
   const questionCounts = [5, 10, 15, 20, 25, 30];
   const countPillsHtml = questionCounts.map(n => 
@@ -253,16 +298,42 @@ function renderLanding() {
   const statsHtml = `
     <div class="stats-grid">
       <div class="stat-card">
-        <span class="stat-value">${stats.totalQuizzes}</span>
-        <span class="stat-label">Sessions</span>
+        <div class="stat-card-top">
+          <div class="stat-icon-wrapper theme-teal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <span class="stat-badge-pill">Total Sessions</span>
+        </div>
+        <div class="stat-card-bottom">
+          <span class="stat-value">${stats.totalQuizzes}</span>
+          <span class="stat-sublabel">${stats.totalQuizzes === 1 ? '1 Completed' : stats.totalQuizzes + ' Completed'}</span>
+        </div>
       </div>
+
       <div class="stat-card">
-        <span class="stat-value">${avgScore}<span class="stat-unit">%</span></span>
-        <span class="stat-label">Avg. Score</span>
+        <div class="stat-card-top">
+          <div class="stat-icon-wrapper theme-sky">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <span class="stat-badge-pill">Accuracy Rate</span>
+        </div>
+        <div class="stat-card-bottom">
+          <span class="stat-value">${avgScore}<span class="stat-unit">%</span></span>
+          <span class="stat-sublabel">Average Score</span>
+        </div>
       </div>
+
       <div class="stat-card">
-        <span class="stat-value">${totalCorrect}<span class="stat-unit">/${stats.totalQuestions}</span></span>
-        <span class="stat-label">Correct</span>
+        <div class="stat-card-top">
+          <div class="stat-icon-wrapper theme-success">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span class="stat-badge-pill">Correct Questions</span>
+        </div>
+        <div class="stat-card-bottom">
+          <span class="stat-value">${totalCorrect}<span class="stat-unit">/${stats.totalQuestions}</span></span>
+          <span class="stat-sublabel">Questions Solved</span>
+        </div>
       </div>
     </div>
   `;
@@ -270,13 +341,16 @@ function renderLanding() {
   const categoryAnalyticsHtml = CATEGORIES.map(cat => {
     const catData = stats.categories[cat] || { total: 0, correct: 0 };
     const percentage = catData.total > 0 ? Math.round((catData.correct / catData.total) * 100) : 0;
-    const subtitle = catData.total > 0 ? `${catData.correct} of ${catData.total} correct` : 'No data yet';
+    const icon = CATEGORY_ICONS[cat] || '';
 
     return `
       <div class="analytics-row${catData.total === 0 ? ' analytics-row--empty' : ''}">
         <div class="analytics-meta">
-          <span>${cat}</span>
-          <span>${catData.total > 0 ? percentage + '%' : '--'}</span>
+          <div class="analytics-name-box">
+            <span class="analytics-icon">${icon}</span>
+            <span class="analytics-title">${cat}</span>
+          </div>
+          <span class="analytics-badge">${catData.total > 0 ? percentage + '%' : 'No Data'}</span>
         </div>
         <div class="analytics-bar-track">
           <div class="analytics-bar-fill" style="width: ${percentage}%"></div>
@@ -290,9 +364,11 @@ function renderLanding() {
 
   return `
     <div class="page">
+      ${renderAppHeader('Dashboard')}
+
       <header class="page-header">
         <div>
-          <h1 class="page-title">Dashboard</h1>
+          <h1 class="page-title">Overview & Session Launchpad</h1>
           <p class="page-subtitle">${dateStr}</p>
         </div>
       </header>
@@ -304,25 +380,26 @@ function renderLanding() {
       <div class="dashboard-grid">
         <section class="card launch-card">
           <header class="card-header">
-            <h2>New Session</h2>
+            <h2>New Session Setup</h2>
+            <p>Customize category, difficulty, and question count</p>
           </header>
 
           <div class="form-group">
-            <label>Category</label>
-            <div class="pill-group" id="category-pills">
+            <label>Select Category</label>
+            <div class="category-grid" id="category-pills">
               ${categoryPillsHtml}
             </div>
           </div>
 
           <div class="form-group">
-            <label>Difficulty</label>
+            <label>Difficulty Level</label>
             <div class="segmented-control" id="difficulty-pills">
               ${difficultyPillsHtml}
             </div>
           </div>
 
           <div class="form-group">
-            <label>Questions</label>
+            <label>Question Count</label>
             <div class="pill-group" id="count-pills">
               ${countPillsHtml}
             </div>
@@ -334,6 +411,7 @@ function renderLanding() {
         <section class="card analytics-card">
           <header class="card-header">
             <h2>Category Mastery</h2>
+            <p>Performance accuracy across topics</p>
           </header>
           <div class="analytics-grid">
             ${categoryAnalyticsHtml}
@@ -543,6 +621,8 @@ function renderHistory() {
 
   return `
     <div class="page">
+      ${renderAppHeader('Session History')}
+
       <header class="page-header history-header-actions">
         <div>
           <h1 class="page-title">Session History</h1>
@@ -638,6 +718,8 @@ function renderSettings() {
 
   return `
     <div class="page">
+      ${renderAppHeader('Settings')}
+
       <header class="page-header">
         <div>
           <h1 class="page-title">Settings</h1>
