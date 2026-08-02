@@ -913,18 +913,19 @@ progress::-moz-progress-bar {
     width: 100%;
 }
 
-.result .card {
+.result-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 0.5rem;
-    max-width: 500px;
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 .result h1 {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--navy);
 }
 
@@ -935,13 +936,13 @@ progress::-moz-progress-bar {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    margin: 1.75rem 0;
+    margin: 1.5rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: conic-gradient(
         var(--teal) calc(var(--percent) * 1%),
-        var(--beige) calc(var(--percent) * 1%)
+        var(--border-light) calc(var(--percent) * 1%)
     );
 }
 

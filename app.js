@@ -444,13 +444,15 @@ function renderResult() {
 
   return `
     <div class="page">
+      ${renderAppHeader('Quiz Results')}
+
       <main class="result">
-        <section class="card">
+        <section class="card result-card">
           <h1>Quiz Complete</h1>
           <div class="score-circle" style="--percent: ${percentage}">
             <span>${state.score} / ${total}</span>
           </div>
-          <p class="percentage">${percentage}%</p>
+          <p class="percentage">${percentage}% Accuracy</p>
           <p class="message">${msg}</p>
           <div class="button-group">
             <button id="review-btn" class="btn btn-secondary">Review Answers</button>
