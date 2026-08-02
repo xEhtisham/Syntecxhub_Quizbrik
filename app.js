@@ -458,7 +458,8 @@ function renderResult() {
           <p class="message">${msg}</p>
           <div class="button-group">
             <button id="review-btn" class="btn btn-secondary">Review Answers</button>
-            <button id="restart-btn" class="btn">Play Again</button>
+            <button id="play-again-btn" class="btn btn-secondary">Play Again</button>
+            <button id="dashboard-btn" class="btn">Back to Dashboard</button>
           </div>
         </section>
       </main>
@@ -870,15 +871,26 @@ function showResult(isFirstTime = false) {
   app.innerHTML = renderResult();
   
   document.getElementById('review-btn').addEventListener('click', showReview);
-  document.getElementById('restart-btn').addEventListener('click', () => {
-    state.questions = [];
-    state.userAnswers = [];
-    state.currentQuestion = 0;
-    state.score = 0;
-    state.answered = false;
-    state.selectedAnswer = null;
-    showLanding();
-  });
+
+  const playAgainBtn = document.getElementById('play-again-btn');
+  if (playAgainBtn) {
+    playAgainBtn.addEventListener('click', () => {
+      startQuiz();
+    });
+  }
+
+  const dashboardBtn = document.getElementById('dashboard-btn');
+  if (dashboardBtn) {
+    dashboardBtn.addEventListener('click', () => {
+      state.questions = [];
+      state.userAnswers = [];
+      state.currentQuestion = 0;
+      state.score = 0;
+      state.answered = false;
+      state.selectedAnswer = null;
+      showLanding();
+    });
+  }
 }
 
 function showReview() {
