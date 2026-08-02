@@ -242,27 +242,16 @@ const CATEGORY_ICONS = {
 };
 
 function renderAppHeader(pageTitle) {
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
   return `
     <div class="app-topbar">
       <div class="topbar-left">
-        <div class="breadcrumb">
-          <span class="breadcrumb-app">Quizbrik</span>
-          <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-page">${pageTitle}</span>
-        </div>
+        <h1 class="topbar-title">${pageTitle}</h1>
       </div>
       <div class="topbar-right">
-        <div class="status-indicator" title="Local Dataset & Live API Synced">
-          <span class="status-dot"></span>
-          <span class="status-text">Engine Ready</span>
-        </div>
-        <div class="user-badge">
-          <div class="user-avatar">EK</div>
-          <div class="user-info">
-            <span class="user-name">Ehtisham</span>
-            <span class="user-role">Pro Account</span>
-          </div>
-        </div>
+        <span class="topbar-date">${dateStr}</span>
       </div>
     </div>
   `;
@@ -270,21 +259,12 @@ function renderAppHeader(pageTitle) {
 
 function renderLanding() {
   const categoryPillsHtml = CATEGORIES.map(c => 
-    `<button type="button" class="category-tile pill-btn ${c === state.selectedCategory ? 'active' : ''}" data-type="category" data-value="${c}">
-      <span class="pill-icon">${CATEGORY_ICONS[c] || ''}</span>
-      <span>${c}</span>
-    </button>`
+    `<button type="button" class="pill-btn ${c === state.selectedCategory ? 'active' : ''}" data-type="category" data-value="${c}">${c}</button>`
   ).join('');
 
-  const difficultyPillsHtml = DIFFICULTIES.map(d => {
-    const dotColor = d === 'Easy' ? 'easy' : (d === 'Medium' ? 'medium' : 'hard');
-    return `
-      <button type="button" class="segment-btn ${d === state.selectedDifficulty ? 'active' : ''}" data-type="difficulty" data-value="${d}">
-        <span class="diff-dot diff-dot-${dotColor}"></span>
-        <span>${d}</span>
-      </button>
-    `;
-  }).join('');
+  const difficultyPillsHtml = DIFFICULTIES.map(d => 
+    `<button type="button" class="segment-btn ${d === state.selectedDifficulty ? 'active' : ''}" data-type="difficulty" data-value="${d}">${d}</button>`
+  ).join('');
 
   const questionCounts = [5, 10, 15, 20, 25, 30];
   const countPillsHtml = questionCounts.map(n => 
@@ -298,42 +278,16 @@ function renderLanding() {
   const statsHtml = `
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-card-top">
-          <div class="stat-icon-wrapper theme-teal">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <span class="stat-badge-pill">Total Sessions</span>
-        </div>
-        <div class="stat-card-bottom">
-          <span class="stat-value">${stats.totalQuizzes}</span>
-          <span class="stat-sublabel">${stats.totalQuizzes === 1 ? '1 Completed' : stats.totalQuizzes + ' Completed'}</span>
-        </div>
+        <span class="stat-label">Quizzes Played</span>
+        <span class="stat-value">${stats.totalQuizzes}</span>
       </div>
-
       <div class="stat-card">
-        <div class="stat-card-top">
-          <div class="stat-icon-wrapper theme-sky">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          </div>
-          <span class="stat-badge-pill">Accuracy Rate</span>
-        </div>
-        <div class="stat-card-bottom">
-          <span class="stat-value">${avgScore}<span class="stat-unit">%</span></span>
-          <span class="stat-sublabel">Average Score</span>
-        </div>
+        <span class="stat-label">Average Score</span>
+        <span class="stat-value">${avgScore}<span class="stat-unit">%</span></span>
       </div>
-
       <div class="stat-card">
-        <div class="stat-card-top">
-          <div class="stat-icon-wrapper theme-success">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <span class="stat-badge-pill">Correct Questions</span>
-        </div>
-        <div class="stat-card-bottom">
-          <span class="stat-value">${totalCorrect}<span class="stat-unit">/${stats.totalQuestions}</span></span>
-          <span class="stat-sublabel">Questions Solved</span>
-        </div>
+        <span class="stat-label">Total Correct</span>
+        <span class="stat-value">${totalCorrect}<span class="stat-unit"> / ${stats.totalQuestions}</span></span>
       </div>
     </div>
   `;
@@ -341,16 +295,12 @@ function renderLanding() {
   const categoryAnalyticsHtml = CATEGORIES.map(cat => {
     const catData = stats.categories[cat] || { total: 0, correct: 0 };
     const percentage = catData.total > 0 ? Math.round((catData.correct / catData.total) * 100) : 0;
-    const icon = CATEGORY_ICONS[cat] || '';
 
     return `
       <div class="analytics-row${catData.total === 0 ? ' analytics-row--empty' : ''}">
         <div class="analytics-meta">
-          <div class="analytics-name-box">
-            <span class="analytics-icon">${icon}</span>
-            <span class="analytics-title">${cat}</span>
-          </div>
-          <span class="analytics-badge">${catData.total > 0 ? percentage + '%' : 'No Data'}</span>
+          <span>${cat}</span>
+          <span>${catData.total > 0 ? percentage + '%' : '0%'}</span>
         </div>
         <div class="analytics-bar-track">
           <div class="analytics-bar-fill" style="width: ${percentage}%"></div>
@@ -359,19 +309,9 @@ function renderLanding() {
     `;
   }).join('');
 
-  const today = new Date();
-  const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-
   return `
     <div class="page">
       ${renderAppHeader('Dashboard')}
-
-      <header class="page-header">
-        <div>
-          <h1 class="page-title">Overview & Session Launchpad</h1>
-          <p class="page-subtitle">${dateStr}</p>
-        </div>
-      </header>
 
       <div class="overview-strip">
         ${statsHtml}
@@ -380,19 +320,18 @@ function renderLanding() {
       <div class="dashboard-grid">
         <section class="card launch-card">
           <header class="card-header">
-            <h2>New Session Setup</h2>
-            <p>Customize category, difficulty, and question count</p>
+            <h2>Start a Quiz</h2>
           </header>
 
           <div class="form-group">
-            <label>Select Category</label>
-            <div class="category-grid" id="category-pills">
+            <label>Category</label>
+            <div class="pill-group" id="category-pills">
               ${categoryPillsHtml}
             </div>
           </div>
 
           <div class="form-group">
-            <label>Difficulty Level</label>
+            <label>Difficulty</label>
             <div class="segmented-control" id="difficulty-pills">
               ${difficultyPillsHtml}
             </div>
@@ -411,7 +350,6 @@ function renderLanding() {
         <section class="card analytics-card">
           <header class="card-header">
             <h2>Category Mastery</h2>
-            <p>Performance accuracy across topics</p>
           </header>
           <div class="analytics-grid">
             ${categoryAnalyticsHtml}
