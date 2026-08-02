@@ -934,6 +934,13 @@ function showReview() {
   });
 }
 
+function getCalculatedScore() {
+  if (!state.questions || state.questions.length === 0) return 0;
+  return state.questions.reduce((acc, q, idx) => {
+    return acc + (state.userAnswers[idx] === q.correctAnswer ? 1 : 0);
+  }, 0);
+}
+
 function startTimer() {
   clearInterval(state.timerInterval);
   const settings = getStoredSettings();
@@ -954,10 +961,7 @@ function startTimer() {
       clearInterval(state.timerInterval);
       state.answered = true;
       state.userAnswers[state.currentQuestion] = state.selectedAnswer;
-      const q = state.questions[state.currentQuestion];
-      if (state.selectedAnswer && state.selectedAnswer === q.correctAnswer) {
-        state.score++;
-      }
+      state.score = getCalculatedScore();
       showQuiz(false);
     }
   }, 1000);
@@ -978,7 +982,7 @@ function handleSelectOption(e) {
 }
 
 function submitAnswer() {
-  if (!state.selectedAnswer) return;
+  if (state.answered || !state.selectedAnswer) return;
 
   clearInterval(state.timerInterval);
   const q = state.questions[state.currentQuestion];
@@ -986,10 +990,7 @@ function submitAnswer() {
   state.answered = true;
   state.lastSubmitTime = Date.now();
   state.userAnswers[state.currentQuestion] = state.selectedAnswer;
-  
-  if (state.selectedAnswer === q.correctAnswer) {
-    state.score++;
-  }
+  state.score = getCalculatedScore();
 
   // Update option buttons in-place without re-rendering HTML
   document.querySelectorAll('.option-btn').forEach(btn => {
