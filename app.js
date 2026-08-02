@@ -104,38 +104,84 @@ function getUniqueQuestionPool(allQuestions, category, difficulty, count) {
   return uniqueQuestions;
 }
 
+// OTDB Session Token — prevents duplicate questions and helps with rate limits
+let otdbSessionToken = null;
+
+async function getOTDBToken() {
+  if (otdbSessionToken) return otdbSessionToken;
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const res = await fetch('https://opentdb.com/api_token.php?command=request', { signal: controller.signal });
+    clearTimeout(timeoutId);
+    const data = await res.json();
+    if (data.response_code === 0 && data.token) {
+      otdbSessionToken = data.token;
+      return otdbSessionToken;
+    }
+  } catch (e) {
+    // Token fetch failed, proceed without token
+  }
+  return null;
+}
+
 async function fetchOTDBQuestions(count, categoryId, difficulty) {
+  const token = await getOTDBToken();
+
   const tryFetch = async (url) => {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
       const res = await fetch(url, { signal: controller.signal });
       clearTimeout(timeoutId);
+
+      // Handle HTTP-level rate limiting (429)
+      if (res.status === 429) {
+        return { response_code: 5 };
+      }
+      if (!res.ok) return null;
+
       return await res.json();
     } catch (e) {
       return null;
     }
   };
 
-  let url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
+  const tokenParam = token ? `&token=${token}` : '';
+
+  // Attempt 1: exact category + difficulty
+  let url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple${tokenParam}`;
   let data = await tryFetch(url);
 
   if (data && data.response_code === 0 && data.results && data.results.length > 0) {
     return convertOTDBQuestions(data.results);
   }
 
-  // If rate-limited by OTDB (code 5), wait 1.2s and retry
-  if (data && data.response_code === 5) {
-    await new Promise(r => setTimeout(r, 1200));
+  // If token exhausted (code 4), reset token and retry once
+  if (data && data.response_code === 4) {
+    otdbSessionToken = null;
+    const newToken = await getOTDBToken();
+    const newTokenParam = newToken ? `&token=${newToken}` : '';
+    url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple${newTokenParam}`;
     data = await tryFetch(url);
     if (data && data.response_code === 0 && data.results && data.results.length > 0) {
       return convertOTDBQuestions(data.results);
     }
   }
 
-  // If insufficient questions for exact difficulty (code 1), fetch without difficulty filter
+  // If rate-limited (code 5 or HTTP 429), wait 5.5s and retry
+  if (data && data.response_code === 5) {
+    console.log('[Quizbrik] Rate-limited by OTDB, retrying in 5.5s...');
+    await new Promise(r => setTimeout(r, 5500));
+    data = await tryFetch(url);
+    if (data && data.response_code === 0 && data.results && data.results.length > 0) {
+      return convertOTDBQuestions(data.results);
+    }
+  }
+
+  // If insufficient questions for exact difficulty (code 1), relax difficulty filter
   if (!data || data.response_code !== 0) {
-    url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&type=multiple`;
+    url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&type=multiple${tokenParam}`;
     data = await tryFetch(url);
     if (data && data.response_code === 0 && data.results && data.results.length > 0) {
       return convertOTDBQuestions(data.results);
