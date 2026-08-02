@@ -102,6 +102,47 @@ function getUniqueQuestionPool(allQuestions, category, difficulty, count) {
   return uniqueQuestions;
 }
 
+async function fetchOTDBQuestions(count, categoryId, difficulty) {
+  const tryFetch = async (url) => {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  };
+
+  let url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
+  let data = await tryFetch(url);
+
+  if (data && data.response_code === 0 && data.results && data.results.length > 0) {
+    return convertOTDBQuestions(data.results);
+  }
+
+  // If rate-limited by OTDB (code 5), wait 1.2s and retry
+  if (data && data.response_code === 5) {
+    await new Promise(r => setTimeout(r, 1200));
+    data = await tryFetch(url);
+    if (data && data.response_code === 0 && data.results && data.results.length > 0) {
+      return convertOTDBQuestions(data.results);
+    }
+  }
+
+  // If insufficient questions for exact difficulty (code 1), fetch without difficulty filter
+  if (!data || data.response_code !== 0) {
+    url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&type=multiple`;
+    data = await tryFetch(url);
+    if (data && data.response_code === 0 && data.results && data.results.length > 0) {
+      return convertOTDBQuestions(data.results);
+    }
+  }
+
+  return [];
+}
+
 async function startQuiz() {
   const startBtn = document.getElementById('start-quiz-btn');
   if (startBtn) {
@@ -117,25 +158,10 @@ async function startQuiz() {
   let selectedQuestions = [];
 
   if (categoryId) {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1000);
-
-      const url = `https://opentdb.com/api.php?amount=${count}&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
-      const res = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeoutId);
-
-      const data = await res.json();
-
-      if (data.response_code === 0 && data.results && data.results.length > 0) {
-        selectedQuestions = convertOTDBQuestions(data.results);
-      }
-    } catch (err) {
-      // Fast fallback on API timeout or error
-    }
+    selectedQuestions = await fetchOTDBQuestions(count, categoryId, difficulty);
   }
 
-  // Fallback to pre-cached local questions instantly
+  // Fallback to pre-cached local questions instantly if API returns no questions
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
     selectedQuestions = getUniqueQuestionPool(allQuestions, category, difficulty, count);
