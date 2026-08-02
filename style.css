@@ -893,10 +893,24 @@ progress::-moz-progress-bar {
     color: var(--navy);
 }
 
-.review-header p {
-    font-size: 0.92rem;
+.review-filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.review-filter-bar .pill-btn {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.95rem;
+}
+
+.review-empty-filter {
+    text-align: center;
+    padding: 2.5rem 1rem;
     color: var(--text-muted);
-    margin-top: 0.25rem;
+    font-size: 0.92rem;
+    background: var(--beige);
+    border-radius: var(--radius-sm);
 }
 
 .review-list {

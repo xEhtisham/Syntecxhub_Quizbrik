@@ -447,9 +447,15 @@ function renderResult() {
 }
 
 function renderReview() {
+  let correctCount = 0;
+  let incorrectCount = 0;
+
   const reviewItemsHtml = state.questions.map((q, i) => {
     const userAns = state.userAnswers[i];
     const isCorrect = userAns === q.correctAnswer;
+    if (isCorrect) correctCount++;
+    else incorrectCount++;
+
     const statusClass = isCorrect ? 'review-correct' : 'review-wrong';
     const statusText = isCorrect ? 'Correct' : (userAns ? 'Incorrect' : 'Time Expired');
 
@@ -467,6 +473,8 @@ function renderReview() {
     `;
   }).join('');
 
+  const totalCount = state.questions.length;
+
   return `
     <div class="page">
       <main class="review">
@@ -475,6 +483,13 @@ function renderReview() {
             <h1>Answer Review</h1>
             <p>Detailed breakdown of your performance</p>
           </header>
+
+          <div class="review-filter-bar" id="review-filter-bar">
+            <button type="button" class="pill-btn active" data-filter="all">All (${totalCount})</button>
+            <button type="button" class="pill-btn" data-filter="incorrect">Incorrect (${incorrectCount})</button>
+            <button type="button" class="pill-btn" data-filter="correct">Correct (${correctCount})</button>
+          </div>
+
           <div class="review-list">
             ${reviewItemsHtml}
           </div>
@@ -845,6 +860,42 @@ function showResult(isFirstTime = false) {
 function showReview() {
   app.innerHTML = renderReview();
   document.getElementById('back-to-result-btn').addEventListener('click', () => showResult(false));
+
+  const filterBtns = document.querySelectorAll('#review-filter-bar .pill-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+
+      const filter = e.currentTarget.getAttribute('data-filter');
+      const items = document.querySelectorAll('.review-item');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const isCorrect = item.classList.contains('review-correct');
+        if (filter === 'all' || (filter === 'correct' && isCorrect) || (filter === 'incorrect' && !isCorrect)) {
+          item.style.display = 'flex';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      let emptyMsgEl = document.getElementById('review-empty-msg');
+      if (visibleCount === 0) {
+        if (!emptyMsgEl) {
+          emptyMsgEl = document.createElement('div');
+          emptyMsgEl.id = 'review-empty-msg';
+          emptyMsgEl.className = 'review-empty-filter';
+          document.querySelector('.review-list').appendChild(emptyMsgEl);
+        }
+        emptyMsgEl.style.display = 'block';
+        emptyMsgEl.textContent = filter === 'incorrect' ? '🎉 Perfect score! No incorrect answers to show.' : 'No correct answers in this session.';
+      } else if (emptyMsgEl) {
+        emptyMsgEl.style.display = 'none';
+      }
+    });
+  });
 }
 
 function startTimer() {
