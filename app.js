@@ -1,6 +1,6 @@
 "use strict";
 
-const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports"];
+const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports", "Film", "Music"];
 const DIFFICULTIES = ["Easy", "Medium", "Hard"];
 const DEFAULT_QUESTION_COUNT = 10;
 const MIN_QUESTIONS = 5;
@@ -52,7 +52,9 @@ const OTDB_CATEGORY_MAP = {
   "Technology": 18,
   "History": 23,
   "Geography": 22,
-  "Sports": 21
+  "Sports": 21,
+  "Film": 11,
+  "Music": 12
 };
 
 function decodeHTML(html) {
@@ -161,10 +163,15 @@ async function startQuiz() {
     selectedQuestions = await fetchOTDBQuestions(count, categoryId, difficulty);
   }
 
-  // Fallback to pre-cached local questions instantly if API returns no questions
+  if (selectedQuestions.length > 0) {
+    console.log(`[Quizbrik] Loaded ${selectedQuestions.length} questions from Open Trivia DB (category: ${category}, difficulty: ${difficulty})`);
+  }
+
+  // Fallback to pre-cached local questions if API returns no questions
   if (selectedQuestions.length === 0) {
     const allQuestions = await loadQuestions();
     selectedQuestions = getUniqueQuestionPool(allQuestions, category, difficulty, count);
+    console.log(`[Quizbrik] Loaded ${selectedQuestions.length} questions from local database (category: ${category}, difficulty: ${difficulty})`);
   }
 
   // Enforce session difficulty & dynamically shuffle option positions for every question
