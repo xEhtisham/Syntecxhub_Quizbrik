@@ -5,7 +5,11 @@ const DIFFICULTIES = ["Easy", "Medium", "Hard"];
 const DEFAULT_QUESTION_COUNT = 10;
 const MIN_QUESTIONS = 5;
 const MAX_QUESTIONS = 50;
-const TIMER_SECONDS = 30;
+const TIMER_BY_DIFFICULTY = { Easy: 30, Medium: 25, Hard: 20 };
+
+function getTimerForDifficulty() {
+  return TIMER_BY_DIFFICULTY[state.selectedDifficulty] || 30;
+}
 
 const state = {
   selectedCategory: "General Knowledge",
@@ -17,7 +21,7 @@ const state = {
   score: 0,
   answered: false,
   selectedAnswer: null,
-  timer: TIMER_SECONDS,
+  timer: 30,
   timerInterval: null,
 };
 
@@ -233,7 +237,7 @@ async function startQuiz() {
   state.score = 0;
   state.answered = false;
   state.selectedAnswer = null;
-  state.timer = TIMER_SECONDS;
+  state.timer = getTimerForDifficulty();
 
   showQuiz(true);
 }
@@ -1029,7 +1033,7 @@ function getCalculatedScore() {
 function startTimer() {
   clearInterval(state.timerInterval);
   const settings = getStoredSettings();
-  state.timer = settings.timerSeconds || TIMER_SECONDS;
+  state.timer = settings.timerSeconds || getTimerForDifficulty();
   
   const timerEl = document.getElementById('timer');
   
@@ -1117,7 +1121,7 @@ function nextQuestion() {
   state.answered = false;
   state.selectedAnswer = null;
   const settings = getStoredSettings();
-  state.timer = settings.timerSeconds || TIMER_SECONDS;
+  state.timer = settings.timerSeconds || getTimerForDifficulty();
   
   if (state.currentQuestion >= state.questions.length) {
     showResult(true);
