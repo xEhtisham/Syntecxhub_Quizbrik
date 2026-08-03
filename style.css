@@ -207,6 +207,18 @@ body {
     width: 100%;
     max-width: 1040px;
     margin: 0 auto;
+    animation: viewFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes viewFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .app-topbar {
