@@ -26,16 +26,20 @@ const state = {
 };
 
 let localQuestionCache = null;
+let localQuestionPromise = null;
 
 async function loadQuestions() {
   if (localQuestionCache) return localQuestionCache;
-  try {
-    const response = await fetch('data/questions.json');
-    localQuestionCache = await response.json();
-    return localQuestionCache;
-  } catch (e) {
-    return [];
+  if (!localQuestionPromise) {
+    localQuestionPromise = fetch('data/questions.json')
+      .then(res => res.json())
+      .then(data => {
+        localQuestionCache = data;
+        return data;
+      })
+      .catch(() => []);
   }
+  return localQuestionPromise;
 }
 
 // Pre-fetch local questions in background at app startup
