@@ -741,13 +741,6 @@ function showHistory() {
 }
 
 function renderSettings() {
-  const settings = getStoredSettings();
-
-  const timerOptions = [15, 30, 45, 60];
-  const timerPillsHtml = timerOptions.map(t => 
-    `<button type="button" class="pill-btn ${t === settings.timerSeconds ? 'active' : ''}" data-setting="timer" data-value="${t}">${t}s</button>`
-  ).join('');
-
   return `
     <div class="page">
       ${renderAppHeader('Settings')}
@@ -763,11 +756,13 @@ function renderSettings() {
         <div class="settings-row">
           <div class="settings-info">
             <h3>Timer Duration</h3>
-            <p>Time allowed per question during quiz sessions</p>
+            <p>Time allowed per question, automatically adjusted by difficulty</p>
           </div>
           <div class="settings-control">
-            <div class="pill-group" id="timer-setting-pills">
-              ${timerPillsHtml}
+            <div class="timer-difficulty-display">
+              <span class="timer-diff-item"><strong>Easy</strong> ${TIMER_BY_DIFFICULTY.Easy}s</span>
+              <span class="timer-diff-item"><strong>Medium</strong> ${TIMER_BY_DIFFICULTY.Medium}s</span>
+              <span class="timer-diff-item"><strong>Hard</strong> ${TIMER_BY_DIFFICULTY.Hard}s</span>
             </div>
           </div>
         </div>
@@ -789,16 +784,6 @@ function renderSettings() {
 function showSettings() {
   updateActiveSidebarNav('settings');
   app.innerHTML = renderSettings();
-
-  document.querySelectorAll('#timer-setting-pills .pill-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const val = parseInt(e.currentTarget.getAttribute('data-value'), 10);
-      const settings = getStoredSettings();
-      settings.timerSeconds = val;
-      saveStoredSettings(settings);
-      showSettings();
-    });
-  });
 
   const resetBtn = document.getElementById('reset-all-data-btn');
   if (resetBtn) {

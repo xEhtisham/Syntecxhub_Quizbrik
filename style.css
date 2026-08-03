@@ -1244,6 +1244,26 @@ progress::-moz-progress-bar {
     min-width: 180px;
 }
 
+.timer-difficulty-display {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.timer-diff-item {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--border-light);
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.timer-diff-item strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
 .btn-danger-outline {
     border: 1.5px solid var(--danger);
     color: var(--danger);
