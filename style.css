@@ -619,6 +619,13 @@ body {
     transform: translateY(0) scale(0.985);
 }
 
+.btn:focus-visible,
+.pill-btn:focus-visible,
+.option-btn:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+}
+
 .btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
