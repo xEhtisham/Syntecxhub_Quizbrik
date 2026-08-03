@@ -1,3 +1,7 @@
+/**
+ * Quizbrik — Core Application Logic & State Management
+ * Handles live Open Trivia DB fetching, local dataset fallbacks, UI rendering, and session history persistence.
+ */
 "use strict";
 
 const CATEGORIES = ["General Knowledge", "Science", "Technology", "History", "Geography", "Sports", "Film", "Music"];
