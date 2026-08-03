@@ -769,6 +769,19 @@ function renderSettings() {
 
         <div class="settings-row">
           <div class="settings-info">
+            <h3>Keyboard Controls</h3>
+            <p>Use keyboard shortcuts for fast quiz navigation</p>
+          </div>
+          <div class="settings-control">
+            <div class="timer-difficulty-display">
+              <span class="timer-diff-item"><strong>1-4</strong> Select Answer</span>
+              <span class="timer-diff-item"><strong>Enter</strong> Submit / Next</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-info">
             <h3>Data Reset</h3>
             <p>Clear all local quiz history, performance metrics, and settings</p>
           </div>
